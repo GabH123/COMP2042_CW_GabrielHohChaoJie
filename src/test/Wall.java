@@ -21,8 +21,16 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
+import static test.Brick.*;
+
 
 public class Wall {
+
+    public static final int UP_IMPACT = 100;
+    public static final int DOWN_IMPACT = 200;
+    public static final int LEFT_IMPACT = 300;
+    public static final int RIGHT_IMPACT = 400;
+
 
     private static final int LEVELS_COUNT = 4;
 
@@ -202,25 +210,40 @@ public class Wall {
 
     private boolean impactWall(){
         for(Brick b : bricks){
-            switch(b.findImpact(ball)) {
+            switch(findImpact(b,ball)) {
                 //Vertical Impact
-                case Brick.UP_IMPACT:
+                case UP_IMPACT:
                     ball.reverseY();
                     return b.setImpact(ball.down, Brick.Crack.UP);
-                case Brick.DOWN_IMPACT:
+                case DOWN_IMPACT:
                     ball.reverseY();
                     return b.setImpact(ball.up,Brick.Crack.DOWN);
 
                 //Horizontal Impact
-                case Brick.LEFT_IMPACT:
+                case LEFT_IMPACT:
                     ball.reverseX();
                     return b.setImpact(ball.right,Brick.Crack.RIGHT);
-                case Brick.RIGHT_IMPACT:
+                case RIGHT_IMPACT:
                     ball.reverseX();
                     return b.setImpact(ball.left,Brick.Crack.LEFT);
             }
         }
         return false;
+    }
+
+    public int findImpact(Brick brick, Ball ball){
+        if (brick.isBroken())
+            return 0;
+        int out = 0;
+        if (brick.brickFace.contains(ball.right))
+            out = LEFT_IMPACT;
+        else if (brick.brickFace.contains(ball.left))
+            out = RIGHT_IMPACT;
+        else if (brick.brickFace.contains(ball.up))
+            out = DOWN_IMPACT;
+        else if (brick.brickFace.contains(ball.down))
+            out = UP_IMPACT;
+        return out;
     }
 
     private boolean impactBorder(){
