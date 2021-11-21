@@ -83,4 +83,12 @@ public class Player {
         ballPoint.setLocation(p);
         playerFace.setLocation(ballPoint.x - (int)playerFace.getWidth()/2,ballPoint.y);
     }
+
+    public void playerDrawer(Graphics2D g2d){
+        g2d.setColor(Player.INNER_COLOR);
+        g2d.fill(playerFace);
+
+        g2d.setColor(Player.BORDER_COLOR);
+        g2d.draw(playerFace);
+    }
 }

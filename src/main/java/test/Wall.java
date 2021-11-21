@@ -369,4 +369,12 @@ public class Wall {
     public Player getPlayer() {
         return player;
     }
+
+    public void drawPlayerShape(Graphics2D g2d){
+         getPlayer().playerDrawer(g2d);
+    }
+
+    public void drawBallShape(Graphics2D g2d){
+         getBall().ballDrawer(g2d);
+    }
 }

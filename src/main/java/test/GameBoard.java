@@ -76,7 +76,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         debugConsole = new DebugConsole(owner,wall,this);
         //initialize the first level
-        wall.nextLevel();
+        wall.nextLevel(); //Should be in constructor?
 
         gameTimer = new Timer(10,e ->{
             wall.move();
@@ -130,13 +130,13 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setColor(Color.BLUE);
         g2d.drawString(message,250,225);
 
-        drawBall(wall.getBall(),g2d);
+        drawBall(wall,g2d);
 
         for(Brick b : wall.getBricks())
             if(!b.isBroken())
                 drawBrick(b,g2d);
 
-        drawPlayer(wall.getPlayer(),g2d);
+        drawPlayer(wall,g2d);
 
         if(showPauseMenu)
             drawMenu(g2d);
@@ -164,30 +164,15 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setColor(tmp);
     }
 
-    private void drawBall(Ball ball,Graphics2D g2d){
+    private void drawBall(Wall wall,Graphics2D g2d){
         Color tmp = g2d.getColor();
-
-        Shape s = ball.getBallFace();
-
-        g2d.setColor(ball.getInnerColor());
-        g2d.fill(s);
-
-        g2d.setColor(ball.getBorderColor());
-        g2d.draw(s);
-
+        wall.drawBallShape(g2d);
         g2d.setColor(tmp);
     }
 
-    private void drawPlayer(Player p,Graphics2D g2d){
+    private void drawPlayer(Wall wall, Graphics2D g2d){
         Color tmp = g2d.getColor();
-
-        Shape s = p.getPlayerFace();
-        g2d.setColor(Player.INNER_COLOR);
-        g2d.fill(s);
-
-        g2d.setColor(Player.BORDER_COLOR);
-        g2d.draw(s);
-
+        wall.drawPlayerShape(g2d);
         g2d.setColor(tmp);
     }
 
