@@ -49,7 +49,6 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
         this.setUndecorated(true);
 
-
     }
 
     public void initialize(){
@@ -68,7 +67,6 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         initialize();
         /*to avoid problems with graphics focus controller is added here*/
         this.addWindowFocusListener(this);
-
     }
 
     private void autoLocate(){
