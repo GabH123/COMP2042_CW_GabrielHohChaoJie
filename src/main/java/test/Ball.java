@@ -126,7 +126,7 @@ abstract public class Ball {
         return speedY;
     }
 
-    public void ballDrawer(Graphics2D g2d){
+    public void ballDrawInfo(Graphics2D g2d){
         g2d.setColor(getInnerColor());
         g2d.fill(getBallFace());
 

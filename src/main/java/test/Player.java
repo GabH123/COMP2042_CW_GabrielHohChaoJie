@@ -22,7 +22,7 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
 
-public class Player {
+public class Player implements Playable{
 
 
     public static final Color BORDER_COLOR = Color.GREEN.darker().darker();
@@ -46,10 +46,7 @@ public class Player {
 
     }
 
-    private Rectangle makeRectangle(int width,int height){
-        Point p = new Point((int)(ballPoint.getX() - (width / 2)),(int)ballPoint.getY());
-        return  new Rectangle(p,new Dimension(width,height));
-    }
+
 
     public boolean impact(Ball b){
         return playerFace.contains(b.getPosition()) && playerFace.contains(b.down) ;
@@ -67,7 +64,7 @@ public class Player {
         moveAmount = -DEF_MOVE_AMOUNT;
     }
 
-    public void movRight(){
+    public void moveRight(){
         moveAmount = DEF_MOVE_AMOUNT;
     }
 
@@ -83,8 +80,12 @@ public class Player {
         ballPoint.setLocation(p);
         playerFace.setLocation(ballPoint.x - (int)playerFace.getWidth()/2,ballPoint.y);
     }
+    private Rectangle makeRectangle(int width,int height){
+        Point p = new Point((int)(ballPoint.getX() - (width / 2)),(int)ballPoint.getY());
+        return  new Rectangle(p,new Dimension(width,height));
+    }
 
-    public void playerDrawer(Graphics2D g2d){
+    public void playerDrawInfo(Graphics2D g2d){
         g2d.setColor(Player.INNER_COLOR);
         g2d.fill(playerFace);
 

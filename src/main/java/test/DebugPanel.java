@@ -22,7 +22,9 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-
+/**
+ * DebugPanel is the container for holding the button and the slider.
+ */
 
 public class DebugPanel extends JPanel {
 
