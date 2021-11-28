@@ -7,4 +7,13 @@ public class Level {
     public Level(Brick[] bricks) {
         this.bricks = bricks;
     }
+
+    public void resetLevel(){
+        for(Brick b : getBricks())
+            b.repair();
+    }
+
+    public Brick[] getBricks() {
+        return bricks;
+    }
 }

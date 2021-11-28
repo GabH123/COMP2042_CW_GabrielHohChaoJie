@@ -42,14 +42,13 @@ public class Wall {
     private Random rnd;
     private Rectangle area;
 
-    private Brick[] bricks;
+    private Level currentLevel;
     private Ball ball;
     private Player player;
 
     private LevelFactory levelMaker;
-    private Level[] levelss;
+    private Level[] levels;
 
-    private Brick[][] levels;
     private int level;
 
     private Point startPoint;
@@ -61,9 +60,10 @@ public class Wall {
 
         this.startPoint = new Point(ballPos);
 
-        levels = makeLevels(drawArea,brickCount,lineCount,brickDimensionRatio);
-        level = 0;
 
+        level = 0;
+        levelMaker=new LevelFactory(drawArea,brickCount,lineCount,brickDimensionRatio);
+        levels = makeLevels();
         ballCount = 3;
         ballLost = false;
 
@@ -131,142 +131,32 @@ public class Wall {
     }
 
     public void wallReset(){
-        for(Brick b : getBricks())
+        for(Brick b : getCurrentLevel().getBricks())
             b.repair();
-        brickCount = getBricks().length;
+        brickCount = getCurrentLevel().getBricks().length;
         ballCount = 3;
     }
 
     public void nextLevel(){
-        bricks = levels[level++];
-        this.brickCount = getBricks().length;
-    }
-
-
-
-
-    //Makes each of the bricks
-    private Brick[] makeSingleTypeLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int type){
-        /*
-          if brickCount is not divisible by line count,brickCount is adjusted to the biggest
-          multiple of lineCount smaller then brickCount
-         */
-
-        //BrickFactory?
-        brickCnt = roundBrickCnt(brickCnt,lineCnt);
-
-        int brickOnLine = brickCnt / lineCnt;
-
-        brickCnt += lineCnt / 2;
-
-        Dimension brickSize = setBrickDimension(drawArea,brickOnLine,brickSizeRatio);
-
-        return setBrickLocation(brickCnt,lineCnt,brickOnLine,brickSize,type);
-
-    }
-
-    private Brick[] makeChessboardLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
-        /*
-          if brickCount is not divisible by line count,brickCount is adjusted to the biggest
-          multiple of lineCount smaller then brickCount
-         */
-        brickCnt=roundBrickCnt(brickCnt,lineCnt);
-
-        //First, decide dimensions of the brick
-        int brickOnLine = brickCnt / lineCnt;
-
-        int centerLeft = brickOnLine / 2 - 1;
-        int centerRight = brickOnLine / 2 + 1;
-
-        double brickLen = drawArea.getWidth() / brickOnLine;
-        double brickHgt = brickLen / brickSizeRatio;
-
-        brickCnt += lineCnt / 2; //??
-
-        Brick[] tmp  = new Brick[brickCnt];
-
-        Dimension brickSize = new Dimension((int) brickLen,(int) brickHgt);
-
-        //Second, set the location of each brick
-        Point p = new Point();
-        int i;
-
-        for(i = 0; i < tmp.length; i++){
-            int line = i / brickOnLine;
-            if(line == lineCnt)
-                break;
-
-            int posX = i % brickOnLine;
-
-            double x = posX * brickLen;
-            x =(line % 2 == 0) ? x : (x - (brickLen / 2));
-
-            double y = (line) * brickHgt;
-
-            p.setLocation(x,y);
-
-            boolean b = ((line % 2 == 0 && i % 2 == 0) || (line % 2 != 0 && posX > centerLeft && posX <= centerRight));
-            tmp[i] = b ?  makeBrick(p,brickSize,typeA) : makeBrick(p,brickSize,typeB);
-        }
-
-        for(double y = brickHgt;i < tmp.length;i++, y += 2*brickHgt){
-            double x = (brickOnLine * brickLen) - (brickLen / 2);
-            p.setLocation(x,y);
-            tmp[i] = makeBrick(p,brickSize,typeA);
-        }
-        return tmp;
-    }
-
-    private Brick [] setBrickLocation(int brickCnt, int lineCnt, int brickOnLine,Dimension brickSize, int type){
-        Brick [] bricks = new Brick [brickCnt];
-        Point p = new Point();
-
-        int brickNo;
-        for(brickNo = 0; brickNo < bricks.length; brickNo++){
-            int line = brickNo / brickOnLine;
-            if(line == lineCnt)
-                break;
-            double x = (brickNo % brickOnLine) * brickSize.getWidth();
-            x =(line % 2 == 0) ? x : (x - (brickSize.getWidth() / 2));
-            double y = (line) * brickSize.getHeight();
-            p.setLocation(x,y);
-            bricks[brickNo] = makeBrick(p,brickSize,type);
-            //System.out.println("Brick: "+i+" X: "+x+" Y: "+y);
-        }
-
-        for(double y = brickSize.getHeight();brickNo < bricks.length;brickNo++, y += 2*brickSize.getHeight()){
-            double x = (brickOnLine * brickSize.getWidth()) - (brickSize.getWidth() / 2);
-            p.setLocation(x,y);
-            bricks[brickNo] = new ClayBrick(p,brickSize);
-        }
-        return bricks;
-    }
-
-    private Dimension setBrickDimension (Rectangle drawArea, int brickOnLine, double brickSizeRatio){
-        double brickLen = drawArea.getWidth() / brickOnLine;
-        double brickHgt = brickLen / brickSizeRatio;
-        return new Dimension((int) brickLen,(int) brickHgt);
-    }
-
-    private int roundBrickCnt (int brickCnt, int lineCnt){
-        return brickCnt -= brickCnt % lineCnt;
+        currentLevel = levels[level++];
+        this.brickCount = getCurrentLevel().getBricks().length;
     }
 
     private void makeBall(Point2D ballPos){
         ball = new RubberBall(ballPos);
     }
 
-    private Brick[][] makeLevels(Rectangle drawArea,int brickCount,int lineCount,double brickDimensionRatio){
-        Brick[][] tmp = new Brick[LEVELS_COUNT][];
-        tmp[0] = makeSingleTypeLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY);
-        tmp[1] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,CEMENT);
-        tmp[2] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,CLAY,STEEL);
-        tmp[3] = makeChessboardLevel(drawArea,brickCount,lineCount,brickDimensionRatio,STEEL,CEMENT);
+    private Level[] makeLevels(){
+        Level[] tmp = new Level[LEVELS_COUNT];
+        tmp[0] = getLevelMaker().makeLevel(CLAY,CLAY);
+        tmp[1] = getLevelMaker().makeLevel(CLAY,CEMENT);
+        tmp[2] = getLevelMaker().makeLevel(CLAY,STEEL);
+        tmp[3] = getLevelMaker().makeLevel(CEMENT,STEEL);
         return tmp;
     }
 
     private boolean impactWall(){
-        for(Brick b : getBricks()){
+        for(Brick b : getCurrentLevel().getBricks()){
             switch(findImpact(b, getBall())) {
                 //Vertical Impact
                 case UP_IMPACT:
@@ -377,8 +267,8 @@ public class Wall {
         return ballLost;
     }
 
-    public Brick[] getBricks() {
-        return bricks;
+    public Level getCurrentLevel() {
+        return currentLevel;
     }
 
     public Ball getBall() {
@@ -387,6 +277,14 @@ public class Wall {
 
     public Playable getPlayer() {
         return player;
+    }
+
+    public LevelFactory getLevelMaker() {
+        return levelMaker;
+    }
+
+    public Level[] getLevels() {
+        return levels;
     }
 
 

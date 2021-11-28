@@ -16,35 +16,18 @@ public class LevelFactory {
     private double brickDimensionRatio;
     private Rectangle drawArea;
 
-    public LevelFactory(int brickCount, int lineCount, double brickDimensionRatio, Rectangle drawArea) {
-        this.brickCount = brickCount;
+    public LevelFactory(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio) {
+        this.brickCount = roundBrickCnt(brickCount,lineCount);
         this.lineCount = lineCount;
         this.brickDimensionRatio = brickDimensionRatio;
         this.drawArea = drawArea;
     }
 
-    public Level makeLevel(Brick[] bricks,int type){
-        return new Level(bricks);
+    public Level makeLevel(int typeA,int typeB){
+
+        return new Level(makeChessboardLevel(getDrawArea(),getBrickCount(),getLineCount(),getBrickDimensionRatio(),typeA,typeB));
     }
 
-    private Brick[] makeSingleTypeLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int type){
-        /*
-          if brickCount is not divisible by line count,brickCount is adjusted to the biggest
-          multiple of lineCount smaller then brickCount
-         */
-
-        //BrickFactory?
-        brickCnt = roundBrickCnt(brickCnt,lineCnt);
-
-        int brickOnLine = brickCnt / lineCnt;
-
-        brickCnt += lineCnt / 2;
-
-        Dimension brickSize = setBrickDimension(drawArea,brickOnLine,brickSizeRatio);
-
-        return setBrickLocation(brickCnt,lineCnt,brickOnLine,brickSize,type);
-
-    }
     private Brick[] makeChessboardLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
         /*
           if brickCount is not divisible by line count,brickCount is adjusted to the biggest
@@ -148,8 +131,24 @@ public class LevelFactory {
         return new Dimension((int) brickLen,(int) brickHgt);
     }
 
+    //Rounds the amount of Bricks so that it fits exactly in the screen according to the number of lines
     private int roundBrickCnt (int brickCnt, int lineCnt){
         return brickCnt -= brickCnt % lineCnt;
     }
 
+    public int getBrickCount() {
+        return brickCount;
+    }
+
+    public int getLineCount() {
+        return lineCount;
+    }
+
+    public double getBrickDimensionRatio() {
+        return brickDimensionRatio;
+    }
+
+    public Rectangle getDrawArea() {
+        return drawArea;
+    }
 }
