@@ -44,7 +44,10 @@ public class Wall {
 
     private Brick[] bricks;
     private Ball ball;
-    private Playable player;
+    private Player player;
+
+    private LevelFactory levelMaker;
+    private Level[] levelss;
 
     private Brick[][] levels;
     private int level;
