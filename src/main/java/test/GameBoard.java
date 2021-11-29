@@ -93,9 +93,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
         drawBall(wall,g2d);
 
-        for(Brick b : wall.getCurrentLevel().getBricks())
-            if(!b.isBroken())
-                drawBrick(b,g2d);
+        drawLevel(wall,g2d);
 
         drawPlayer(wall,g2d);
 
@@ -151,6 +149,12 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         this.addKeyListener(this);
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
+    }
+
+    private void drawLevel(Wall wall,Graphics2D g2d){
+        for(Brick b : wall.getCurrentLevel().getBricks())
+            if(!b.isBroken())
+                drawBrick(b,g2d);
     }
 
     private void drawBrick(Brick brick,Graphics2D g2d){
