@@ -8,12 +8,16 @@ public class Level {
         this.bricks = bricks;
     }
 
-    public void resetLevel(){
+    public void resetBricks(){
         for(Brick b : getBricks())
             b.repair();
     }
 
     public Brick[] getBricks() {
         return bricks;
+    }
+
+    public int getNumberOfBricks(){
+        return getBricks().length;
     }
 }

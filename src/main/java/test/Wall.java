@@ -49,7 +49,7 @@ public class Wall {
     private LevelFactory levelMaker;
     private Level[] levels;
 
-    private int level;
+    private int currentLevelNumber;
 
     private Point startPoint;
     private int brickCount;
@@ -61,7 +61,7 @@ public class Wall {
         this.startPoint = new Point(ballPos);
 
 
-        level = 0;
+        currentLevelNumber = 0;
         levelMaker=new LevelFactory(drawArea,brickCount,lineCount,brickDimensionRatio);
         levels = makeLevels();
         ballCount = 3;
@@ -70,15 +70,9 @@ public class Wall {
         rnd = new Random();
 
         makeBall(ballPos);
-        int speedX,speedY;
-        do{
-            speedX = rnd.nextInt(5) - 2;
-        }while(speedX == 0);
-        do{
-            speedY = -rnd.nextInt(3);
-        }while(speedY == 0);
 
-        getBall().setSpeed(speedX,speedY);
+
+        getBall().setSpeed(randomiseSpeedX(),randomiseSpeedY());
 
         player = new Player((Point) ballPos.clone(),150,10, drawArea);
 
@@ -118,29 +112,23 @@ public class Wall {
     public void ballReset(){
         getPlayer().moveTo(startPoint);
         getBall().moveTo(startPoint);
-        int speedX,speedY;
-        do{
-            speedX = rnd.nextInt(5) - 2;
-        }while(speedX == 0);
-        do{
-            speedY = -rnd.nextInt(3);
-        }while(speedY == 0);
 
-        getBall().setSpeed(speedX,speedY);
+        getBall().setSpeed(randomiseSpeedX(),randomiseSpeedY());
         ballLost = false;
     }
 
     public void wallReset(){
-        for(Brick b : getCurrentLevel().getBricks())
-            b.repair();
-        brickCount = getCurrentLevel().getBricks().length;
+        getCurrentLevel().resetBricks();
+        brickCount = getLevelMaker().getBrickCount();
         ballCount = 3;
     }
 
     public void nextLevel(){
-        currentLevel = levels[level++];
-        this.brickCount = getCurrentLevel().getBricks().length;
+        currentLevel = levels[currentLevelNumber++];
+        this.brickCount = getLevelMaker().getBrickCount();
     }
+
+
 
     private void makeBall(Point2D ballPos){
         ball = new RubberBall(ballPos);
@@ -198,25 +186,21 @@ public class Wall {
         return ((p.getX() < area.getX()) ||(p.getX() > (area.getX() + area.getWidth())));
     }
 
-    private Brick makeBrick(Point point, Dimension size, int type){
-        //Switch CASE for subclasses not allowed
-        Brick out;
-        switch(type){
-            case CLAY:
-                out = new ClayBrick(point,size);
-                break;
-            case STEEL:
-                out = new SteelBrick(point,size);
-                break;
-            case CEMENT:
-                out = new CementBrick(point, size);
-                break;
-            default:
-                throw  new IllegalArgumentException(String.format("Unknown Type:%d\n",type));
-        }
-        return  out;
+    private int randomiseSpeedX(){
+        int speedX;
+        do{
+            speedX = getRnd().nextInt(5) - 2;
+        }while(speedX == 0);
+        return speedX;
     }
 
+    private int randomiseSpeedY(){
+        int speedY;
+        do{
+            speedY = -getRnd().nextInt(3);
+        }while(speedY == 0);
+        return speedY;
+    }
 
 
     public void drawPlayerShape(Graphics2D g2d){
@@ -227,12 +211,8 @@ public class Wall {
         getBall().ballDrawInfo(g2d);
     }
 
-    public void drawBrickShape(Graphics2D g2d){
-
-    }
-
     public boolean hasLevel(){
-        return level < levels.length;
+        return currentLevelNumber < levels.length;
     }
 
     public void setBallXSpeed(int s){
@@ -287,5 +267,7 @@ public class Wall {
         return levels;
     }
 
-
+    public Random getRnd() {
+        return rnd;
+    }
 }

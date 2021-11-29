@@ -17,16 +17,16 @@ public class LevelFactory {
     private Rectangle drawArea;
 
     public LevelFactory(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio) {
+        this.drawArea = drawArea;
         this.brickCount = roundBrickCnt(brickCount,lineCount);
         this.lineCount = lineCount;
         this.brickDimensionRatio = brickDimensionRatio;
-        this.drawArea = drawArea;
     }
 
-    public Level makeLevel(int typeA,int typeB){
-
+    public Level makeLevel(int typeA,int typeB) {
         return new Level(makeChessboardLevel(getDrawArea(),getBrickCount(),getLineCount(),getBrickDimensionRatio(),typeA,typeB));
     }
+
 
     private Brick[] makeChessboardLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
         /*
@@ -99,7 +99,6 @@ public class LevelFactory {
         return  out;
     }
 
-
     private Brick [] setBrickLocation(int brickCnt, int lineCnt, int brickOnLine,Dimension brickSize, int type){
         Brick [] bricks = new Brick [brickCnt];
         Point p = new Point();
@@ -135,6 +134,8 @@ public class LevelFactory {
     private int roundBrickCnt (int brickCnt, int lineCnt){
         return brickCnt -= brickCnt % lineCnt;
     }
+
+
 
     public int getBrickCount() {
         return brickCount;
