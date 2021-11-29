@@ -75,10 +75,38 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         wall = new Wall(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point(300,430));
 
         debugConsole = new DebugConsole(owner,wall,this);
-        //initialize the first level
-        wall.nextLevel(); //Should be in constructor?
 
-        gameTimer = new Timer(10,e ->{
+        gameTimer = instantiateTimer();
+    }
+
+
+
+
+    public void paint(Graphics g){
+
+        Graphics2D g2d = (Graphics2D) g;
+
+        clear(g2d);
+
+        g2d.setColor(Color.BLUE);
+        g2d.drawString(message,250,225);
+
+        drawBall(wall,g2d);
+
+        for(Brick b : wall.getCurrentLevel().getBricks())
+            if(!b.isBroken())
+                drawBrick(b,g2d);
+
+        drawPlayer(wall,g2d);
+
+        if(showPauseMenu)
+            drawMenu(g2d);
+
+        Toolkit.getDefaultToolkit().sync();
+    }
+
+    private Timer instantiateTimer(){
+       return new Timer(10,e ->{
             wall.move();
             wall.findImpacts();
             message = String.format("Bricks: %d Balls %d",wall.getBrickCount(),wall.getBallCount());
@@ -109,7 +137,12 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
     }
 
-
+    private void clear(Graphics2D g2d){
+        Color tmp = g2d.getColor();
+        g2d.setColor(BG_COLOR);
+        g2d.fillRect(0,0,getWidth(),getHeight());
+        g2d.setColor(tmp);
+    }
 
     private void initialize(){
         this.setPreferredSize(new Dimension(DEF_WIDTH,DEF_HEIGHT));
@@ -118,37 +151,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         this.addKeyListener(this);
         this.addMouseListener(this);
         this.addMouseMotionListener(this);
-    }
-
-
-    public void paint(Graphics g){
-
-        Graphics2D g2d = (Graphics2D) g;
-
-        clear(g2d);
-
-        g2d.setColor(Color.BLUE);
-        g2d.drawString(message,250,225);
-
-        drawBall(wall,g2d);
-
-        for(Brick b : wall.getCurrentLevel().getBricks())
-            if(!b.isBroken())
-                drawBrick(b,g2d);
-
-        drawPlayer(wall,g2d);
-
-        if(showPauseMenu)
-            drawMenu(g2d);
-
-        Toolkit.getDefaultToolkit().sync();
-    }
-
-    private void clear(Graphics2D g2d){
-        Color tmp = g2d.getColor();
-        g2d.setColor(BG_COLOR);
-        g2d.fillRect(0,0,getWidth(),getHeight());
-        g2d.setColor(tmp);
     }
 
     private void drawBrick(Brick brick,Graphics2D g2d){
