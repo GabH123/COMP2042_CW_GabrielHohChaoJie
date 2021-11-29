@@ -21,6 +21,8 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
+import static test.LevelFactory.TOTAL_NUMBER_OF_LEVELS;
+
 /**
  * Wall is used to store the current logical state of the game in-game and level.
  * Note: Level making should be in a separate class called Level.
@@ -32,13 +34,6 @@ public class Wall {
     public static final int LEFT_IMPACT = 300;
     public static final int RIGHT_IMPACT = 400;
 
-
-    private static final int LEVELS_COUNT = 4;
-
-    private static final int CLAY = 1;
-    private static final int STEEL = 2;
-    private static final int CEMENT = 3;
-
     private Random rnd;
     private Rectangle area;
 
@@ -47,7 +42,7 @@ public class Wall {
     private Player player;
 
     private LevelFactory levelMaker;
-    private Level[] levels;
+
 
     private int currentLevelNumber;
 
@@ -63,7 +58,7 @@ public class Wall {
 
         currentLevelNumber = 0;
         levelMaker=new LevelFactory(drawArea,brickCount,lineCount,brickDimensionRatio);
-        levels = makeLevels();
+
         ballCount = 3;
         ballLost = false;
 
@@ -124,7 +119,7 @@ public class Wall {
     }
 
     public void nextLevel(){
-        currentLevel = levels[currentLevelNumber++];
+        currentLevel = getLevelMaker().getThisLevel(currentLevelNumber++);
         this.brickCount = getLevelMaker().getBrickCount();
     }
 
@@ -134,14 +129,6 @@ public class Wall {
         ball = new RubberBall(ballPos);
     }
 
-    private Level[] makeLevels(){
-        Level[] tmp = new Level[LEVELS_COUNT];
-        tmp[0] = getLevelMaker().makeLevel(CLAY,CLAY);
-        tmp[1] = getLevelMaker().makeLevel(CLAY,CEMENT);
-        tmp[2] = getLevelMaker().makeLevel(CLAY,STEEL);
-        tmp[3] = getLevelMaker().makeLevel(CEMENT,STEEL);
-        return tmp;
-    }
 
     private boolean impactWall(){
         for(Brick b : getCurrentLevel().getBricks()){
@@ -212,7 +199,7 @@ public class Wall {
     }
 
     public boolean hasLevel(){
-        return currentLevelNumber < levels.length;
+        return currentLevelNumber < TOTAL_NUMBER_OF_LEVELS;
     }
 
     public void setBallXSpeed(int s){
@@ -263,9 +250,6 @@ public class Wall {
         return levelMaker;
     }
 
-    public Level[] getLevels() {
-        return levels;
-    }
 
     public Random getRnd() {
         return rnd;

@@ -11,6 +11,8 @@ public class LevelFactory {
     private static final int STEEL = 2;
     private static final int CEMENT = 3;
 
+    public static final int TOTAL_NUMBER_OF_LEVELS = 4;
+
     private int brickCount;
     private int lineCount;
     private double brickDimensionRatio;
@@ -21,6 +23,19 @@ public class LevelFactory {
         this.brickCount = roundBrickCnt(brickCount,lineCount);
         this.lineCount = lineCount;
         this.brickDimensionRatio = brickDimensionRatio;
+    }
+
+    public Level getThisLevel(int level){
+        switch (level){
+            case 1:
+                return makeLevel(CLAY,CEMENT);
+            case 2:
+                return makeLevel(CLAY,STEEL);
+            case 3:
+                return makeLevel(CEMENT,STEEL);
+            default:
+                return makeLevel(CLAY,CLAY);
+        }
     }
 
     public Level makeLevel(int typeA,int typeB) {
