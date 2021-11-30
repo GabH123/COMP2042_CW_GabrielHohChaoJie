@@ -100,6 +100,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         if(showPauseMenu)
             drawMenu(g2d);
 
+
         Toolkit.getDefaultToolkit().sync();
     }
 

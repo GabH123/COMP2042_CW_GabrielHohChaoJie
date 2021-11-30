@@ -14,4 +14,6 @@ public class GameplayController {
         wall = new Wall(new Rectangle(0,0,DEF_WIDTH,DEF_HEIGHT),30,3,6/2,new Point(300,430));
 
     }
+
+
 }

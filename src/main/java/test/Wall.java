@@ -21,11 +21,10 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
-import static test.LevelFactory.TOTAL_NUMBER_OF_LEVELS;
 
 /**
- * Wall is used to store the current logical state of the game in-game and level.
- * Note: Level making should be in a separate class called Level.
+ * Wall is used to store the current logical state of the game in-game.
+ *
  */
 public class Wall {
 
@@ -199,7 +198,7 @@ public class Wall {
     }
 
     public boolean hasLevel(){
-        return currentLevelNumber < TOTAL_NUMBER_OF_LEVELS;
+        return currentLevelNumber < LevelFactory.TOTAL_NUMBER_OF_LEVELS;
     }
 
     public void setBallXSpeed(int s){
