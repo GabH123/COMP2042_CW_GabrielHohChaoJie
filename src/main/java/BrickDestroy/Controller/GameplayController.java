@@ -28,6 +28,7 @@ import java.util.Random;
  * Wall is used to store the current logical state of the game in-game.
  *
  */
+
 public class GameplayController {
 
     public static final int UP_IMPACT = 100;
