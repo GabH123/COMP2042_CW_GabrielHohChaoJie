@@ -1,4 +1,4 @@
-package test;
+package BrickDestroy.Model;
 
 import java.awt.*;
 

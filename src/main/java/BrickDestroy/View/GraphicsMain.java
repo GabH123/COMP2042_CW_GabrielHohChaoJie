@@ -1,4 +1,4 @@
-package test;
+package BrickDestroy.View;
 /*
  *  Brick Destroy - A simple Arcade video game
  *   Copyright (C) 2017  Filippo Ranza
@@ -16,8 +16,6 @@ package test;
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-import test.GameFrame;
 
 import java.awt.*;
 

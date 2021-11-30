@@ -1,10 +1,8 @@
-package test;
+package BrickDestroy.Model;
 
 import java.awt.*;
 import java.awt.Point;
-import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
-import java.util.Random;
 
 /**
  * Created by filippo on 04/09/16.
@@ -16,7 +14,7 @@ abstract public class Brick {
     public static final int DEF_STEPS = 35;
 
     private String name;
-    Shape brickFace;
+    private Shape brickFace;
 
     private Color border;
     private Color inner;
@@ -78,6 +76,10 @@ abstract public class Brick {
         g2d.setColor(getBorderColor());
         g2d.draw(getBrick());
 
+    }
+
+    public Shape getBrickFace() {
+        return brickFace;
     }
 }
 

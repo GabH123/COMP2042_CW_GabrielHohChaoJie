@@ -15,7 +15,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test;
+package BrickDestroy.View;
+
+import BrickDestroy.Model.Ball;
+import BrickDestroy.Controller.GameplayController;
 
 import javax.swing.*;
 import java.awt.*;

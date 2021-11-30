@@ -15,7 +15,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test;
+package BrickDestroy.Controller;
+
+import BrickDestroy.Model.*;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
@@ -128,25 +130,24 @@ public class GameplayController {
         ball = new RubberBall(ballPos);
     }
 
-
     private boolean impactWall(){
         for(Brick b : getCurrentLevel().getBricks()){
             switch(findImpact(b, getBall())) {
                 //Vertical Impact
                 case UP_IMPACT:
                     getBall().reverseY();
-                    return b.setImpact(getBall().down, Crack.UP);
+                    return b.setImpact(getBall().getDown(), Crack.UP);
                 case DOWN_IMPACT:
                     getBall().reverseY();
-                    return b.setImpact(getBall().up,Crack.DOWN);
+                    return b.setImpact(getBall().getUp(),Crack.DOWN);
 
                 //Horizontal Impact
                 case LEFT_IMPACT:
                     getBall().reverseX();
-                    return b.setImpact(getBall().right,Crack.RIGHT);
+                    return b.setImpact(getBall().getRight(),Crack.RIGHT);
                 case RIGHT_IMPACT:
                     getBall().reverseX();
-                    return b.setImpact(getBall().left,Crack.LEFT);
+                    return b.setImpact(getBall().getLeft(),Crack.LEFT);
             }
         }
         return false;
@@ -156,13 +157,13 @@ public class GameplayController {
         if (brick.isBroken())
             return 0;
         int out = 0;
-        if (brick.brickFace.contains(ball.right))
+        if (brick.getBrickFace().contains(ball.getRight()))
             out = LEFT_IMPACT;
-        else if (brick.brickFace.contains(ball.left))
+        else if (brick.getBrick().contains(ball.getLeft()))
             out = RIGHT_IMPACT;
-        else if (brick.brickFace.contains(ball.up))
+        else if (brick.getBrick().contains(ball.getUp()))
             out = DOWN_IMPACT;
-        else if (brick.brickFace.contains(ball.down))
+        else if (brick.getBrickFace().contains(ball.getDown()))
             out = UP_IMPACT;
         return out;
     }
@@ -187,6 +188,7 @@ public class GameplayController {
         }while(speedY == 0);
         return speedY;
     }
+
 
 
     public void drawPlayerShape(Graphics2D g2d){
@@ -248,7 +250,6 @@ public class GameplayController {
     public LevelFactory getLevelMaker() {
         return levelMaker;
     }
-
 
     public Random getRnd() {
         return rnd;

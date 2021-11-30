@@ -1,4 +1,4 @@
-package test;
+package BrickDestroy.Model;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
@@ -14,10 +14,10 @@ abstract public class Ball {
 
     private Point2D center;
 
-    Point2D up;
-    Point2D down;
-    Point2D left;
-    Point2D right;
+    private Point2D up;
+    private Point2D down;
+    private Point2D left;
+    private Point2D right;
 
     private Color border;
     private Color inner;
@@ -33,11 +33,11 @@ abstract public class Ball {
         left = new Point2D.Double();
         right = new Point2D.Double();
 
-        up.setLocation(center.getX(),center.getY()-(radiusB / 2));
-        down.setLocation(center.getX(),center.getY()+(radiusB / 2));
+        getUp().setLocation(center.getX(),center.getY()-(radiusB / 2));
+        getDown().setLocation(center.getX(),center.getY()+(radiusB / 2));
 
-        left.setLocation(center.getX()-(radiusA /2),center.getY());
-        right.setLocation(center.getX()+(radiusA /2),center.getY());
+        getLeft().setLocation(center.getX()-(radiusA /2),center.getY());
+        getRight().setLocation(center.getX()+(radiusA /2),center.getY());
 
 
         ballFace = makeBall(center,radiusA,radiusB);
@@ -111,11 +111,11 @@ abstract public class Ball {
     }
 
     private void setPoints(double width,double height){
-        up.setLocation(center.getX(),center.getY()-(height / 2));
-        down.setLocation(center.getX(),center.getY()+(height / 2));
+        getUp().setLocation(center.getX(),center.getY()-(height / 2));
+        getDown().setLocation(center.getX(),center.getY()+(height / 2));
 
-        left.setLocation(center.getX()-(width / 2),center.getY());
-        right.setLocation(center.getX()+(width / 2),center.getY());
+        getLeft().setLocation(center.getX()-(width / 2),center.getY());
+        getRight().setLocation(center.getX()+(width / 2),center.getY());
     }
 
     public int getSpeedX(){
@@ -132,5 +132,21 @@ abstract public class Ball {
 
         g2d.setColor(getBorderColor());
         g2d.draw(getBallFace());
+    }
+
+    public Point2D getUp() {
+        return up;
+    }
+
+    public Point2D getDown() {
+        return down;
+    }
+
+    public Point2D getLeft() {
+        return left;
+    }
+
+    public Point2D getRight() {
+        return right;
     }
 }
