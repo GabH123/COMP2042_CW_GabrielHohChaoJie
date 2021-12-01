@@ -45,18 +45,22 @@ public class GameplayController {
 
     private LevelFactory levelMaker;
 
-
     private int currentLevelNumber;
+    private String message;
+
+    private boolean showPauseMenu;
 
     private Point startPoint;
     private int brickCount;
     private int ballCount;
     private boolean ballLost;
 
+
     public GameplayController(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos){
 
         this.startPoint = new Point(ballPos);
-
+        message = new String();
+        showPauseMenu = false;
 
         currentLevelNumber = 0;
         levelMaker=new LevelFactory(drawArea,brickCount,lineCount,brickDimensionRatio);
@@ -235,6 +239,15 @@ public class GameplayController {
     public boolean isBallLost(){
         return ballLost;
     }
+
+    public boolean isShowPauseMenu() {
+        return showPauseMenu;
+    }
+
+    public void changeShowPauseMenu() {
+        this.showPauseMenu = !this.showPauseMenu;
+    }
+
 
     public Level getCurrentLevel() {
         return currentLevel;

@@ -58,7 +58,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     private Rectangle continueButtonRect;
     private Rectangle exitButtonRect;
     private Rectangle restartButtonRect;
-    private int strLen;
 
     private DebugConsole debugConsole;
 
@@ -66,7 +65,6 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
     public GameBoard(JFrame owner){
         super();
 
-        strLen = 0;
         showPauseMenu = false;
 
 
@@ -215,10 +213,8 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
         g2d.setFont(menuFont);
         g2d.setColor(MENU_COLOR);
 
-        if(strLen == 0){
-            FontRenderContext frc = g2d.getFontRenderContext();
-            strLen = menuFont.getStringBounds(PAUSE,frc).getBounds().width;
-        }
+        FontRenderContext frc = g2d.getFontRenderContext();
+        int strLen = menuFont.getStringBounds(PAUSE,frc).getBounds().width;
 
         int x = (this.getWidth() - strLen) / 2;
         int y = this.getHeight() / 10;
@@ -230,7 +226,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
 
 
         if(continueButtonRect == null){
-            FontRenderContext frc = g2d.getFontRenderContext();
+            frc = g2d.getFontRenderContext();
             continueButtonRect = menuFont.getStringBounds(CONTINUE,frc).getBounds();
             continueButtonRect.setLocation(x,y-continueButtonRect.height);
         }
