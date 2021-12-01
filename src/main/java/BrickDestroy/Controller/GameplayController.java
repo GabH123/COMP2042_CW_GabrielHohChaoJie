@@ -20,16 +20,17 @@ package BrickDestroy.Controller;
 import BrickDestroy.Model.*;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
 
 /**
- * Wall is used to store the current logical state of the game in-game.
+ * GameplayController is used to store the current logical state of the game in-game.
  *
  */
 
-public class GameplayController {
+public class GameplayController implements Controllable{
 
     public static final int UP_IMPACT = 100;
     public static final int DOWN_IMPACT = 200;
@@ -46,9 +47,8 @@ public class GameplayController {
     private LevelFactory levelMaker;
 
     private int currentLevelNumber;
-    private String message;
 
-    private boolean showPauseMenu;
+    private boolean pauseMenuShown;
 
     private Point startPoint;
     private int brickCount;
@@ -59,8 +59,7 @@ public class GameplayController {
     public GameplayController(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos){
 
         this.startPoint = new Point(ballPos);
-        message = new String();
-        showPauseMenu = false;
+        pauseMenuShown = false;
 
         currentLevelNumber = 0;
         levelMaker=new LevelFactory(drawArea,brickCount,lineCount,brickDimensionRatio);
@@ -83,17 +82,17 @@ public class GameplayController {
     }
 
 
-    public void move(){
+    public void updatePosition(){
         getPlayer().move();
         getBall().move();
     }
 
-    public void findImpacts(){
+    public void detectBallCollision(){
         if(getPlayer().impact(getBall())){
             getBall().reverseY();
         }
-        else if(impactWall()){
-            /*for efficiency reverse is done into method impactWall
+        else if(getCurrentLevel().detectBallBrickCollision(getBall())){
+            /*for efficiency reverse is done into method findImpacts
             * because for every brick program checks for horizontal and vertical impacts
             */
             brickCount--;
@@ -110,7 +109,7 @@ public class GameplayController {
         }
     }
 
-    public void ballReset(){
+    public void resetBall(){
         getPlayer().moveTo(startPoint);
         getBall().moveTo(startPoint);
 
@@ -118,15 +117,30 @@ public class GameplayController {
         ballLost = false;
     }
 
-    public void wallReset(){
+    public void resetLevel(){
         getCurrentLevel().resetBricks();
-        brickCount = getLevelMaker().getBrickCount();
+        brickCount = getCurrentLevel().getNumberOfBricks();
         ballCount = 3;
     }
 
     public void nextLevel(){
         currentLevel = getLevelMaker().getThisLevel(currentLevelNumber++);
-        this.brickCount = getLevelMaker().getBrickCount();
+        this.brickCount = getCurrentLevel().getNumberOfBricks();
+    }
+
+    public void movePlayer(KeyEvent keyEvent){
+        switch (keyEvent.getKeyCode()) {
+            case KeyEvent.VK_A:
+                getPlayer().moveLeft();
+                break;
+            case KeyEvent.VK_D:
+                getPlayer().moveRight();
+                break;
+        }
+    }
+
+    public void stopPlayer(){
+        getPlayer().stop();
     }
 
 
@@ -135,43 +149,6 @@ public class GameplayController {
         ball = new RubberBall(ballPos);
     }
 
-    private boolean impactWall(){
-        for(Brick b : getCurrentLevel().getBricks()){
-            switch(findImpact(b, getBall())) {
-                //Vertical Impact
-                case UP_IMPACT:
-                    getBall().reverseY();
-                    return b.setImpact(getBall().getDown(), Crack.UP);
-                case DOWN_IMPACT:
-                    getBall().reverseY();
-                    return b.setImpact(getBall().getUp(),Crack.DOWN);
-
-                //Horizontal Impact
-                case LEFT_IMPACT:
-                    getBall().reverseX();
-                    return b.setImpact(getBall().getRight(),Crack.RIGHT);
-                case RIGHT_IMPACT:
-                    getBall().reverseX();
-                    return b.setImpact(getBall().getLeft(),Crack.LEFT);
-            }
-        }
-        return false;
-    }
-
-    private int findImpact(Brick brick, Ball ball){
-        if (brick.isBroken())
-            return 0;
-        int out = 0;
-        if (brick.getBrickFace().contains(ball.getRight()))
-            out = LEFT_IMPACT;
-        else if (brick.getBrick().contains(ball.getLeft()))
-            out = RIGHT_IMPACT;
-        else if (brick.getBrick().contains(ball.getUp()))
-            out = DOWN_IMPACT;
-        else if (brick.getBrickFace().contains(ball.getDown()))
-            out = UP_IMPACT;
-        return out;
-    }
 
     private boolean impactBorder(){
         Point2D p = getBall().getPosition();
@@ -216,6 +193,8 @@ public class GameplayController {
         getBall().setYSpeed(s);
     }
 
+
+
     public void resetBallCount(){
         ballCount = 3;
     }
@@ -240,12 +219,12 @@ public class GameplayController {
         return ballLost;
     }
 
-    public boolean isShowPauseMenu() {
-        return showPauseMenu;
+    public boolean isPauseMenuShown() {
+        return pauseMenuShown;
     }
 
     public void changeShowPauseMenu() {
-        this.showPauseMenu = !this.showPauseMenu;
+        this.pauseMenuShown = !this.pauseMenuShown;
     }
 
 
@@ -257,7 +236,7 @@ public class GameplayController {
         return ball;
     }
 
-    public Playable getPlayer() {
+    public Player getPlayer() {
         return player;
     }
 
