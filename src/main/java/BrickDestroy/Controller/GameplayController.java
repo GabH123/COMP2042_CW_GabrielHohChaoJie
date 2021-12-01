@@ -47,11 +47,9 @@ public class GameplayController implements Controllable{
     private LevelFactory levelMaker;
 
     private int currentLevelNumber;
-
     private boolean pauseMenuShown;
 
     private Point startPoint;
-    private int brickCount;
     private int ballCount;
     private boolean ballLost;
 
@@ -88,22 +86,15 @@ public class GameplayController implements Controllable{
     }
 
     public void detectBallCollision(){
-        if(getPlayer().impact(getBall())){
-            getBall().reverseY();
+        if(getPlayer().detectBallPlayerCollision(getBall())){
         }
         else if(getCurrentLevel().detectBallBrickCollision(getBall())){
-            /*for efficiency reverse is done into method findImpacts
-            * because for every brick program checks for horizontal and vertical impacts
-            */
-            brickCount--;
         }
-        else if(impactBorder()) {
-            getBall().reverseX();
+        else if(detectBallBorderCollision(getBall())) {
         }
-        else if(getBall().getPosition().getY() < area.getY()){
-            getBall().reverseY();
+        else if(detectBallRoofCollision(getBall())){
         }
-        else if(getBall().getPosition().getY() > area.getY() + area.getHeight()){
+        else if(detectBallLostCollision(getBall())){
             ballCount--;
             ballLost = true;
         }
@@ -119,13 +110,11 @@ public class GameplayController implements Controllable{
 
     public void resetLevel(){
         getCurrentLevel().resetBricks();
-        brickCount = getCurrentLevel().getNumberOfBricks();
         ballCount = 3;
     }
 
     public void nextLevel(){
         currentLevel = getLevelMaker().getThisLevel(currentLevelNumber++);
-        this.brickCount = getCurrentLevel().getNumberOfBricks();
     }
 
     public void movePlayer(KeyEvent keyEvent){
@@ -143,16 +132,34 @@ public class GameplayController implements Controllable{
         getPlayer().stop();
     }
 
+    public boolean hasLevel(){
+        return currentLevelNumber < LevelFactory.TOTAL_NUMBER_OF_LEVELS;
+    }
 
 
     private void makeBall(Point2D ballPos){
         ball = new RubberBall(ballPos);
     }
 
+    private boolean detectBallRoofCollision(Ball ball){
+        if (getBall().getPosition().getY() < area.getY()){
+            ball.reverseY();
+            return true;
+        }
+        return false;
+    }
 
-    private boolean impactBorder(){
-        Point2D p = getBall().getPosition();
-        return ((p.getX() < area.getX()) ||(p.getX() > (area.getX() + area.getWidth())));
+    private boolean detectBallBorderCollision(Ball ball){
+        Point2D p = ball.getPosition();
+        if ((p.getX() < area.getX()) ||(p.getX() > (area.getX() + area.getWidth()))) {
+            ball.reverseX();
+            return true;
+        }
+        return false;
+    }
+
+    private boolean detectBallLostCollision(Ball ball){
+        return getBall().getPosition().getY() > area.getY() + area.getHeight();
     }
 
     private int randomiseSpeedX(){
@@ -181,9 +188,6 @@ public class GameplayController implements Controllable{
         getBall().ballDrawInfo(g2d);
     }
 
-    public boolean hasLevel(){
-        return currentLevelNumber < LevelFactory.TOTAL_NUMBER_OF_LEVELS;
-    }
 
     public void setBallXSpeed(int s){
         getBall().setXSpeed(s);
@@ -204,11 +208,11 @@ public class GameplayController implements Controllable{
     }
 
     public boolean isDone(){
-        return brickCount == 0;
+        return getCurrentLevel().getNumberOfBricksLeft() == 0;
     }
 
-    public int getBrickCount(){
-        return brickCount;
+    public int numberOfRemainingBricks(){
+        return getCurrentLevel().getNumberOfBricksLeft();
     }
 
     public int getBallCount(){

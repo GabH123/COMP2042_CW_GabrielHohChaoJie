@@ -11,4 +11,5 @@ public interface Controllable {
     void nextLevel();
     void movePlayer(KeyEvent keyEvent);
     void stopPlayer();
+    boolean hasLevel();
 }

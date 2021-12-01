@@ -46,8 +46,12 @@ public class Player implements Playable{
 
 
 
-    public boolean impact(Ball b){
-        return playerFace.contains(b.getPosition()) && playerFace.contains(b.getDown()) ;
+    public boolean detectBallPlayerCollision(Ball ball){
+        if (playerFace.contains(ball.getPosition()) && playerFace.contains(ball.getDown())) {
+            ball.reverseY();
+            return true;
+        }
+        return false;
     }
 
     public void move(){

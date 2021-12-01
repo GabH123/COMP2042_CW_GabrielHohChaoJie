@@ -108,7 +108,7 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
        return new Timer(10,e ->{
             gameplayController.updatePosition();
             gameplayController.detectBallCollision();
-            message = String.format("Bricks: %d Balls %d", gameplayController.getBrickCount(), gameplayController.getBallCount());
+            message = String.format("Bricks: %d Balls %d", gameplayController.numberOfRemainingBricks(), gameplayController.getBallCount());
             if(gameplayController.isBallLost()){
                 if(gameplayController.ballEnd()){
                     gameplayController.resetLevel();

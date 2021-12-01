@@ -4,7 +4,7 @@ import java.awt.*;
 
 public interface Playable {
 
-    boolean impact(Ball b);
+    boolean detectBallPlayerCollision(Ball b);
     void move();
     void moveLeft();
     void moveRight();

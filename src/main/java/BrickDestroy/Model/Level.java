@@ -58,7 +58,15 @@ public class Level {
         return bricks;
     }
 
-    public int getNumberOfBricks(){
+    public int getTotalNumberOfBricks(){
         return getBricks().length;
+    }
+
+    public int getNumberOfBricksLeft(){
+        int total=0;
+        for(Brick b:getBricks())
+            if (!b.isBroken())
+                total++;
+        return total;
     }
 }
