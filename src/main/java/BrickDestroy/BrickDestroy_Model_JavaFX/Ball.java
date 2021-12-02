@@ -1,8 +1,9 @@
 package BrickDestroy.BrickDestroy_Model_JavaFX;
 
-import java.awt.*;
-import java.awt.geom.Point2D;
-import java.awt.geom.RectangularShape;
+
+import javafx.geometry.*;
+import javafx.scene.paint.*;
+import javafx.scene.shape.*;
 
 /**
  * Created by filippo on 04/09/16.

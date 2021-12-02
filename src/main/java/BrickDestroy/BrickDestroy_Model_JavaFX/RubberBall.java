@@ -17,15 +17,19 @@
  */
 package BrickDestroy.BrickDestroy_Model_JavaFX;
 
-import java.awt.*;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Point2D;
+import javafx.geometry.Point2D;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.*;
+import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
+
 
 public class RubberBall extends Ball {
 
 
     private static final int DEF_RADIUS = 10;
-    private static final Color DEF_INNER_COLOR = new Color(255, 219, 88);
+     static final Color DEF_INNER_COLOR = new Color(1, 220/256, 89/256,1);
     private static final Color DEF_BORDER_COLOR = DEF_INNER_COLOR.darker().darker();
 
 
@@ -40,6 +44,6 @@ public class RubberBall extends Ball {
         double x = center.getX() - (radiusA / 2);
         double y = center.getY() - (radiusB / 2);
 
-        return new Ellipse2D.Double(x,y,radiusA,radiusB);
+        return new Ellipse(x,y,radiusA,radiusB);
     }
 }

@@ -18,6 +18,7 @@
 package BrickDestroy.GameController_JavaFX;
 
 import BrickDestroy.BrickDestroy_Model_JavaFX.*;
+import javafx.scene.canvas.GraphicsContext;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -72,7 +73,7 @@ public class GameplayController implements Controllable {
 
         getBall().setSpeed(randomiseSpeedX(),randomiseSpeedY());
 
-        player = new Player((Point) ballPos.clone(),150,10, drawArea);
+        player = new Player((Point2D) ballPos.clone(),150,10, drawArea);
 
         area = drawArea;
 
@@ -180,12 +181,12 @@ public class GameplayController implements Controllable {
 
 
 
-    public void drawPlayerShape(Graphics2D g2d){
-        getPlayer().playerDrawInfo(g2d);
+    public void drawPlayerShape(GraphicsContext gc){
+        getPlayer().playerDrawInfo(gc);
     }
 
-    public void drawBallShape(Graphics2D g2d){
-        getBall().ballDrawInfo(g2d);
+    public void drawBallShape(GraphicsContext gc){
+        getBall().ballDrawInfo(gc);
     }
 
 

@@ -1,6 +1,7 @@
 package BrickDestroy.BrickDestroy_Model_JavaFX;
 
-import java.awt.*;
+import javafx.geometry.Point2D;
+import javafx.scene.canvas.GraphicsContext;
 
 public interface Playable {
 
@@ -9,6 +10,6 @@ public interface Playable {
     void moveLeft();
     void moveRight();
     void stop();
-    void moveTo(Point p);
-    void playerDrawInfo(Graphics2D g2d);
+    void moveTo(Point2D p);
+    void playerDrawInfo(GraphicsContext gc);
 }

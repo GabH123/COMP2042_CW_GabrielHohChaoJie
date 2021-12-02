@@ -17,7 +17,11 @@
  */
 package BrickDestroy.BrickDestroy_Model_JavaFX;
 
-import java.awt.*;
+import javafx.geometry.Point2D;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.*;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 
 
 public class Player implements Playable {
@@ -29,18 +33,18 @@ public class Player implements Playable {
     private static final int DEF_MOVE_AMOUNT = 5;
 
     private Rectangle playerFace;
-    private Point ballPoint;
+    private Point2D ballPoint;
     private int moveAmount;
     private int min;
     private int max;
 
 
-    public Player(Point ballPoint, int width, int height, Rectangle container) {
+    public Player(Point2D ballPoint, int width, int height, Rectangle container) {
         this.ballPoint = ballPoint;
         moveAmount = 0;
         playerFace = makeRectangle(width, height);
-        min = container.x + (width / 2);
-        max = min + container.width - width;
+        min = (int) container.getWidth() + (width / 2);
+        max = min + (int) container.getWidth() - width;
 
     }
 
@@ -58,8 +62,9 @@ public class Player implements Playable {
         double x = ballPoint.getX() + moveAmount;
         if(x < min || x > max)
             return;
-        ballPoint.setLocation(x,ballPoint.getY());
-        playerFace.setLocation(ballPoint.x - (int)playerFace.getWidth()/2,ballPoint.y);
+        ballPoint.add(x,ballPoint.getY());
+        playerFace.setX(ballPoint.getX() - playerFace.getWidth()/2);
+        playerFace.setY(ballPoint.getY());
     }
 
     public void moveLeft(){
@@ -78,20 +83,21 @@ public class Player implements Playable {
         return  playerFace;
     }
 
-    public void moveTo(Point p){
-        ballPoint.setLocation(p);
-        playerFace.setLocation(ballPoint.x - (int)playerFace.getWidth()/2,ballPoint.y);
+    public void moveTo(Point2D p){
+        ballPoint.add(p);
+        playerFace.setX(ballPoint.getX() - playerFace.getWidth()/2);
+        playerFace.setY(ballPoint.getY());
     }
     private Rectangle makeRectangle(int width,int height){
-        Point p = new Point((int)(ballPoint.getX() - (width / 2)),(int)ballPoint.getY());
-        return  new Rectangle(p,new Dimension(width,height));
+        Point2D p = new Point2D((ballPoint.getX() - (width / 2)),ballPoint.getY());
+        return  new Rectangle(p.getX(),p.getY(),width,height);
     }
 
-    public void playerDrawInfo(Graphics2D g2d){
-        g2d.setColor(Player.INNER_COLOR);
-        g2d.fill(playerFace);
+    public void playerDrawInfo(GraphicsContext gc){
+        gc.setFill(INNER_COLOR);
+        gc.fillRect(playerFace.getX(),playerFace.getY(),playerFace.getWidth(),playerFace.getHeight());
 
-        g2d.setColor(Player.BORDER_COLOR);
-        g2d.draw(playerFace);
+        gc.setStroke(BORDER_COLOR);
+        gc.strokeRect(playerFace.getX(),playerFace.getY(),playerFace.getWidth(),playerFace.getHeight());
     }
 }

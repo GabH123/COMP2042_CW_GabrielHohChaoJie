@@ -17,8 +17,14 @@
  */
 package BrickDestroy.BrickDestroy_Model_JavaFX;
 
-import java.awt.*;
-import java.awt.geom.Point2D;
+import javafx.geometry.Dimension2D;
+import javafx.geometry.Point2D;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.*;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
+
+
 import java.util.Random;
 
 
@@ -33,7 +39,7 @@ public class SteelBrick extends Brick {
     private Random rnd;
     private Shape brickFace;
 
-    public SteelBrick(Point point, Dimension size){
+    public SteelBrick(Point2D point, Dimension2D size){
         super(NAME,point,size,DEF_BORDER,DEF_INNER,STEEL_STRENGTH);
         rnd = new Random();
         brickFace = super.getBrickFace();

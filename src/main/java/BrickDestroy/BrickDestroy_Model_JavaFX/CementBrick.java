@@ -1,8 +1,12 @@
 package BrickDestroy.BrickDestroy_Model_JavaFX;
 
-import java.awt.*;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Point2D;
+import javafx.geometry.Dimension2D;
+import javafx.geometry.Point2D;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.*;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
+
 
 
 public class CementBrick extends Brick {
@@ -17,14 +21,14 @@ public class CementBrick extends Brick {
     private Shape brickFace;
 
 
-    public CementBrick(Point point, Dimension size){
+    public CementBrick(Point2D point, Dimension2D size){
         super(NAME,point,size,DEF_BORDER,DEF_INNER,CEMENT_STRENGTH);
         crackJavaFX = new Crack(DEF_CRACK_DEPTH,DEF_STEPS);
         brickFace = super.getBrickFace();
     }
 
     @Override
-    protected Shape makeBrickFace(Point pos, Dimension size) {
+    protected Shape makeBrickFace(Point2D pos, Dimension2D size) {
         return new Rectangle(pos,size);
     }
 

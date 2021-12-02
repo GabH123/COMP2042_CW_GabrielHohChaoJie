@@ -1,7 +1,12 @@
 package BrickDestroy.BrickDestroy_Model_JavaFX;
 
-import java.awt.*;
-import java.awt.geom.Point2D;
+import javafx.geometry.Dimension2D;
+import javafx.geometry.Point2D;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.*;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
+
 
 /**
  * Created by filippo on 04/09/16.
@@ -13,7 +18,7 @@ abstract public class Brick {
     public static final int DEF_STEPS = 35;
 
     private String name;
-    private Shape brickFace;
+    private Rectangle brickFace;
 
     private Color border;
     private Color inner;
@@ -24,7 +29,7 @@ abstract public class Brick {
     private boolean broken;
 
 
-    public Brick(String name, Point pos, Dimension size, Color border, Color inner, int strength) {
+    public Brick(String name, Point2D pos, Dimension2D size, Color border, Color inner, int strength) {
         broken = false;
         this.name = name;
         brickFace = makeBrickFace(pos, size);
@@ -34,7 +39,7 @@ abstract public class Brick {
 
     }
 
-    protected abstract Shape makeBrickFace(Point pos, Dimension size);
+    protected abstract Rectangle makeBrickFace(Point2D pos, Dimension2D size);
 
     public boolean setImpact(Point2D point, int dir) {
         if (broken)
@@ -68,12 +73,12 @@ abstract public class Brick {
         broken = (strength == 0);
     }
 
-    public void brickDrawInfo(Graphics2D g2d){
-        g2d.setColor(getInnerColor());
-        g2d.fill(getBrick());
+    public void brickDrawInfo(GraphicsContext g2d){
+        g2d.setFill(getInnerColor());
+        g2d.fillRect(brickFace.getX(),brickFace.getY(),brickFace.getWidth(),brickFace.getHeight());
 
-        g2d.setColor(getBorderColor());
-        g2d.draw(getBrick());
+        g2d.setStroke(getBorderColor());
+        g2d.strokeRect(brickFace.getX(),brickFace.getY(),brickFace.getWidth(),brickFace.getHeight());
 
     }
 
