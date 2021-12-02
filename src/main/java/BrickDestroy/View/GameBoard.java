@@ -158,14 +158,14 @@ public class GameBoard extends JComponent implements KeyListener,MouseListener,M
                 drawBrick(b,g2d);
     }
 
-    private void drawBrick(Brick brick,Graphics2D g2d){
+    private void drawBrick(Brick brickJavaFX,Graphics2D g2d){
         Color tmp = g2d.getColor();
 
-        g2d.setColor(brick.getInnerColor());
-        g2d.fill(brick.getBrick());
+        g2d.setColor(brickJavaFX.getInnerColor());
+        g2d.fill(brickJavaFX.getBrick());
 
-        g2d.setColor(brick.getBorderColor());
-        g2d.draw(brick.getBrick());
+        g2d.setColor(brickJavaFX.getBorderColor());
+        g2d.draw(brickJavaFX.getBrick());
 
 
         g2d.setColor(tmp);

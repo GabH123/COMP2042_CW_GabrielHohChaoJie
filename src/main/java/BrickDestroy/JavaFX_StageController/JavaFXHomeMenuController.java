@@ -10,7 +10,7 @@ public class JavaFXHomeMenuController {
 
     @FXML
     private void initialize(){
-        
+
     }
 
     @FXML
@@ -25,7 +25,8 @@ public class JavaFXHomeMenuController {
 
     @FXML
     void exitGame(ActionEvent event) {
-
+        System.out.println("User clicked \'Exit\' !");
+        System.exit(0);
     }
 
 

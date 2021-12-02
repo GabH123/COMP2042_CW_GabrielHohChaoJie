@@ -30,17 +30,17 @@
                         <Font size="40.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Goal: Destroy all the bricks" textAlignment="CENTER" wrappingWidth="607.1155700683594">
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Goal: Destroy all the brickJavaFXES" textAlignment="CENTER" wrappingWidth="607.1155700683594">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="How: You can move left and right to deflect the ball" textAlignment="CENTER" wrappingWidth="569.5155639648438">
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="How: You can move left and right to deflect the ballJavaFX" textAlignment="CENTER" wrappingWidth="569.5155639648438">
                      <font>
                         <Font size="16.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="You lose a life if the missed the ball." textAlignment="CENTER" wrappingWidth="569.5155639648438">
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="You lose a life if the missed the ballJavaFX." textAlignment="CENTER" wrappingWidth="569.5155639648438">
                      <font>
                         <Font size="16.0" />
                      </font>

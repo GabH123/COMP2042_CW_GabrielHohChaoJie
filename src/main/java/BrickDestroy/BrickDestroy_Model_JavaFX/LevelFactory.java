@@ -1,4 +1,4 @@
-package BrickDestroy.Model;
+package BrickDestroy.BrickDestroy_Model_JavaFX;
 
 import java.awt.*;
 
@@ -38,7 +38,7 @@ public class LevelFactory {
         }
     }
 
-    public Level makeLevel(int typeA,int typeB) {
+    public Level makeLevel(int typeA, int typeB) {
         return new Level(makeChessboardLevel(getDrawArea(),getBrickCount(),getLineCount(),getBrickDimensionRatio(),typeA,typeB));
     }
 
@@ -114,12 +114,12 @@ public class LevelFactory {
         return  out;
     }
 
-    private Brick [] setBrickLocation(int brickCnt, int lineCnt, int brickOnLine,Dimension brickSize, int type){
-        Brick [] bricks = new Brick [brickCnt];
+    private Brick[] setBrickLocation(int brickCnt, int lineCnt, int brickOnLine, Dimension brickSize, int type){
+        Brick[] brickJavaFXES = new Brick[brickCnt];
         Point p = new Point();
 
         int brickNo;
-        for(brickNo = 0; brickNo < bricks.length; brickNo++){
+        for(brickNo = 0; brickNo < brickJavaFXES.length; brickNo++){
             int line = brickNo / brickOnLine;
             if(line == lineCnt)
                 break;
@@ -127,16 +127,16 @@ public class LevelFactory {
             x =(line % 2 == 0) ? x : (x - (brickSize.getWidth() / 2));
             double y = (line) * brickSize.getHeight();
             p.setLocation(x,y);
-            bricks[brickNo] = makeBrick(p,brickSize,type);
+            brickJavaFXES[brickNo] = makeBrick(p,brickSize,type);
             //System.out.println("Brick: "+i+" X: "+x+" Y: "+y);
         }
 
-        for(double y = brickSize.getHeight();brickNo < bricks.length;brickNo++, y += 2*brickSize.getHeight()){
+        for(double y = brickSize.getHeight(); brickNo < brickJavaFXES.length; brickNo++, y += 2*brickSize.getHeight()){
             double x = (brickOnLine * brickSize.getWidth()) - (brickSize.getWidth() / 2);
             p.setLocation(x,y);
-            bricks[brickNo] = new ClayBrick(p,brickSize);
+            brickJavaFXES[brickNo] = new ClayBrick(p,brickSize);
         }
-        return bricks;
+        return brickJavaFXES;
     }
 
     private Dimension setBrickDimension (Rectangle drawArea, int brickOnLine, double brickSizeRatio){
