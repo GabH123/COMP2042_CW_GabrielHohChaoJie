@@ -1,4 +1,4 @@
-package BrickDestroy.Controller;
+package BrickDestroy.GameController;
 
 import java.awt.event.KeyEvent;
 

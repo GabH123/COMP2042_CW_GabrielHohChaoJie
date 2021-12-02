@@ -1,6 +1,6 @@
 package BrickDestroy.Model;
 
-import static BrickDestroy.Controller.GameplayController.*;
+import static BrickDestroy.GameController.GameplayController.*;
 
 public class Level {
 

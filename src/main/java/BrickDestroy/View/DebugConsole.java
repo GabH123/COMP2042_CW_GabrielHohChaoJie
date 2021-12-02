@@ -18,7 +18,7 @@
 package BrickDestroy.View;
 
 import BrickDestroy.Model.Ball;
-import BrickDestroy.Controller.GameplayController;
+import BrickDestroy.GameController.GameplayController;
 
 import javax.swing.*;
 import java.awt.*;

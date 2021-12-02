@@ -17,7 +17,7 @@
  */
 package BrickDestroy.View;
 
-import BrickDestroy.Controller.GameplayController;
+import BrickDestroy.GameController.GameplayController;
 
 import javax.swing.*;
 import javax.swing.event.ChangeListener;

@@ -18,7 +18,7 @@
 package BrickDestroy.View;
 
 import BrickDestroy.Model.Brick;
-import BrickDestroy.Controller.GameplayController;
+import BrickDestroy.GameController.GameplayController;
 import BrickDestroy.Model.Level;
 
 import javax.swing.*;
