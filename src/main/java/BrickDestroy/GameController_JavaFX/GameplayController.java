@@ -20,9 +20,13 @@ package BrickDestroy.GameController_JavaFX;
 import BrickDestroy.BrickDestroy_Model_JavaFX.*;
 import javafx.scene.canvas.GraphicsContext;
 
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.geom.Point2D;
+import javafx.geometry.Dimension2D;
+import javafx.geometry.Point2D;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.*;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
+
 import java.util.Random;
 
 
@@ -50,14 +54,14 @@ public class GameplayController implements Controllable {
     private int currentLevelNumber;
     private boolean pauseMenuShown;
 
-    private Point startPoint;
+    private Point2D startPoint;
     private int ballCount;
     private boolean ballLost;
 
 
-    public GameplayController(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos){
+    public GameplayController(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point2D ballPos){
 
-        this.startPoint = new Point(ballPos);
+        this.startPoint = new Point2D(ballPos.getX(),ballPos.getY());
         pauseMenuShown = false;
 
         currentLevelNumber = 0;
@@ -136,6 +140,7 @@ public class GameplayController implements Controllable {
     public boolean hasLevel(){
         return currentLevelNumber < LevelFactory.TOTAL_NUMBER_OF_LEVELS;
     }
+
 
 
     private void makeBall(Point2D ballPos){

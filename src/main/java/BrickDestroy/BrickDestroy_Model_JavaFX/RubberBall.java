@@ -18,10 +18,8 @@
 package BrickDestroy.BrickDestroy_Model_JavaFX;
 
 import javafx.geometry.Point2D;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Ellipse;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 

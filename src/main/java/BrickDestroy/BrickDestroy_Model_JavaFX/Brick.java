@@ -18,7 +18,7 @@ abstract public class Brick {
     public static final int DEF_STEPS = 35;
 
     private String name;
-    private Rectangle brickFace;
+    private Shape brickFace;
 
     private Color border;
     private Color inner;
@@ -39,7 +39,7 @@ abstract public class Brick {
 
     }
 
-    protected abstract Rectangle makeBrickFace(Point2D pos, Dimension2D size);
+    protected abstract Shape makeBrickFace(Point2D pos, Dimension2D size);
 
     public boolean setImpact(Point2D point, int dir) {
         if (broken)
@@ -74,11 +74,12 @@ abstract public class Brick {
     }
 
     public void brickDrawInfo(GraphicsContext g2d){
+        Rectangle brickRectangle = (Rectangle) getBrickFace();
         g2d.setFill(getInnerColor());
-        g2d.fillRect(brickFace.getX(),brickFace.getY(),brickFace.getWidth(),brickFace.getHeight());
+        g2d.fillRect(brickRectangle.getX(),brickRectangle.getY(),brickRectangle.getWidth(),brickRectangle.getHeight());
 
         g2d.setStroke(getBorderColor());
-        g2d.strokeRect(brickFace.getX(),brickFace.getY(),brickFace.getWidth(),brickFace.getHeight());
+        g2d.strokeRect(brickRectangle.getX(),brickRectangle.getY(),brickRectangle.getWidth(),brickRectangle.getHeight());
 
     }
 

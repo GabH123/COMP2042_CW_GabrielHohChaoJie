@@ -29,16 +29,16 @@ abstract public class Ball {
     public Ball(Point2D center, int radiusA, int radiusB, Color inner, Color border){
         this.center = center;
 
-        up = new Point2D.Double();
-        down = new Point2D.Double();
-        left = new Point2D.Double();
-        right = new Point2D.Double();
+        up = new Point2D(0,0);
+        down = new Point2D(0,0);
+        left = new Point2D(0,0);
+        right = new Point2D(0,0);
 
-        getUp().setLocation(center.getX(),center.getY()-(radiusB / 2));
-        getDown().setLocation(center.getX(),center.getY()+(radiusB / 2));
+        getUp().add(center.getX(),center.getY()-(radiusB / 2));
+        getDown().add(center.getX(),center.getY()+(radiusB / 2));
 
-        getLeft().setLocation(center.getX()-(radiusA /2),center.getY());
-        getRight().setLocation(center.getX()+(radiusA /2),center.getY());
+        getLeft().add(center.getX()-(radiusA /2),center.getY());
+        getRight().add(center.getX()+(radiusA /2),center.getY());
 
 
         ballFace = makeBall(center,radiusA,radiusB);
@@ -51,16 +51,16 @@ abstract public class Ball {
     protected abstract Shape makeBall(Point2D center,int radiusA,int radiusB);
 
     public void move(){
-        RectangularShape tmp = (RectangularShape) ballFace;
-        center.setLocation((center.getX() + speedX),(center.getY() + speedY));
-        double w = tmp.getWidth();
-        double h = tmp.getHeight();
+        //Shape tmp = (Shape) ballFace;
+        center.add((center.getX() + speedX),(center.getY() + speedY));
+        ballFace.setLayoutX(speedX);
+        ballFace.setLayoutY(speedY);
+        //double w = tmp.getWidth();
+        //double h = tmp.getHeight();
 
-        tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h);
-        setPoints(w,h);
 
-
-        ballFace = tmp;
+        //tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h);
+        setPoints(ballFace.getLayoutBounds().getWidth(),ballFace.getLayoutBounds().getHeight());
     }
 
     public void setSpeed(int x,int y){
@@ -100,23 +100,20 @@ abstract public class Ball {
         return ballFace;
     }
 
-    public void moveTo(Point p){
-        center.setLocation(p);
-
-        RectangularShape tmp = (RectangularShape) ballFace;
-        double w = tmp.getWidth();
-        double h = tmp.getHeight();
-
-        tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h);
-        ballFace = tmp;
+    public void moveTo(Point2D p){
+        center.add(p);
+        ballFace.setLayoutX(p.getX());
+        ballFace.setLayoutY(p.getY());
+        setPoints(ballFace.getLayoutBounds().getWidth(),ballFace.getLayoutBounds().getHeight());
     }
 
     private void setPoints(double width,double height){
-        getUp().setLocation(center.getX(),center.getY()-(height / 2));
-        getDown().setLocation(center.getX(),center.getY()+(height / 2));
 
-        getLeft().setLocation(center.getX()-(width / 2),center.getY());
-        getRight().setLocation(center.getX()+(width / 2),center.getY());
+        getUp().add(center.getX(),center.getY()-(height / 2));
+        getDown().add(center.getX(),center.getY()+(height / 2));
+
+        getLeft().add(center.getX()-(width / 2),center.getY());
+        getRight().add(center.getX()+(width / 2),center.getY());
     }
 
     public int getSpeedX(){
@@ -125,14 +122,6 @@ abstract public class Ball {
 
     public int getSpeedY(){
         return speedY;
-    }
-
-    public void ballDrawInfo(Graphics2D g2d){
-        g2d.setColor(getInnerColor());
-        g2d.fill(getBallFace());
-
-        g2d.setColor(getBorderColor());
-        g2d.draw(getBallFace());
     }
 
     public Point2D getUp() {

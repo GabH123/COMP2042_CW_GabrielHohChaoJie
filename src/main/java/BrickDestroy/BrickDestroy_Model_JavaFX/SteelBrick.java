@@ -19,7 +19,6 @@ package BrickDestroy.BrickDestroy_Model_JavaFX;
 
 import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
@@ -31,7 +30,7 @@ import java.util.Random;
 public class SteelBrick extends Brick {
 
     private static final String NAME = "Steel Brick";
-    private static final Color DEF_INNER = new Color(203, 203, 201);
+    private static final Color DEF_INNER = new Color(204.0/256, 204.0/256, 202.0/256,1);
     private static final Color DEF_BORDER = Color.BLACK;
     private static final int STEEL_STRENGTH = 1;
     private static final double STEEL_PROBABILITY = 0.4;
@@ -47,8 +46,8 @@ public class SteelBrick extends Brick {
 
 
     @Override
-    protected Shape makeBrickFace(Point pos, Dimension size) {
-        return new Rectangle(pos,size);
+    protected Shape makeBrickFace(Point2D pos, Dimension2D size) {
+        return new Rectangle(pos.getX(),pos.getY(),size.getWidth(),size.getHeight());
     }
 
     @Override

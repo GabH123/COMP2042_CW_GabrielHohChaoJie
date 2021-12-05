@@ -1,6 +1,9 @@
 package BrickDestroy.BrickDestroy_Model_JavaFX;
 
-import java.awt.*;
+import javafx.geometry.Dimension2D;
+import javafx.geometry.Point2D;
+import javafx.scene.shape.Rectangle;
+
 
 /**LevelFactory is a class use to create (or build) different types of level for Wall. It also stores the info required for building each level.
  *
@@ -63,10 +66,10 @@ public class LevelFactory {
 
         Brick[] tmp  = new Brick[brickCnt];
 
-        Dimension brickSize = new Dimension((int) brickLen,(int) brickHgt);
+        Dimension2D brickSize = new Dimension2D((int) brickLen,(int) brickHgt);
 
         //Second, set the location of each brickJavaFX
-        Point p = new Point();
+        Point2D p = new Point2D(0,0);
         int i;
 
         for(i = 0; i < tmp.length; i++){
@@ -81,7 +84,7 @@ public class LevelFactory {
 
             double y = (line) * brickHgt;
 
-            p.setLocation(x,y);
+            p.add(x,y);
 
             boolean b = ((line % 2 == 0 && i % 2 == 0) || (line % 2 != 0 && posX > centerLeft && posX <= centerRight));
             tmp[i] = b ?  makeBrick(p,brickSize,typeA) : makeBrick(p,brickSize,typeB);
@@ -89,13 +92,13 @@ public class LevelFactory {
 
         for(double y = brickHgt;i < tmp.length;i++, y += 2*brickHgt){
             double x = (brickOnLine * brickLen) - (brickLen / 2);
-            p.setLocation(x,y);
+            p.add(x,y);
             tmp[i] = makeBrick(p,brickSize,typeA);
         }
         return tmp;
     }
 
-    private Brick makeBrick(Point point, Dimension size, int type){
+    private Brick makeBrick(Point2D point, Dimension2D size, int type){
         //Switch CASE for subclasses not allowed
         Brick out;
         switch(type){
@@ -114,9 +117,9 @@ public class LevelFactory {
         return  out;
     }
 
-    private Brick[] setBrickLocation(int brickCnt, int lineCnt, int brickOnLine, Dimension brickSize, int type){
+    private Brick[] setBrickLocation(int brickCnt, int lineCnt, int brickOnLine, Dimension2D brickSize, int type){
         Brick[] brickJavaFXES = new Brick[brickCnt];
-        Point p = new Point();
+        Point2D p = new Point2D(0,0);
 
         int brickNo;
         for(brickNo = 0; brickNo < brickJavaFXES.length; brickNo++){
@@ -126,23 +129,23 @@ public class LevelFactory {
             double x = (brickNo % brickOnLine) * brickSize.getWidth();
             x =(line % 2 == 0) ? x : (x - (brickSize.getWidth() / 2));
             double y = (line) * brickSize.getHeight();
-            p.setLocation(x,y);
+            p.add(x,y);
             brickJavaFXES[brickNo] = makeBrick(p,brickSize,type);
             //System.out.println("Brick: "+i+" X: "+x+" Y: "+y);
         }
 
         for(double y = brickSize.getHeight(); brickNo < brickJavaFXES.length; brickNo++, y += 2*brickSize.getHeight()){
             double x = (brickOnLine * brickSize.getWidth()) - (brickSize.getWidth() / 2);
-            p.setLocation(x,y);
+            p.add(x,y);
             brickJavaFXES[brickNo] = new ClayBrick(p,brickSize);
         }
         return brickJavaFXES;
     }
 
-    private Dimension setBrickDimension (Rectangle drawArea, int brickOnLine, double brickSizeRatio){
+    private Dimension2D setBrickDimension (Rectangle drawArea, int brickOnLine, double brickSizeRatio){
         double brickLen = drawArea.getWidth() / brickOnLine;
         double brickHgt = brickLen / brickSizeRatio;
-        return new Dimension((int) brickLen,(int) brickHgt);
+        return new Dimension2D((int) brickLen,(int) brickHgt);
     }
 
     //Rounds the amount of Bricks so that it fits exactly in the screen according to the number of lines
