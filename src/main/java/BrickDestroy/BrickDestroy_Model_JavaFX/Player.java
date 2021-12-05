@@ -18,8 +18,10 @@
 package BrickDestroy.BrickDestroy_Model_JavaFX;
 
 import javafx.geometry.Point2D;
+import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
@@ -36,16 +38,18 @@ public class Player implements Playable {
     private Rectangle playerFace;
     private Point2D ballPoint;
     private int moveAmount;
-    private int min;
-    private int max;
+    private double min;
+    private double max;
 
 
-    public Player(Point2D ballPoint, int width, int height, Canvas container) {
+    public Player(Point2D ballPoint, int width, int height, Pane container) {
+        System.out.println(ballPoint.getX()+" "+ballPoint.getY());
+
         this.ballPoint = ballPoint;
         moveAmount = 0;
         playerFace = makeRectangle(width, height);
-        min = (int) container.getWidth() + (width / 2);
-        max = min + (int) container.getWidth() - width;
+        min =  container.getPrefWidth() + (width / 2);
+        max = min +  container.getPrefWidth() - width;
 
     }
 
@@ -92,6 +96,10 @@ public class Player implements Playable {
     private Rectangle makeRectangle(int width,int height){
         Point2D p = new Point2D((ballPoint.getX() - (width / 2)),ballPoint.getY());
         return  new Rectangle(p.getX(),p.getY(),width,height);
+    }
+
+    public void print(){
+        System.out.println(playerFace.getX()+" "+playerFace.getY());
     }
 
     public void playerDrawInfo(GraphicsContext gc){

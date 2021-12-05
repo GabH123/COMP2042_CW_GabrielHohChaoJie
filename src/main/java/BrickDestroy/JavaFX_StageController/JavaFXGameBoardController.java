@@ -1,10 +1,14 @@
 package BrickDestroy.JavaFX_StageController;
 
-import BrickDestroy.GameController.GameplayController;
+import BrickDestroy.GameController_JavaFX.GameplayController;
 import javafx.fxml.FXML;
+import javafx.geometry.Point2D;
+import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Rectangle;
 
-import java.awt.*;
 
 public class JavaFXGameBoardController {
     private static final int DEF_WIDTH = 600;
@@ -12,16 +16,27 @@ public class JavaFXGameBoardController {
 
     private GameplayController gameplayController;
 
-
     @FXML
-    private Canvas gameBoardWall;
+    private Group gameBoardWall;
+    @FXML
+    private StackPane gameBoard;
+    @FXML
+    private Pane gameBoardPane;
+
 
     @FXML
     private void initialize(){
-        gameplayController = new GameplayController(new Rectangle(0,0,(int)gameBoardWall.getWidth(),(int)gameBoardWall.getHeight()),30,3,6/2,new Point(300,430));
+        System.out.println(" "+gameBoard.getPrefHeight());
+        gameplayController = new GameplayController(gameBoard,30,3,6/2,new Point2D(gameBoard.getPrefWidth(),gameBoard.getPrefHeight()));
+        gameplayController.getPlayer().print();
+        drawGameplay();
     }
 
     private void drawGameplay(){
-
+        //Rectangle test = new Rectangle(0,100,100,100);
+        //gameBoardWall.getChildren().add(test);
+        //gameplayController.getPlayer().playerFace.setX(gameplayController.getPlayer().playerFace.getX()+100);
+        gameBoardWall.getChildren().add(gameplayController.getPlayer().getPlayerFace());
+        gameBoardWall.getChildren().add(gameplayController.getBall().getBallFace());
     }
 }

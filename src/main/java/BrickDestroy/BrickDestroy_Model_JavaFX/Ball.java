@@ -51,15 +51,10 @@ abstract public class Ball {
     protected abstract Shape makeBall(Point2D center,int radiusA,int radiusB);
 
     public void move(){
-        //Shape tmp = (Shape) ballFace;
         center.add((center.getX() + speedX),(center.getY() + speedY));
         ballFace.setLayoutX(speedX);
         ballFace.setLayoutY(speedY);
-        //double w = tmp.getWidth();
-        //double h = tmp.getHeight();
 
-
-        //tmp.setFrame((center.getX() -(w / 2)),(center.getY() - (h / 2)),w,h);
         setPoints(ballFace.getLayoutBounds().getWidth(),ballFace.getLayoutBounds().getHeight());
     }
 
@@ -139,4 +134,6 @@ abstract public class Ball {
     public Point2D getRight() {
         return right;
     }
+
+
 }

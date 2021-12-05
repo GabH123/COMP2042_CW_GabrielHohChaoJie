@@ -2,7 +2,9 @@ package BrickDestroy.BrickDestroy_Model_JavaFX;
 
 import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
+import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
 
@@ -20,9 +22,9 @@ public class LevelFactory {
     private int brickCount;
     private int lineCount;
     private double brickDimensionRatio;
-    private Canvas drawArea;
+    private Pane drawArea;
 
-    public LevelFactory(Canvas drawArea, int brickCount, int lineCount, double brickDimensionRatio) {
+    public LevelFactory(Pane drawArea, int brickCount, int lineCount, double brickDimensionRatio) {
         this.drawArea = drawArea;
         this.brickCount = roundBrickCnt(brickCount,lineCount);
         this.lineCount = lineCount;
@@ -47,7 +49,7 @@ public class LevelFactory {
     }
 
 
-    private Brick[] makeChessboardLevel(Canvas drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
+    private Brick[] makeChessboardLevel(Pane drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
         /*
           if brickCount is not divisible by line count,brickCount is adjusted to the biggest
           multiple of lineCount smaller then brickCount
@@ -60,7 +62,7 @@ public class LevelFactory {
         int centerLeft = brickOnLine / 2 - 1;
         int centerRight = brickOnLine / 2 + 1;
 
-        double brickLen = drawArea.getWidth() / brickOnLine;
+        double brickLen = drawArea.getLayoutBounds().getWidth() / brickOnLine;
         double brickHgt = brickLen / brickSizeRatio;
 
         brickCnt += lineCnt / 2; //??
@@ -168,7 +170,7 @@ public class LevelFactory {
         return brickDimensionRatio;
     }
 
-    public Canvas getDrawArea() {
+    public Pane getDrawArea() {
         return drawArea;
     }
 }

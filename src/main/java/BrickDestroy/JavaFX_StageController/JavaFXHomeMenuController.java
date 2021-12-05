@@ -14,8 +14,8 @@ public class JavaFXHomeMenuController {
     }
 
     @FXML
-    void startGame(ActionEvent event) {
-
+    void startGame(ActionEvent event) throws IOException{
+        BrickDestroyMain.setNewScene("BrickDestroy_GameBoard");
     }
 
     @FXML
