@@ -1,6 +1,7 @@
 package BrickDestroy.GameController_JavaFX;
 
-import java.awt.event.KeyEvent;
+
+import javafx.scene.input.KeyEvent;
 
 public interface Controllable {
 

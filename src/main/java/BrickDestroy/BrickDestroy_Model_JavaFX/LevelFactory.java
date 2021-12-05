@@ -2,6 +2,7 @@ package BrickDestroy.BrickDestroy_Model_JavaFX;
 
 import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.shape.Rectangle;
 
 
@@ -19,9 +20,9 @@ public class LevelFactory {
     private int brickCount;
     private int lineCount;
     private double brickDimensionRatio;
-    private Rectangle drawArea;
+    private Canvas drawArea;
 
-    public LevelFactory(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio) {
+    public LevelFactory(Canvas drawArea, int brickCount, int lineCount, double brickDimensionRatio) {
         this.drawArea = drawArea;
         this.brickCount = roundBrickCnt(brickCount,lineCount);
         this.lineCount = lineCount;
@@ -46,7 +47,7 @@ public class LevelFactory {
     }
 
 
-    private Brick[] makeChessboardLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
+    private Brick[] makeChessboardLevel(Canvas drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
         /*
           if brickCount is not divisible by line count,brickCount is adjusted to the biggest
           multiple of lineCount smaller then brickCount
@@ -167,7 +168,7 @@ public class LevelFactory {
         return brickDimensionRatio;
     }
 
-    public Rectangle getDrawArea() {
+    public Canvas getDrawArea() {
         return drawArea;
     }
 }

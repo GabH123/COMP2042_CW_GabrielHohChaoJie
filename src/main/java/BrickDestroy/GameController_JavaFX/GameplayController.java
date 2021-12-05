@@ -18,11 +18,13 @@
 package BrickDestroy.GameController_JavaFX;
 
 import BrickDestroy.BrickDestroy_Model_JavaFX.*;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
 import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
@@ -43,7 +45,7 @@ public class GameplayController implements Controllable {
     public static final int RIGHT_IMPACT = 400;
 
     private Random rnd;
-    private Rectangle area;
+    private Canvas area;
 
     private Level currentLevel;
     private Ball ball;
@@ -59,7 +61,7 @@ public class GameplayController implements Controllable {
     private boolean ballLost;
 
 
-    public GameplayController(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point2D ballPos){
+    public GameplayController(Canvas drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point2D ballPos){
 
         this.startPoint = new Point2D(ballPos.getX(),ballPos.getY());
         pauseMenuShown = false;
@@ -77,7 +79,7 @@ public class GameplayController implements Controllable {
 
         getBall().setSpeed(randomiseSpeedX(),randomiseSpeedY());
 
-        player = new Player((Point2D) ballPos.clone(),150,10, drawArea);
+        player = new Player(new Point2D(ballPos.getX(),ballPos.getY()),150,10, drawArea);
 
         area = drawArea;
 
@@ -123,11 +125,11 @@ public class GameplayController implements Controllable {
     }
 
     public void movePlayer(KeyEvent keyEvent){
-        switch (keyEvent.getKeyCode()) {
-            case KeyEvent.VK_A:
+        switch (keyEvent.getCode()) {
+            case A:
                 getPlayer().moveLeft();
                 break;
-            case KeyEvent.VK_D:
+            case D:
                 getPlayer().moveRight();
                 break;
         }
@@ -148,7 +150,7 @@ public class GameplayController implements Controllable {
     }
 
     private boolean detectBallRoofCollision(Ball ball){
-        if (getBall().getPosition().getY() < area.getY()){
+        if (getBall().getPosition().getY() < area.getHeight()){
             ball.reverseY();
             return true;
         }
@@ -157,7 +159,7 @@ public class GameplayController implements Controllable {
 
     private boolean detectBallBorderCollision(Ball ball){
         Point2D p = ball.getPosition();
-        if ((p.getX() < area.getX()) ||(p.getX() > (area.getX() + area.getWidth()))) {
+        if ((p.getX() < area.getWidth()) ||(p.getX() > (area.getWidth()))) {
             ball.reverseX();
             return true;
         }
@@ -165,7 +167,7 @@ public class GameplayController implements Controllable {
     }
 
     private boolean detectBallLostCollision(Ball ball){
-        return getBall().getPosition().getY() > area.getY() + area.getHeight();
+        return getBall().getPosition().getY() > area.getHeight();
     }
 
     private int randomiseSpeedX(){
@@ -186,13 +188,13 @@ public class GameplayController implements Controllable {
 
 
 
-    public void drawPlayerShape(GraphicsContext gc){
+    /*public void drawPlayerShape(GraphicsContext gc){
         getPlayer().playerDrawInfo(gc);
     }
 
     public void drawBallShape(GraphicsContext gc){
         getBall().ballDrawInfo(gc);
-    }
+    }*/
 
 
     public void setBallXSpeed(int s){

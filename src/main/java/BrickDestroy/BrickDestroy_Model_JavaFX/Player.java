@@ -18,6 +18,7 @@
 package BrickDestroy.BrickDestroy_Model_JavaFX;
 
 import javafx.geometry.Point2D;
+import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
@@ -39,7 +40,7 @@ public class Player implements Playable {
     private int max;
 
 
-    public Player(Point2D ballPoint, int width, int height, Rectangle container) {
+    public Player(Point2D ballPoint, int width, int height, Canvas container) {
         this.ballPoint = ballPoint;
         moveAmount = 0;
         playerFace = makeRectangle(width, height);
@@ -98,6 +99,7 @@ public class Player implements Playable {
         gc.fillRect(playerFace.getX(),playerFace.getY(),playerFace.getWidth(),playerFace.getHeight());
 
         gc.setStroke(BORDER_COLOR);
+        gc.setLineWidth(1);
         gc.strokeRect(playerFace.getX(),playerFace.getY(),playerFace.getWidth(),playerFace.getHeight());
     }
 }
