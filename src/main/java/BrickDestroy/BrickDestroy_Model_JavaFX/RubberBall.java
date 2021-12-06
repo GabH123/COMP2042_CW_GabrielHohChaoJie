@@ -27,7 +27,7 @@ public class RubberBall extends Ball {
 
 
     private static final int DEF_RADIUS = 10;
-     static final Color DEF_INNER_COLOR = new Color(1, 220/256, 89/256,1);
+    static final Color DEF_INNER_COLOR = new Color(1.0, 220.0/256, 89.0/256,1);
     private static final Color DEF_BORDER_COLOR = DEF_INNER_COLOR.darker().darker();
 
 

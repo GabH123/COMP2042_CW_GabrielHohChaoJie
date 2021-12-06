@@ -2,6 +2,7 @@ package BrickDestroy.BrickDestroy_Model_JavaFX;
 
 import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
+import javafx.scene.Group;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
@@ -19,6 +20,7 @@ abstract public class Brick {
 
     private String name;
     private Shape brickFace;
+    protected Group brick;
 
     private Color border;
     private Color inner;
@@ -36,10 +38,17 @@ abstract public class Brick {
         this.border = border;
         this.inner = inner;
         this.fullStrength = this.strength = strength;
-
+        brick.getChildren().add(brickFace);
     }
 
     protected abstract Shape makeBrickFace(Point2D pos, Dimension2D size);
+
+    protected void initialiseBrick(Color inner,Color border){
+        getBrickFace().setFill(inner);
+        getBrickFace().setStroke(border);
+        getBrickFace().setStrokeWidth(1);
+
+    }
 
     public boolean setImpact(Point2D point, int dir) {
         if (broken)
@@ -71,6 +80,8 @@ abstract public class Brick {
     public void impact() {
         strength--;
         broken = (strength == 0);
+        if (broken)
+            getBrickFace().setVisible(false);
     }
 
     public void brickDrawInfo(GraphicsContext g2d){

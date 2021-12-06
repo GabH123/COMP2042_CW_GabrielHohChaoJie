@@ -62,14 +62,13 @@ public class LevelFactory {
         int centerLeft = brickOnLine / 2 - 1;
         int centerRight = brickOnLine / 2 + 1;
 
-        double brickLen = drawArea.getLayoutBounds().getWidth() / brickOnLine;
+        double brickLen = drawArea.getPrefWidth() / brickOnLine;
         double brickHgt = brickLen / brickSizeRatio;
-
         brickCnt += lineCnt / 2; //??
 
         Brick[] tmp  = new Brick[brickCnt];
 
-        Dimension2D brickSize = new Dimension2D((int) brickLen,(int) brickHgt);
+        Dimension2D brickSize = new Dimension2D( brickLen, brickHgt);
 
         //Second, set the location of each brickJavaFX
         Point2D p = new Point2D(0,0);
@@ -87,16 +86,16 @@ public class LevelFactory {
 
             double y = (line) * brickHgt;
 
-            p.add(x,y);
 
             boolean b = ((line % 2 == 0 && i % 2 == 0) || (line % 2 != 0 && posX > centerLeft && posX <= centerRight));
-            tmp[i] = b ?  makeBrick(p,brickSize,typeA) : makeBrick(p,brickSize,typeB);
+
+            tmp[i] = b ?  makeBrick(new Point2D(x,y),brickSize,typeA) : makeBrick(new Point2D(x,y),brickSize,typeB);
+
         }
 
         for(double y = brickHgt;i < tmp.length;i++, y += 2*brickHgt){
             double x = (brickOnLine * brickLen) - (brickLen / 2);
-            p.add(x,y);
-            tmp[i] = makeBrick(p,brickSize,typeA);
+            tmp[i] = makeBrick(new Point2D(x,y),brickSize,typeA);
         }
         return tmp;
     }

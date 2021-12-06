@@ -34,7 +34,7 @@ public class Crack {
     }
 
 
-    public Path draw() {
+    public Path drawCrack() {
         return crack;
     }
 
@@ -52,28 +52,28 @@ public class Crack {
 
         switch (direction) {
             case LEFT:
-                start.add(bounds.getX() + bounds.getWidth(), bounds.getY());
-                end.add(bounds.getX() + bounds.getWidth(), bounds.getY() + bounds.getHeight());
+                start= new Point2D(bounds.getX() + bounds.getWidth(), bounds.getY());
+                end = new Point2D(bounds.getX() + bounds.getWidth(), bounds.getY() + bounds.getHeight());
                 Point2D tmp = makeRandomPoint(start, end, VERTICAL);
                 makeCrack(impact, tmp);
 
                 break;
             case RIGHT:
-                start.add(new Point2D(bounds.getX(),bounds.getY()));
-                end.add(bounds.getX(), bounds.getY() + bounds.getHeight());
+                start = new Point2D(bounds.getX(),bounds.getY());
+                end = new Point2D(bounds.getX(), bounds.getY() + bounds.getHeight());
                 tmp = makeRandomPoint(start, end, VERTICAL);
                 makeCrack(impact, tmp);
 
                 break;
             case UP:
-                start.add(bounds.getX(), bounds.getY() + bounds.getHeight());
-                end.add(bounds.getX() + bounds.getWidth(), bounds.getY() + bounds.getHeight());
+                start = new Point2D(bounds.getX(), bounds.getY() + bounds.getHeight());
+                end = new Point2D(bounds.getX() + bounds.getWidth(), bounds.getY() + bounds.getHeight());
                 tmp = makeRandomPoint(start, end, HORIZONTAL);
                 makeCrack(impact, tmp);
                 break;
             case DOWN:
-                start.add(new Point2D(bounds.getX(),bounds.getY()));
-                end.add(bounds.getX() + bounds.getWidth(), bounds.getY());
+                start = new Point2D(bounds.getX(),bounds.getY());
+                end = new Point2D(bounds.getX() + bounds.getWidth(), bounds.getY());
                 tmp = makeRandomPoint(start, end, HORIZONTAL);
                 makeCrack(impact, tmp);
 
@@ -135,16 +135,16 @@ public class Crack {
     private Point2D makeRandomPoint(Point2D from, Point2D to, int direction) {
 
         Point2D out = new Point2D(0,0);
-        int pos;
+        double pos;
 
         switch (direction) {
             case HORIZONTAL:
-                pos = rnd.nextInt((int) (to.getX() - from.getX())) + (int) from.getX();
-                out.add(pos, to.getY());
+                pos = rnd.nextInt((int) (to.getX() - from.getX())) +  from.getX();
+                out = new Point2D(pos, to.getY());
                 break;
             case VERTICAL:
                 pos = rnd.nextInt((int) (to.getY() - from.getY())) + (int)from.getY();
-                out.add(to.getX(), pos);
+                out = new Point2D(to.getX(), pos);
                 break;
         }
         return out;

@@ -69,15 +69,6 @@ abstract public class Brick {
         broken = (strength == 0);
     }
 
-    public void brickDrawInfo(Graphics2D g2d){
-        g2d.setColor(getInnerColor());
-        g2d.fill(getBrick());
-
-        g2d.setColor(getBorderColor());
-        g2d.draw(getBrick());
-
-    }
-
     public Shape getBrickFace() {
         return brickFace;
     }

@@ -42,6 +42,7 @@ public class SteelBrick extends Brick {
         super(NAME,point,size,DEF_BORDER,DEF_INNER,STEEL_STRENGTH);
         rnd = new Random();
         brickFace = super.getBrickFace();
+        initialiseBrick(DEF_INNER,DEF_BORDER);
     }
 
 

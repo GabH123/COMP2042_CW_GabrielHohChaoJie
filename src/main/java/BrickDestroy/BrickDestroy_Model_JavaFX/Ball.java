@@ -29,33 +29,26 @@ abstract public class Ball {
     public Ball(Point2D center, int radiusA, int radiusB, Color inner, Color border){
         this.center = center;
 
-        up = new Point2D(0,0);
-        down = new Point2D(0,0);
-        left = new Point2D(0,0);
-        right = new Point2D(0,0);
-
-        getUp().add(center.getX(),center.getY()-(radiusB / 2));
-        getDown().add(center.getX(),center.getY()+(radiusB / 2));
-
-        getLeft().add(center.getX()-(radiusA /2),center.getY());
-        getRight().add(center.getX()+(radiusA /2),center.getY());
-
-
+        setPoints(radiusA,radiusB);
         ballFace = makeBall(center,radiusA,radiusB);
         this.border = border;
         this.inner  = inner;
         speedX = 0;
         speedY = 0;
+        System.out.println(radiusA+" "+radiusB);
+
+        initialiseBall(ballFace);
     }
 
     protected abstract Shape makeBall(Point2D center,int radiusA,int radiusB);
 
     public void move(){
-        center.add((center.getX() + speedX),(center.getY() + speedY));
-        ballFace.setLayoutX(speedX);
-        ballFace.setLayoutY(speedY);
+        center=center.add(speedX,speedY);
+        ballFace.setTranslateX(ballFace.getTranslateX()+speedX);
+        ballFace.setTranslateY(ballFace.getTranslateY()+speedY);
 
-        setPoints(ballFace.getLayoutBounds().getWidth(),ballFace.getLayoutBounds().getHeight());
+        setPoints(ballFace.getLayoutBounds().getWidth()/2,ballFace.getLayoutBounds().getHeight()/2);
+
     }
 
     public void setSpeed(int x,int y){
@@ -96,19 +89,27 @@ abstract public class Ball {
     }
 
     public void moveTo(Point2D p){
-        center.add(p);
-        ballFace.setLayoutX(p.getX());
-        ballFace.setLayoutY(p.getY());
-        setPoints(ballFace.getLayoutBounds().getWidth(),ballFace.getLayoutBounds().getHeight());
+        center=p;
+        ballFace.setTranslateX(0);
+        ballFace.setTranslateY(0);
+
+        setPoints(ballFace.getLayoutBounds().getWidth()/2,ballFace.getLayoutBounds().getHeight()/2);
+        //System.out.println("Resetting: "+p);
+    }
+
+    private void initialiseBall(Shape ballFace){
+        ballFace.setFill(inner);
+        ballFace.setStroke(border);
+        ballFace.setStrokeWidth(1.0);
     }
 
     private void setPoints(double width,double height){
 
-        getUp().add(center.getX(),center.getY()-(height / 2));
-        getDown().add(center.getX(),center.getY()+(height / 2));
+        up = center.add(0,-height );
+        down = center.add(0,height );
 
-        getLeft().add(center.getX()-(width / 2),center.getY());
-        getRight().add(center.getX()+(width / 2),center.getY());
+        left = center.add(-width ,0);
+        right = center.add(width,0);
     }
 
     public int getSpeedX(){

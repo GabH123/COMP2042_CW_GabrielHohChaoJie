@@ -4,15 +4,21 @@ import static BrickDestroy.GameController_JavaFX.GameplayController.*;
 
 public class Level {
 
-    private Brick[] brickJavaFXES;
+    private Brick[] bricks;
 
-    public Level(Brick[] brickJavaFXES) {
-        this.brickJavaFXES = brickJavaFXES;
+    public Level(Brick[] bricks) {
+        this.bricks = bricks;
     }
 
     public void resetBricks(){
         for(Brick b : getBricks())
             b.repair();
+    }
+
+    public void updateBrickBrokenStatus(){
+        for (Brick b:getBricks())
+            if (b.isBroken())
+                b.getBrickFace().setDisable(true);
     }
 
     public boolean detectBallBrickCollision(Ball ballJavaFX){
@@ -55,7 +61,7 @@ public class Level {
 
 
     public Brick[] getBricks() {
-        return brickJavaFXES;
+        return bricks;
     }
 
     public int getTotalNumberOfBricks(){

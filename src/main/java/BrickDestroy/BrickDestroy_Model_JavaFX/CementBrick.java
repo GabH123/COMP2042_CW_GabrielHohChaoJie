@@ -24,7 +24,7 @@ public class CementBrick extends Brick {
         super(NAME,point,size,DEF_BORDER,DEF_INNER,CEMENT_STRENGTH);
         crack = new Crack(DEF_CRACK_DEPTH,DEF_STEPS);
         brickFace = super.getBrickFace();
-
+        initialiseBrick(DEF_INNER,DEF_BORDER);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class CementBrick extends Brick {
         super.impact();
         if(!super.isBroken()){
             crack.makeCrack(point,dir,(Rectangle) getBrick());
-            //updateBrick();
+            brick.getChildren().add(crack.drawCrack());
             return false;
         }
         return true;

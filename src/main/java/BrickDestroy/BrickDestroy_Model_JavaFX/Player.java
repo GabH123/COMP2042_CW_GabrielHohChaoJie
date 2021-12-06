@@ -42,21 +42,21 @@ public class Player implements Playable {
     private double max;
 
 
-    public Player(Point2D ballPoint, int width, int height, Pane container) {
-        System.out.println(ballPoint.getX()+" "+ballPoint.getY());
+    public Player(Point2D ballPoint, double width, double height, Pane container) {
 
         this.ballPoint = ballPoint;
         moveAmount = 0;
         playerFace = makeRectangle(width, height);
-        min =  container.getPrefWidth() + (width / 2);
-        max = min +  container.getPrefWidth() - width;
+        min =  width/2;
+        max = container.getPrefWidth() - width/2;
 
+        initialisePlayerFace(playerFace);
     }
 
 
 
     public boolean detectBallPlayerCollision(Ball ballJavaFX){
-        if (playerFace.contains(ballJavaFX.getPosition()) && playerFace.contains(ballJavaFX.getDown())) {
+        if (playerFace.contains(ballJavaFX.getPosition()) /*|| playerFace.contains(ballJavaFX.getDown())*/) {
             ballJavaFX.reverseY();
             return true;
         }
@@ -67,7 +67,7 @@ public class Player implements Playable {
         double x = ballPoint.getX() + moveAmount;
         if(x < min || x > max)
             return;
-        ballPoint.add(x,ballPoint.getY());
+        ballPoint=new Point2D(x,ballPoint.getY());
         playerFace.setX(ballPoint.getX() - playerFace.getWidth()/2);
         playerFace.setY(ballPoint.getY());
     }
@@ -89,13 +89,20 @@ public class Player implements Playable {
     }
 
     public void moveTo(Point2D p){
-        ballPoint.add(p);
+        ballPoint = p;
         playerFace.setX(ballPoint.getX() - playerFace.getWidth()/2);
         playerFace.setY(ballPoint.getY());
     }
-    private Rectangle makeRectangle(int width,int height){
-        Point2D p = new Point2D((ballPoint.getX() - (width / 2)),ballPoint.getY());
+
+    private Rectangle makeRectangle(double width,double height){
+        Point2D p = ballPoint.add(-(width / 2),0);
         return  new Rectangle(p.getX(),p.getY(),width,height);
+    }
+
+    private void initialisePlayerFace(Rectangle playerFace){
+        playerFace.setFill(INNER_COLOR);
+        playerFace.setStroke(BORDER_COLOR);
+        playerFace.setStrokeWidth(1.0f);
     }
 
     public void print(){

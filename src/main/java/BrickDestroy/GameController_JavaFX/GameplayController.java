@@ -64,7 +64,6 @@ public class GameplayController implements Controllable {
 
 
     public GameplayController(Pane drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point2D ballPos){
-        System.out.println(ballPos.getX()+" "+ballPos.getY());
         this.startPoint = new Point2D(ballPos.getX(),ballPos.getY());
         pauseMenuShown = false;
 
@@ -74,7 +73,7 @@ public class GameplayController implements Controllable {
         ballCount = 3;
         ballLost = false;
 
-        rnd = new Random();
+        rnd = new Random(11);
 
         makeBall(ballPos);
 
@@ -88,6 +87,9 @@ public class GameplayController implements Controllable {
         nextLevel();
     }
 
+    public void updateStatusForBricksInLevel(){
+        getCurrentLevel().updateBrickBrokenStatus();
+    }
 
     public void updatePosition(){
         getPlayer().move();
@@ -96,14 +98,23 @@ public class GameplayController implements Controllable {
 
     public void detectBallCollision(){
         if(getPlayer().detectBallPlayerCollision(getBall())){
+            //System.out.println("Test1");
         }
         else if(getCurrentLevel().detectBallBrickCollision(getBall())){
+            //System.out.println("Test2");
+
         }
         else if(detectBallBorderCollision(getBall())) {
+            //System.out.println("Test3");
+
         }
         else if(detectBallRoofCollision(getBall())){
+            //System.out.println("Test4");
+
         }
         else if(detectBallLostCollision(getBall())){
+            //System.out.println("Test5");
+
             ballCount--;
             ballLost = true;
         }
@@ -152,7 +163,7 @@ public class GameplayController implements Controllable {
     }
 
     private boolean detectBallRoofCollision(Ball ball){
-        if (getBall().getPosition().getY() < area.getLayoutBounds().getHeight()){
+        if (getBall().getPosition().getY() <= 0){
             ball.reverseY();
             return true;
         }
@@ -161,7 +172,7 @@ public class GameplayController implements Controllable {
 
     private boolean detectBallBorderCollision(Ball ball){
         Point2D p = ball.getPosition();
-        if ((p.getX() < area.getLayoutBounds().getWidth()) ||(p.getX() > (area.getLayoutBounds().getWidth()))) {
+        if (p.getX() <= 0 ||(p.getX() > (area.getLayoutBounds().getWidth()))) {
             ball.reverseX();
             return true;
         }
@@ -175,7 +186,7 @@ public class GameplayController implements Controllable {
     private int randomiseSpeedX(){
         int speedX;
         do{
-            speedX = getRnd().nextInt(5) - 2;
+            speedX = getRnd().nextInt(10) -2;
         }while(speedX == 0);
         return speedX;
     }
@@ -183,7 +194,7 @@ public class GameplayController implements Controllable {
     private int randomiseSpeedY(){
         int speedY;
         do{
-            speedY = -getRnd().nextInt(3);
+            speedY = -getRnd().nextInt(10);
         }while(speedY == 0);
         return speedY;
     }

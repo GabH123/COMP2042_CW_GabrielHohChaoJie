@@ -15,13 +15,14 @@ import javafx.scene.shape.Shape;
 public class ClayBrick extends Brick {
 
     private static final String NAME = "Clay Brick";
-    private static final Color DEF_INNER = new Color(179/256, 35/256, 35/256,1).darker();
+    private static final Color DEF_INNER = new Color(179.0/256, 35.0/256, 35.0/256,1).darker();
     private static final Color DEF_BORDER = Color.GRAY;
     private static final int CLAY_STRENGTH = 1;
 
 
     public ClayBrick(Point2D point, Dimension2D size){
         super(NAME,point,size,DEF_BORDER,DEF_INNER,CLAY_STRENGTH);
+        initialiseBrick(DEF_INNER,DEF_BORDER);
     }
 
     @Override
