@@ -5,18 +5,16 @@ import BrickDestroy.GameController_JavaFX.GameplayController;
 import BrickDestroy.JavaFX_View.BrickDestroyMain;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
+import javafx.beans.binding.StringExpression;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
-import javafx.scene.Group;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
-import javafx.scene.shape.Path;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -43,7 +41,11 @@ public class JavaFXGameBoardController {
     @FXML
     private Text pauseMessage;
 
+    @FXML
+    private Text displayBallLeft;
 
+    @FXML
+    private Text playerCurrentLevelScore;
 
     @FXML
     private void initialize(){
@@ -53,7 +55,10 @@ public class JavaFXGameBoardController {
         initialiseTimer();
         drawGameplay();
         initialiseFXML();
+        updateNumberOfBallsText();
+
     }
+
     private void initialiseFXML(){
         gameBoardPane.requestFocus();
         gameBoard.requestFocus();
@@ -82,6 +87,9 @@ public class JavaFXGameBoardController {
                 gameplayController.updatePosition();
                 gameplayController.detectBallCollision();
                 if (gameplayController.isBallLost()){
+                    if(gameplayController.getBallCount()==0){
+                        restart();
+                    }
                     lostABall();
                 } else if (gameplayController.numberOfRemainingBricks()<=0){
                     completedALevel();
@@ -91,6 +99,7 @@ public class JavaFXGameBoardController {
     }
 
     private void lostABall(){
+        updateNumberOfBallsText();
         gameplayController.resetBall();
         pause();
     }
@@ -109,6 +118,7 @@ public class JavaFXGameBoardController {
             gameBoardPane.getChildren().remove(b.getCrack().getCrackPath());
         }
     }
+
     private void addLevelBricksToGameBoard(){
         for(Brick b : gameplayController.getCurrentLevel().getBricks()) {
             gameBoardPane.getChildren().add(b.getBrickFace());
@@ -128,9 +138,7 @@ public class JavaFXGameBoardController {
                     if (!isPaused) {
                         pause();
                     } else if (isPaused) {
-
                         resume();
-
                     }
                     break;
             case ESCAPE:
@@ -140,6 +148,7 @@ public class JavaFXGameBoardController {
                     pauseMenu.setVisible(true);
                     pauseMenu.requestFocus();
                 } else if (pauseMenuShown){
+                    resume();
                     pauseMenu.setVisible(false);
                     pauseMessage.setVisible(true);
                     pauseMenuShown=false;
@@ -171,11 +180,7 @@ public class JavaFXGameBoardController {
 
     @FXML
     void restartGame(ActionEvent event) {
-        removeLevelBricksFromGameBoard();
-        gameplayController.resetGame();
-        addLevelBricksToGameBoard();
-        pause();
-        unpausePauseMenu();
+        restart();
     }
 
     @FXML
@@ -185,19 +190,32 @@ public class JavaFXGameBoardController {
         }
     }
 
-    void pause(){
+    private void updateNumberOfBallsText(){
+        displayBallLeft.setText("Balls left: "+gameplayController.getBallCount());
+    }
+
+    private void pause(){
         timer.stop();
         isPaused=true;
         pauseMessage.setVisible(true);
     }
 
-    void resume(){
+    private void resume(){
         timer.start();
         isPaused=false;
         pauseMessage.setVisible(false);
     }
 
-    void unpausePauseMenu(){
+    private void restart(){
+        removeLevelBricksFromGameBoard();
+        gameplayController.resetGame();
+        addLevelBricksToGameBoard();
+        pause();
+        unpausePauseMenu();
+        updateNumberOfBallsText();
+    }
+
+    private void unpausePauseMenu(){
         pauseMenu.setVisible(false);
         pauseMenuShown=false;
         gameBoardPane.requestFocus();

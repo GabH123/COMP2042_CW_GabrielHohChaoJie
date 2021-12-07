@@ -177,7 +177,7 @@ public class GameplayController implements Controllable {
     private int randomiseSpeedX(){
         int speedX;
         do{
-            speedX = getRnd().nextInt(10)-5;
+            speedX = getRnd().nextInt(8)-4;
         }while(speedX == 0);
         return speedX;
     }
@@ -185,7 +185,7 @@ public class GameplayController implements Controllable {
     private int randomiseSpeedY(){
         int speedY;
         do{
-            speedY = -getRnd().nextInt(8);
+            speedY = -getRnd().nextInt(3)-5;
         }while(speedY == 0);
         return speedY;
     }

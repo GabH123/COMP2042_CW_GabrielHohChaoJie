@@ -16,9 +16,24 @@
 
 <StackPane fx:id="gameBoard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BrickDestroy.JavaFX_StageController.JavaFXGameBoardController">
    <children>
-      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" />
-      <Pane fx:id="gameBoardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" onKeyTyped="#onKeyTyped" prefHeight="400.0" prefWidth="600.0" />
-      <Text fx:id="pauseMessage" fill="#18ff00" strokeType="OUTSIDE" strokeWidth="0.0" text="Press spacebar to play...">
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@BrickDestroy_Level_Background.jpg" />
+         </image></ImageView>
+      <Pane fx:id="gameBoardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" onKeyTyped="#onKeyTyped" prefHeight="400.0" prefWidth="600.0" StackPane.alignment="CENTER">
+         <children>
+            <Text fx:id="displayBallLeft" layoutX="14.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balls left:" wrappingWidth="150.4000000000001">
+               <font>
+                  <Font name="Bauhaus 93" size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="playerCurrentLevelScore" layoutX="454.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Score:" wrappingWidth="131.20001220703125">
+               <font>
+                  <Font name="Bauhaus 93" size="24.0" />
+               </font>
+            </Text>
+         </children></Pane>
+      <Text fx:id="pauseMessage" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Press spacebar to play...">
          <stroke>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -35,6 +50,9 @@
                </stops>
             </LinearGradient>
          </stroke>
+         <font>
+            <Font name="Bauhaus 93" size="24.0" />
+         </font>
       </Text>
       <StackPane fx:id="pauseMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#unpause" prefHeight="400.0" prefWidth="600.0" visible="false">
          <children>
@@ -50,7 +68,7 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                      <font>
-                        <Font name="Bell MT" size="60.0" />
+                        <Font name="Bauhaus 93" size="69.0" />
                      </font>
                   </Text>
                   <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#continueGame" prefHeight="70.0" prefWidth="150.0" text="Continue">
@@ -60,16 +78,25 @@
                      <effect>
                         <DropShadow />
                      </effect>
+                     <font>
+                        <Font name="Bauhaus 93" size="24.0" />
+                     </font>
                   </Button>
                   <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#restartGame" prefHeight="70.0" prefWidth="150.0" text="Restart">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="Bauhaus 93" size="24.0" />
+                     </font>
                   </Button>
                   <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#exitGame" prefHeight="70.0" prefWidth="150.0" text="Exit">
                      <VBox.margin>
                         <Insets bottom="10.0" top="10.0" />
                      </VBox.margin>
+                     <font>
+                        <Font name="Bauhaus 93" size="24.0" />
+                     </font>
                   </Button>
                </children>
             </VBox>

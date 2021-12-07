@@ -22,32 +22,32 @@
          <center>
             <VBox alignment="CENTER" prefHeight="208.0" prefWidth="451.0" spacing="10.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" onAction="#startGame" prefHeight="62.0" prefWidth="145.0" text="PLAY!">
+                  <Button mnemonicParsing="false" onAction="#startGame" prefHeight="86.0" prefWidth="191.0" text="PLAY!">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
-                     <font>
-                        <Font size="31.0" />
-                     </font>
                      <effect>
                         <DropShadow />
                      </effect>
+                     <font>
+                        <Font name="Bauhaus 93" size="24.0" />
+                     </font>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#openInfoMenu" prefHeight="26.0" prefWidth="145.0" text="Info">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
                      <effect>
                         <DropShadow />
                      </effect>
+                     <font>
+                        <Font name="Bauhaus 93" size="24.0" />
+                     </font>
                   </Button>
                   <Button mnemonicParsing="false" onAction="#exitGame" prefHeight="26.0" prefWidth="145.0" text="Exit">
-                     <font>
-                        <Font size="16.0" />
-                     </font>
                      <effect>
                         <DropShadow />
                      </effect>
+                     <font>
+                        <Font name="Bauhaus 93" size="24.0" />
+                     </font>
                   </Button>
                </children>
                <BorderPane.margin>
@@ -55,9 +55,9 @@
                </BorderPane.margin></VBox>
          </center>
          <top>
-            <Text fill="WHITE" stroke="BLACK" strokeDashOffset="10.0" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="3.0" text="Brick Destroy" textAlignment="CENTER" wrappingWidth="429.3367430686949" BorderPane.alignment="CENTER">
+            <Text fill="WHITE" stroke="BLACK" strokeDashOffset="10.0" strokeLineCap="ROUND" strokeType="OUTSIDE" strokeWidth="3.0" text="Brick Destroy" textAlignment="CENTER" wrappingWidth="517.336773586273" BorderPane.alignment="CENTER">
                <font>
-                  <Font name="Bookshelf Symbol 7" size="76.0" />
+                  <Font name="Bauhaus 93" size="76.0" />
                </font>
                <BorderPane.margin>
                   <Insets top="40.0" />

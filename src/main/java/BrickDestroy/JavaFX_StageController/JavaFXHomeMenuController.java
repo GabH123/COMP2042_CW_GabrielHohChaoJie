@@ -1,5 +1,6 @@
 package BrickDestroy.JavaFX_StageController;
 
+import BrickDestroy.BrickDestroy_Model_JavaFX.HighScoreManager;
 import BrickDestroy.JavaFX_View.BrickDestroyMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +18,7 @@ public class JavaFXHomeMenuController {
     @FXML
     private void initialize(){
         mainMenuBackground.requestFocus();
+        //HighScoreManager test = new HighScoreManager();
     }
     @FXML
     void keyTest(KeyEvent event) {

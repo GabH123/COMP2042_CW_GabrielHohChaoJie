@@ -56,7 +56,7 @@ public class Player implements Playable {
 
 
     public boolean detectBallPlayerCollision(Ball ballJavaFX){
-        if (playerFace.contains(ballJavaFX.getPosition()) /*|| playerFace.contains(ballJavaFX.getDown())*/) {
+        if (playerFace.contains(ballJavaFX.getPosition())) {
             ballJavaFX.reverseY();
             return true;
         }
