@@ -1,6 +1,7 @@
 package BrickDestroy.JavaFX_StageController;
 
 import BrickDestroy.BrickDestroy_Model_JavaFX.Brick;
+import BrickDestroy.BrickDestroy_Model_JavaFX.HighScoreManager;
 import BrickDestroy.GameController_JavaFX.GameplayController;
 import BrickDestroy.JavaFX_View.BrickDestroyMain;
 import javafx.animation.AnimationTimer;
@@ -16,6 +17,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -51,6 +53,15 @@ public class JavaFXGameBoardController {
     @FXML
     private GridPane highScorePane;
 
+    @FXML
+    private VBox highScoreBoard;
+
+    @FXML
+    private Text displayCurrentScore;
+
+
+
+
 
     @FXML
     private void initialize(){
@@ -61,7 +72,7 @@ public class JavaFXGameBoardController {
         drawGameplay();
         initialiseFXML();
         updateNumberOfBallsText();
-
+        updateScoresFromManager(gameplayController.getHighScoreManager());
 
     }
 
@@ -92,12 +103,13 @@ public class JavaFXGameBoardController {
             public void handle(long l) {
                 gameplayController.updatePosition();
                 gameplayController.detectBallCollision();
+                updateInLevelScoreText(gameplayController.getCurrentPlayerScore());
                 if (gameplayController.isBallLost()){
                     if(gameplayController.getBallCount()==0){
                         restart();
                     }
                     lostABall();
-                } else if (gameplayController.numberOfRemainingBricks()<=0){
+                } else if (gameplayController.numberOfRemainingBricks()<=25){
                     completedALevel();
                 }
             }
@@ -116,6 +128,10 @@ public class JavaFXGameBoardController {
         addLevelBricksToGameBoard();
         gameplayController.resetBall();
         pause();
+        gameBoardPane.setVisible(false);
+        highScoreBoard.setVisible(true);
+        highScoreBoard.requestFocus();
+        updateScoreBoardText(gameplayController.getCurrentPlayerScore());
     }
 
     private void removeLevelBricksFromGameBoard(){
@@ -132,6 +148,22 @@ public class JavaFXGameBoardController {
 
         }
     }
+
+    private void updateScoresFromManager(HighScoreManager highScoreManager) {
+        Text rowName;
+        Text rowScore;
+        System.out.println("TEST");
+
+        int i;
+        for (i=0;(i<highScorePane.getRowCount()-1)&&(i<highScoreManager.getHighScores().size());i++) {
+            rowName=(Text) highScorePane.getChildren().get((highScorePane.getRowCount()-1)+i);
+            rowName.setText(highScoreManager.getHighScores().get(i).getName());
+
+            rowScore=(Text) highScorePane.getChildren().get(2*(highScorePane.getRowCount()-1)+i);
+            rowScore.setText(Integer.toString(highScoreManager.getHighScores().get(i).getScore()));
+        }
+    }
+
     @FXML
     void onKeyPressed(KeyEvent event) {
         //System.out.println("TEST "+event.getCode());
@@ -196,6 +228,15 @@ public class JavaFXGameBoardController {
         }
     }
 
+    @FXML
+    void pressSpaceToContinue(KeyEvent event) {
+        if (event.getCode()==KeyCode.SPACE) {
+            highScoreBoard.setVisible(false);
+            gameBoardPane.setVisible(true);
+            gameBoardPane.requestFocus();
+        }
+    }
+
     private void updateNumberOfBallsText(){
         displayBallLeft.setText("Balls left: "+gameplayController.getBallCount());
     }
@@ -219,6 +260,15 @@ public class JavaFXGameBoardController {
         pause();
         unpausePauseMenu();
         updateNumberOfBallsText();
+        updateInLevelScoreText(gameplayController.getCurrentPlayerScore());
+    }
+
+    private void updateInLevelScoreText(int score){
+        playerCurrentLevelScore.setText("SCORE: "+score);
+    }
+
+    private void updateScoreBoardText(int score){
+        displayCurrentScore.setText("YOUR CURRENT SCORE: "+score);
     }
 
     private void unpausePauseMenu(){

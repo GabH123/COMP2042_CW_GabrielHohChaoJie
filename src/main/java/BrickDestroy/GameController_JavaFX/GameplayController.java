@@ -52,10 +52,12 @@ public class GameplayController implements Controllable {
     private Level currentLevel;
     private Ball ball;
     private Player player;
+    private HighScoreManager highScoreManager;
 
     private LevelFactory levelMaker;
 
     private int currentLevelNumber;
+    private int currentPlayerScore;
 
     private Point2D startPoint;
     private int ballCount;
@@ -65,8 +67,11 @@ public class GameplayController implements Controllable {
     public GameplayController(Pane drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point2D ballPos){
         this.startPoint = new Point2D(ballPos.getX(),ballPos.getY());
 
+        highScoreManager = new HighScoreManager("BrickDestroy_HighScore.bin");
+        highScoreManager.loadFromFile();
         currentLevelNumber = 0;
         levelMaker=new LevelFactory(drawArea,brickCount,lineCount,brickDimensionRatio);
+        currentPlayerScore=0;
 
         ballCount = 3;
         ballLost = false;
@@ -96,7 +101,8 @@ public class GameplayController implements Controllable {
 
     public void detectBallCollision(){
         getPlayer().detectBallPlayerCollision(getBall());
-        getCurrentLevel().detectBallBrickCollision(getBall());
+        if (getCurrentLevel().detectBallBrickCollision(getBall()))
+            currentPlayerScore+=50;
         detectBallBorderCollision(getBall());
         detectBallRoofCollision(getBall());
 
@@ -147,6 +153,7 @@ public class GameplayController implements Controllable {
         resetBallCount();
         currentLevelNumber=0;
         nextLevel();
+        resetPlayScore();
     }
 
 
@@ -191,16 +198,6 @@ public class GameplayController implements Controllable {
     }
 
 
-
-    /*public void drawPlayerShape(GraphicsContext gc){
-        getPlayer().playerDrawInfo(gc);
-    }
-
-    public void drawBallShape(GraphicsContext gc){
-        getBall().ballDrawInfo(gc);
-    }*/
-
-
     public void setBallXSpeed(int s){
         getBall().setXSpeed(s);
     }
@@ -213,6 +210,10 @@ public class GameplayController implements Controllable {
 
     public void resetBallCount(){
         ballCount = 3;
+    }
+
+    public void resetPlayScore(){
+        currentPlayerScore=0;
     }
 
     public boolean ballEnd(){
@@ -247,11 +248,19 @@ public class GameplayController implements Controllable {
         return player;
     }
 
+    public HighScoreManager getHighScoreManager() {
+        return highScoreManager;
+    }
+
     public LevelFactory getLevelMaker() {
         return levelMaker;
     }
 
     public Random getRnd() {
         return rnd;
+    }
+
+    public int getCurrentPlayerScore() {
+        return currentPlayerScore;
     }
 }
