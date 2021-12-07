@@ -34,7 +34,7 @@ public class Crack {
     }
 
 
-    public Path drawCrack() {
+    public Path draw() {
         return crack;
     }
 
@@ -56,14 +56,12 @@ public class Crack {
                 end = new Point2D(bounds.getX() + bounds.getWidth(), bounds.getY() + bounds.getHeight());
                 Point2D tmp = makeRandomPoint(start, end, VERTICAL);
                 makeCrack(impact, tmp);
-
                 break;
             case RIGHT:
                 start = new Point2D(bounds.getX(),bounds.getY());
                 end = new Point2D(bounds.getX(), bounds.getY() + bounds.getHeight());
                 tmp = makeRandomPoint(start, end, VERTICAL);
                 makeCrack(impact, tmp);
-
                 break;
             case UP:
                 start = new Point2D(bounds.getX(), bounds.getY() + bounds.getHeight());
@@ -89,18 +87,19 @@ public class Crack {
 
         path.getElements().add(new MoveTo(start.getX(), start.getY()));
 
-        double w = (end.getX() - start.getY()) / (double) steps;
-        double h = (end.getX() - start.getY()) / (double) steps;
+        double w = (end.getX() - start.getX()) / (double) steps;
+        double h = (end.getY() - start.getY()) / (double) steps;
 
         int bound = crackDepth;
         int jump = bound * 5;
 
         double x, y;
-
+        //System.out.println("Start: "+start.getX()+" "+start.getY());
         for (int i = 1; i < steps; i++) {
 
             x = (i * w) + start.getX();
             y = (i * h) + start.getY() + randomInBounds(bound);
+            //System.out.println(" X: "+x+" Y: "+y);
 
             if (inMiddle(i, CRACK_SECTIONS, steps))
                 y += jumps(jump, JUMP_PROBABILITY);
@@ -108,7 +107,7 @@ public class Crack {
             path.getElements().add(new LineTo(x, y));
 
         }
-
+        //System.out.println(" EndX: "+end.getX()+" "+end.getY());
         path.getElements().add(new LineTo(end.getX(), end.getY()));
     }
 
@@ -150,4 +149,7 @@ public class Crack {
         return out;
     }
 
+    public Path getCrackPath() {
+        return crack;
+    }
 }

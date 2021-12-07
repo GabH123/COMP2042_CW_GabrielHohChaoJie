@@ -56,7 +56,6 @@ public class GameplayController implements Controllable {
     private LevelFactory levelMaker;
 
     private int currentLevelNumber;
-    private boolean pauseMenuShown;
 
     private Point2D startPoint;
     private int ballCount;
@@ -65,7 +64,6 @@ public class GameplayController implements Controllable {
 
     public GameplayController(Pane drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point2D ballPos){
         this.startPoint = new Point2D(ballPos.getX(),ballPos.getY());
-        pauseMenuShown = false;
 
         currentLevelNumber = 0;
         levelMaker=new LevelFactory(drawArea,brickCount,lineCount,brickDimensionRatio);
@@ -97,24 +95,12 @@ public class GameplayController implements Controllable {
     }
 
     public void detectBallCollision(){
-        if(getPlayer().detectBallPlayerCollision(getBall())){
-            //System.out.println("Test1");
-        }
-        else if(getCurrentLevel().detectBallBrickCollision(getBall())){
-            //System.out.println("Test2");
+        getPlayer().detectBallPlayerCollision(getBall());
+        getCurrentLevel().detectBallBrickCollision(getBall());
+        detectBallBorderCollision(getBall());
+        detectBallRoofCollision(getBall());
 
-        }
-        else if(detectBallBorderCollision(getBall())) {
-            //System.out.println("Test3");
-
-        }
-        else if(detectBallRoofCollision(getBall())){
-            //System.out.println("Test4");
-
-        }
-        else if(detectBallLostCollision(getBall())){
-            //System.out.println("Test5");
-
+         if(detectBallLostCollision(getBall())){
             ballCount--;
             ballLost = true;
         }
@@ -156,6 +142,12 @@ public class GameplayController implements Controllable {
         return currentLevelNumber < LevelFactory.TOTAL_NUMBER_OF_LEVELS;
     }
 
+    public void resetGame(){
+        resetBall();
+        resetBallCount();
+        currentLevelNumber=0;
+        nextLevel();
+    }
 
 
     private void makeBall(Point2D ballPos){
@@ -171,8 +163,7 @@ public class GameplayController implements Controllable {
     }
 
     private boolean detectBallBorderCollision(Ball ball){
-        Point2D p = ball.getPosition();
-        if (p.getX() <= 0 ||(p.getX() > (area.getLayoutBounds().getWidth()))) {
+        if (ball.getLeft().getX() <= 0 ||(ball.getRight().getX() > (area.getLayoutBounds().getWidth()))) {
             ball.reverseX();
             return true;
         }
@@ -186,7 +177,7 @@ public class GameplayController implements Controllable {
     private int randomiseSpeedX(){
         int speedX;
         do{
-            speedX = getRnd().nextInt(10) -2;
+            speedX = getRnd().nextInt(10)-5;
         }while(speedX == 0);
         return speedX;
     }
@@ -194,7 +185,7 @@ public class GameplayController implements Controllable {
     private int randomiseSpeedY(){
         int speedY;
         do{
-            speedY = -getRnd().nextInt(10);
+            speedY = -getRnd().nextInt(8);
         }while(speedY == 0);
         return speedY;
     }
@@ -243,15 +234,6 @@ public class GameplayController implements Controllable {
     public boolean isBallLost(){
         return ballLost;
     }
-
-    public boolean isPauseMenuShown() {
-        return pauseMenuShown;
-    }
-
-    public void changeShowPauseMenu() {
-        this.pauseMenuShown = !this.pauseMenuShown;
-    }
-
 
     public Level getCurrentLevel() {
         return currentLevel;

@@ -20,7 +20,8 @@ abstract public class Brick {
 
     private String name;
     private Shape brickFace;
-    protected Group brick;
+
+    protected Crack crack;
 
     private Color border;
     private Color inner;
@@ -38,7 +39,7 @@ abstract public class Brick {
         this.border = border;
         this.inner = inner;
         this.fullStrength = this.strength = strength;
-        brick.getChildren().add(brickFace);
+        crack = new Crack(DEF_CRACK_DEPTH,DEF_STEPS);
     }
 
     protected abstract Shape makeBrickFace(Point2D pos, Dimension2D size);
@@ -59,7 +60,9 @@ abstract public class Brick {
 
     public abstract Shape getBrick();
 
-
+    public Crack getCrack() {
+        return crack;
+    }
     public Color getBorderColor() {
         return border;
     }
@@ -80,23 +83,18 @@ abstract public class Brick {
     public void impact() {
         strength--;
         broken = (strength == 0);
-        if (broken)
+        if (broken) {
             getBrickFace().setVisible(false);
+            getCrack().getCrackPath().setVisible(false);
+        }
     }
 
-    public void brickDrawInfo(GraphicsContext g2d){
-        Rectangle brickRectangle = (Rectangle) getBrickFace();
-        g2d.setFill(getInnerColor());
-        g2d.fillRect(brickRectangle.getX(),brickRectangle.getY(),brickRectangle.getWidth(),brickRectangle.getHeight());
-
-        g2d.setStroke(getBorderColor());
-        g2d.strokeRect(brickRectangle.getX(),brickRectangle.getY(),brickRectangle.getWidth(),brickRectangle.getHeight());
-
-    }
 
     public Shape getBrickFace() {
         return brickFace;
     }
+
+
 }
 
 
