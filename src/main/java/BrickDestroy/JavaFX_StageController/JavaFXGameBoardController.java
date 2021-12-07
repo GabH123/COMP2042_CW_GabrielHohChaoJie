@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
@@ -48,6 +49,10 @@ public class JavaFXGameBoardController {
     private Text playerCurrentLevelScore;
 
     @FXML
+    private GridPane highScorePane;
+
+
+    @FXML
     private void initialize(){
         gameplayController = new GameplayController(gameBoardPane,30,4,6/2,new Point2D(gameBoardPane.getPrefWidth()/2,gameBoardPane.getPrefHeight()-50));
         isPaused=true;
@@ -56,6 +61,7 @@ public class JavaFXGameBoardController {
         drawGameplay();
         initialiseFXML();
         updateNumberOfBallsText();
+
 
     }
 
