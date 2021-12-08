@@ -15,11 +15,9 @@ public class BrickDestroyMain extends Application {
     static private  Scene scene;
     @Override
     public void start(Stage primaryStage)  throws Exception{
-        //System.out.println(getClass().getClassLoader().getResource("BrickDestroy_Menu.fxml"));
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("BrickDestroy_Menu.fxml"));
         primaryStage.setTitle("Brick Destroy");
         scene = new Scene(root, 600, 400);
-        //scene.addEventHandler();
 
         primaryStage.setResizable(false);
         primaryStage.setScene(scene);
@@ -28,6 +26,9 @@ public class BrickDestroyMain extends Application {
     }
     static public void setNewScene(String fxml) throws IOException{
         scene.setRoot(FXMLLoader.load(BrickDestroyMain.class.getClassLoader().getResource(fxml+".fxml")));
+    }
+    static public void setSceneRoot(FXMLLoader fxmlLoader) throws IOException{
+        scene.setRoot(fxmlLoader.load());
     }
 
     public static void main(String[] args) {

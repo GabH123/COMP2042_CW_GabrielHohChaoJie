@@ -35,7 +35,6 @@ abstract public class Ball {
         this.inner  = inner;
         speedX = 0;
         speedY = 0;
-        System.out.println(radiusA+" "+radiusB);
 
         initialiseBall(ballFace);
     }

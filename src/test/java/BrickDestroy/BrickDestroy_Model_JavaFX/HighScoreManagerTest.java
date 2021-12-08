@@ -30,16 +30,23 @@ class HighScoreManagerTest {
 
     @Test
     void addRecord() {
-        test.addRecord("Hello",100);
-        /*test.addRecord("Sam",100);
-        test.addRecord("Nik",200);
-        test.addRecord("Rose",300);
-        test.addRecord("Jake",400);
-        test.addRecord("Peter",400);
-        test.addRecord("Peter",500);*/
+        test.addRecord("Kevin",100);
+        test.addRecord("Sam",200);
+        test.addRecord("Nik",300);
+        test.addRecord("Rose",400);
+        test.addRecord("Jake",500);
+        test.addRecord("Thomas",800);
+        test.addRecord("Peter",1000);
 
         System.out.println(test.getHighScores());
         test.saveToFile();
-        assertEquals(test.getHighScores().size(),1);
+        assertEquals(test.getHighScores().size(),7);
+    }
+
+    @Test
+    void indexOfNewScore(){
+        test.loadFromFile();
+        test.printList();
+        //assertEquals(test.indexOfNewScore(150),5);
     }
 }

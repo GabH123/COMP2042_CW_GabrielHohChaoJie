@@ -6,11 +6,9 @@ import BrickDestroy.GameController_JavaFX.GameplayController;
 import BrickDestroy.JavaFX_View.BrickDestroyMain;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
-import javafx.beans.binding.StringExpression;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.StringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -51,7 +49,7 @@ public class JavaFXGameBoardController {
     private Text playerCurrentLevelScore;
 
     @FXML
-    private GridPane highScorePane;
+    private GridPane scorePane;
 
     @FXML
     private VBox highScoreBoard;
@@ -73,6 +71,7 @@ public class JavaFXGameBoardController {
         initialiseFXML();
         updateNumberOfBallsText();
         updateScoresFromManager(gameplayController.getHighScoreManager());
+        updateInLevelScoreText(gameplayController.getCurrentPlayerScore());
 
     }
 
@@ -106,11 +105,15 @@ public class JavaFXGameBoardController {
                 updateInLevelScoreText(gameplayController.getCurrentPlayerScore());
                 if (gameplayController.isBallLost()){
                     if(gameplayController.getBallCount()==0){
+                        gameFinished();
                         restart();
                     }
                     lostABall();
-                } else if (gameplayController.numberOfRemainingBricks()<=25){
+                } else if (gameplayController.numberOfRemainingBricks()<=0){
                     completedALevel();
+                    if (!gameplayController.hasLevel()){
+                        gameFinished();
+                    }
                 }
             }
         };
@@ -152,21 +155,19 @@ public class JavaFXGameBoardController {
     private void updateScoresFromManager(HighScoreManager highScoreManager) {
         Text rowName;
         Text rowScore;
-        System.out.println("TEST");
 
         int i;
-        for (i=0;(i<highScorePane.getRowCount()-1)&&(i<highScoreManager.getHighScores().size());i++) {
-            rowName=(Text) highScorePane.getChildren().get((highScorePane.getRowCount()-1)+i);
+        for (i=0; (i< scorePane.getRowCount()-1)&&(i<highScoreManager.getHighScores().size()); i++) {
+            rowName=(Text) scorePane.getChildren().get((scorePane.getRowCount()-1)+i);
             rowName.setText(highScoreManager.getHighScores().get(i).getName());
 
-            rowScore=(Text) highScorePane.getChildren().get(2*(highScorePane.getRowCount()-1)+i);
+            rowScore=(Text) scorePane.getChildren().get(2*(scorePane.getRowCount()-1)+i);
             rowScore.setText(Integer.toString(highScoreManager.getHighScores().get(i).getScore()));
         }
     }
 
     @FXML
     void onKeyPressed(KeyEvent event) {
-        //System.out.println("TEST "+event.getCode());
         switch (event.getCode()){
             case A:
             case D:
@@ -254,6 +255,7 @@ public class JavaFXGameBoardController {
     }
 
     private void restart(){
+
         removeLevelBricksFromGameBoard();
         gameplayController.resetGame();
         addLevelBricksToGameBoard();
@@ -261,6 +263,7 @@ public class JavaFXGameBoardController {
         unpausePauseMenu();
         updateNumberOfBallsText();
         updateInLevelScoreText(gameplayController.getCurrentPlayerScore());
+
     }
 
     private void updateInLevelScoreText(int score){
@@ -269,6 +272,19 @@ public class JavaFXGameBoardController {
 
     private void updateScoreBoardText(int score){
         displayCurrentScore.setText("YOUR CURRENT SCORE: "+score);
+    }
+
+    private void gameFinished(){
+        FXMLLoader loadEndGameScoreBoard = new FXMLLoader(BrickDestroyMain.class.getClassLoader().getResource("BrickDestroy_GameEnd.fxml"));
+        try {
+            BrickDestroyMain.setSceneRoot(loadEndGameScoreBoard);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        EndGameController endGameController = loadEndGameScoreBoard.getController();
+        endGameController.initialiseController(gameplayController.getHighScoreManager(), gameplayController.getCurrentPlayerScore());
+        endGameController.highScorePaneSetup();
+
     }
 
     private void unpausePauseMenu(){

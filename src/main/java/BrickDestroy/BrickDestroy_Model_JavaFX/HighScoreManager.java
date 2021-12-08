@@ -62,6 +62,17 @@ public class HighScoreManager implements Manager{
 
     }
 
+    public int indexOfNewScore(int playerNewScore){
+        int i;
+        for (i=0;i< getHighScores().size();i++) {
+            if (getHighScores().get(i).getScore()<playerNewScore)
+                return i;
+        }
+        if (getHighScores().size()<10)
+            return i;
+        else return -1;
+    }
+
     private void createFileIfNotCreated(String highScoreFile){
         try {
             File file = new File(highScoreFile);
@@ -69,6 +80,12 @@ public class HighScoreManager implements Manager{
                 file.createNewFile();
         }catch (IOException e){
             e.printStackTrace();
+        }
+    }
+
+    public void printList(){
+        for (int i=0;i<highScores.size();i++) {
+            System.out.println("Name: "+highScores.get(i).getName()+" Score: "+highScores.get(i).getScore());
         }
     }
 

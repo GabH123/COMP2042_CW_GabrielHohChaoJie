@@ -41,7 +41,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>BrickDestroy.View.GraphicsMain</mainClass>
+                            <mainClass>BrickDestroy.JavaFX_View.BrickDestroyMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -59,7 +59,19 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>org.openjfx.App</mainClass>
+                    <mainClass>BrickDestroyMain</mainClass>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>BrickDestroyMain</mainClass>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>

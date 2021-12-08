@@ -17,6 +17,7 @@ abstract public class Brick {
     public static final int MIN_CRACK = 1;
     public static final int DEF_CRACK_DEPTH = 1;
     public static final int DEF_STEPS = 35;
+    private final int NORMAL_BRICK_SCORE_WORTH = 50;
 
     private String name;
     private Shape brickFace;
@@ -51,11 +52,11 @@ abstract public class Brick {
 
     }
 
-    public boolean setImpact(Point2D point, int dir) {
+    public int setImpact(Point2D point, int dir) {
         if (broken)
-            return false;
+            return 0;
         impact();
-        return broken;
+        return NORMAL_BRICK_SCORE_WORTH;
     }
 
     public abstract Shape getBrick();

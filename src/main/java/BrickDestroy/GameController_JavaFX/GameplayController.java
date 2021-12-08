@@ -90,10 +90,6 @@ public class GameplayController implements Controllable {
         nextLevel();
     }
 
-    public void updateStatusForBricksInLevel(){
-        getCurrentLevel().updateBrickBrokenStatus();
-    }
-
     public void updatePosition(){
         getPlayer().move();
         getBall().move();
@@ -101,8 +97,7 @@ public class GameplayController implements Controllable {
 
     public void detectBallCollision(){
         getPlayer().detectBallPlayerCollision(getBall());
-        if (getCurrentLevel().detectBallBrickCollision(getBall()))
-            currentPlayerScore+=50;
+        currentPlayerScore+=getCurrentLevel().detectBallBrickCollision(getBall());
         detectBallBorderCollision(getBall());
         detectBallRoofCollision(getBall());
 
@@ -138,6 +133,10 @@ public class GameplayController implements Controllable {
                 getPlayer().moveRight();
                 break;
         }
+    }
+
+    public int getPlayerScoreNewPosition(){
+        return getHighScoreManager().indexOfNewScore(getCurrentPlayerScore());
     }
 
     public void stopPlayer(){

@@ -21,7 +21,7 @@ public class Level {
                 b.getBrickFace().setDisable(true);
     }
 
-    public boolean detectBallBrickCollision(Ball ballJavaFX){
+    public int detectBallBrickCollision(Ball ballJavaFX){
         for(Brick b : getBricks()){
             switch(findImpact(b, ballJavaFX)) {
                 //Vertical Impact
@@ -41,7 +41,7 @@ public class Level {
                     return b.setImpact(ballJavaFX.getLeft(), Crack.LEFT);
             }
         }
-        return false;
+        return 0;
     }
 
     private int findImpact(Brick brickJavaFX, Ball ballJavaFX){
