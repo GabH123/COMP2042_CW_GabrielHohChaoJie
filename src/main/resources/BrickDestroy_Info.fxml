@@ -18,7 +18,7 @@
       </ImageView>
       <AnchorPane prefHeight="270.0" prefWidth="600.0">
          <children>
-            <Button layoutY="329.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="70.0" prefWidth="146.0" text="Back" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="40.0">
+            <Button layoutX="230.0" layoutY="322.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="70.0" prefWidth="146.0" text="Back" AnchorPane.bottomAnchor="7.600000000000023" AnchorPane.leftAnchor="230.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -56,6 +56,16 @@
                      </font>
                   </Text>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="A - Move Left   D - Move right   Esc - Pause Menu   Space - Pause" textAlignment="CENTER" wrappingWidth="569.5155639648438">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Destroying bricks gives score." textAlignment="CENTER" wrappingWidth="569.5155639648438">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Clay - 50 Points    Cement - 70 Points    Steel - 90 Points" textAlignment="CENTER" wrappingWidth="569.5155639648438">
                      <font>
                         <Font size="16.0" />
                      </font>
