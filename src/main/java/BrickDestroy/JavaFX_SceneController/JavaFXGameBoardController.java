@@ -1,4 +1,4 @@
-package BrickDestroy.JavaFX_StageController;
+package BrickDestroy.JavaFX_SceneController;
 
 import BrickDestroy.Gameplay_Model.Brick;
 import BrickDestroy.Gameplay_Model.HighScoreManager;
@@ -9,7 +9,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Point2D;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;

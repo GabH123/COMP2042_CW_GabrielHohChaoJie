@@ -1,4 +1,4 @@
-package BrickDestroy.JavaFX_StageController;
+package BrickDestroy.JavaFX_SceneController;
 
 import BrickDestroy.JavaFX_View.BrickDestroyMain;
 import javafx.event.ActionEvent;
