@@ -15,7 +15,7 @@ public class LevelFactory {
     private static final int STEEL = 2;
     private static final int CEMENT = 3;
 
-    public static final int TOTAL_NUMBER_OF_LEVELS = 4;
+    public static final int TOTAL_NUMBER_OF_LEVELS = 9;
 
     private int brickCount;
     private int lineCount;
@@ -31,12 +31,24 @@ public class LevelFactory {
 
     public Level getThisLevel(int level){
         switch (level){
+            case 0:
+                return makeLevel(CLAY,CLAY);
             case 1:
-                return makeLevel(CLAY,CEMENT);
+                return makeLevel(CEMENT,CLAY);
             case 2:
-                return makeLevel(CLAY,STEEL);
+                return makeLevel(CLAY,CEMENT);
             case 3:
+                return makeLevel(CEMENT,CEMENT);
+            case 4:
+                return makeLevel(STEEL,CLAY);
+            case 5:
+                return makeLevel(STEEL,CEMENT);
+            case 6:
+                return makeLevel(CLAY,STEEL);
+            case 7:
                 return makeLevel(CEMENT,STEEL);
+            case 8:
+                return makeLevel(STEEL,STEEL);
             default:
                 return makeLevel(CLAY,CLAY);
         }
@@ -48,13 +60,9 @@ public class LevelFactory {
 
 
     private Brick[] makeChessboardLevel(Pane drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
-        /*
-          if brickCount is not divisible by line count,brickCount is adjusted to the biggest
-          multiple of lineCount smaller then brickCount
-         */
+
         brickCnt=roundBrickCnt(brickCnt,lineCnt);
 
-        //First, decide dimensions of the brickJavaFX
         int brickOnLine = brickCnt / lineCnt;
 
         int centerLeft = brickOnLine / 2 - 1;

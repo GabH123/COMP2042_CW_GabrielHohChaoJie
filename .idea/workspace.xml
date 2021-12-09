@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="77dbe3fb-f09e-4204-adc6-739691bea208" name="Default Changelist" comment="Added back the DebugConsole to project.">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BrickDestroy_HighScore(Backup).bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BrickDestroy_HighScore.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_StageController/DebugDialogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/BrickDestroy_DebugConsole.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/Brick_Destroy-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/GameController/Controllable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/GameController/GameplayController$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/GameController/GameplayController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Ball.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Brick.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Buildable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/CementBrick.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/ClayBrick.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Crack.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/HighScoreManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Level.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/LevelFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Manager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Playable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/RubberBall.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/ScoreRecord.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/SteelBrick.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/JavaFX_StageController/EndGameController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/JavaFX_StageController/JavaFXGameBoardController$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/JavaFX_StageController/JavaFXGameBoardController$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/JavaFX_StageController/JavaFXGameBoardController$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/JavaFX_StageController/JavaFXGameBoardController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/JavaFX_StageController/JavaFXHomeMenuController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/JavaFX_StageController/JavaFXInfoMenuController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/JavaFX_View/BrickDestroyMain.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy_GameBoard.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy_GameEnd.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy_Info.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy_Level_Background.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy_Menu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/BrickDestroy_PauseBackground.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Brick_Destroy_Menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/TextField_Transparent.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/aggravation-board-game-instructions.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-cli/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/BrickDestroy/Gameplay_Model/HighScoreManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/GameplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/GameplayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/CementBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/CementBrick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/LevelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/LevelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/SteelBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/SteelBrick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_StageController/EndGameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_StageController/EndGameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_StageController/JavaFXGameBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_StageController/JavaFXGameBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/BrickDestroy_GameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/BrickDestroy_GameBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/HighScoreManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/HighScoreManagerTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PATH_TO_FX$/javafx.graphics.jar!/javafx/scene/PropertyHelper.class" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="21i88BieSUknvqJCrBxpUIsixJo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="create.test.in.the.same.root" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController_JavaFX" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+  </component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\Year 2\Software Maintenance\Coursework\COMP2042_CW_hcygh1\src\main\java\BrickDestroy\GameController_JavaFX" />
+      <recent name="C:\Users\User\Desktop\Year 2\Software Maintenance\Coursework\COMP2042_CW_hcygh1\src\main\java\BrickDestroy\BrickDestroy_Model_JavaFX" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\Year 2\Software Maintenance\Coursework\COMP2042_CW_hcygh1\src\main\resources" />
+      <recent name="C:\Users\User\Desktop\Year 2\Software Maintenance\Coursework\COMP2042_CW_hcygh1\src\main\resources\fxml" />
+      <recent name="C:\Users\User\Desktop\Year 2\Software Maintenance\Coursework\COMP2042_CW_hcygh1\src\main" />
+      <recent name="C:\Users\User\Desktop\Year 2\Software Maintenance\Coursework\COMP2042_CW_hcygh1\resources\fxml" />
+      <recent name="C:\Users\User\Desktop\Year 2\Software Maintenance\Coursework\COMP2042_CW_hcygh1\resources" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="BrickDestroy.BrickDestroy_Model_JavaFX" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.BrickDestroyMain">
+    <configuration name="BrickDestroyMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BrickDestroy.JavaFX_View.BrickDestroyMain" />
+      <module name="COMP2042_CW_hcygh1" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\JavaFX\javafx-sdk-17.0.1\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BrickDestroy.JavaFX_StageController.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HighScoreManagerTest.addRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP2042_CW_hcygh1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BrickDestroy.BrickDestroy_Model_JavaFX" />
+      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.HighScoreManagerTest" />
+      <option name="METHOD_NAME" value="addRecord" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HighScoreManagerTest.indexOfNewScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP2042_CW_hcygh1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BrickDestroy.BrickDestroy_Model_JavaFX" />
+      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.HighScoreManagerTest" />
+      <option name="METHOD_NAME" value="indexOfNewScore" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HighScoreManagerTest.loadFromFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP2042_CW_hcygh1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BrickDestroy.BrickDestroy_Model_JavaFX" />
+      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.HighScoreManagerTest" />
+      <option name="METHOD_NAME" value="loadFromFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HighScoreManagerTest.saveToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP2042_CW_hcygh1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="BrickDestroy.BrickDestroy_Model_JavaFX" />
+      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.HighScoreManagerTest" />
+      <option name="METHOD_NAME" value="saveToFile" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.BrickDestroyMain" />
+      <item itemvalue="JUnit.HighScoreManagerTest.loadFromFile" />
+      <item itemvalue="JUnit.HighScoreManagerTest.saveToFile" />
+      <item itemvalue="JUnit.HighScoreManagerTest.addRecord" />
+      <item itemvalue="JUnit.HighScoreManagerTest.indexOfNewScore" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.BrickDestroyMain" />
+        <item itemvalue="JUnit.HighScoreManagerTest.addRecord" />
+        <item itemvalue="JUnit.HighScoreManagerTest.indexOfNewScore" />
+        <item itemvalue="JUnit.HighScoreManagerTest.loadFromFile" />
+        <item itemvalue="JUnit.HighScoreManagerTest.saveToFile" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="77dbe3fb-f09e-4204-adc6-739691bea208" name="Default Changelist" comment="" />
+      <created>1638412389446</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638412389446</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Finish setting up JavaFX with Maven.">
+      <created>1638436877732</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638436877732</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implemented switching between Info and Home menu.">
+      <created>1638446818323</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638446818323</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Copied the Model classes into a new package in order to modify them to be suitable with JavaFX.">
+      <created>1638454449730</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1638454449730</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Modified JavaFX version of Brick, CementBrick, Playable, Player and RubberBall to suit JavaFX.">
+      <created>1638458275997</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1638458275997</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Modified JavaFX version of Ball, Brick, CementBrick, ClayBrick, Crack, LevelFactory, RubberBall and SteelBrick.">
+      <created>1638692120374</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1638692120374</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Modified GameplayController to use JavaFX. Also modified Rectangle drawArea to Canvas drawArea in LevelFactory and Player.">
+      <created>1638693242982</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1638693242982</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Testing Pane vs Group...">
+      <created>1638707931661</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1638707931661</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Changed Bricks, Balls and Players to be able to drawn onto the gameboard. Also corrected mistakes on usage of Point2D.">
+      <created>1638801177443</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1638801177443</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added pause menu and pause message.">
+      <created>1638848394195</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1638848394195</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Initialised HighScoreManager and Manager to store and manage high scores.">
+      <created>1638870870250</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1638870870250</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Implemented the basic methods of HighScoreManager and Manager for storing and manage high scores.">
+      <created>1638876435027</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1638876435027</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Adding scoring system. Able to display and reset current player score, but not save them yet.">
+      <created>1638898170591</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1638898170591</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Completed scoring system for Brick Destroy.">
+      <created>1638979118160</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1638979118160</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Removed Swing Brick Destroy files.">
+      <created>1638983381798</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1638983381798</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Renamed most of the components.">
+      <created>1639020462761</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1639020462761</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Finish setting up JavaFX with Maven." />
+    <MESSAGE value="Implemented switching between Info and Home menu." />
+    <MESSAGE value="Copied the Model classes into a new package in order to modify them to be suitable with JavaFX." />
+    <MESSAGE value="Modified JavaFX version of Brick, CementBrick, Playable, Player and RubberBall to suit JavaFX." />
+    <MESSAGE value="Modified JavaFX version of Ball, Brick, CementBrick, ClayBrick, Crack, LevelFactory, RubberBall and SteelBrick." />
+    <MESSAGE value="Modified GameplayController to use JavaFX. Also modified Rectangle drawArea to Canvas drawArea in LevelFactory and Player." />
+    <MESSAGE value="Testing Pane vs Group..." />
+    <MESSAGE value="Changed Bricks, Balls and Players to be able to drawn onto the gameboard. Also corrected mistakes on usage of Point2D." />
+    <MESSAGE value="Added pause menu and pause message." />
+    <MESSAGE value="Initialised HighScoreManager and Manager to store and manage high scores." />
+    <MESSAGE value="Implemented the basic methods of HighScoreManager and Manager for storing and manage high scores." />
+    <MESSAGE value="Adding scoring system. Able to display and reset current player score, but not save them yet." />
+    <MESSAGE value="Completed scoring system for Brick Destroy." />
+    <MESSAGE value="Removed Swing Brick Destroy files." />
+    <MESSAGE value="Renamed most of the components." />
+    <MESSAGE value="Added back the DebugConsole to project." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added back the DebugConsole to project." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/COMP2042_CW_hcygh1$BrickDestroyMain.ic" NAME="BrickDestroyMain Coverage Results" MODIFIED="1638759279191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>BrickDestroy.JavaFX_StageController.*</FILTER>
+    </SUITE>
+  </component>
+</project>

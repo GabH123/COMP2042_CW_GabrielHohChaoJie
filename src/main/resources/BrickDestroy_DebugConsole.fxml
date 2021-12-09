@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<DialogPane prefHeight="83.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BrickDestroy.JavaFX_StageController.DebugDialogController">
+   <content>
+      <AnchorPane prefHeight="185.0" prefWidth="354.0">
+         <children>
+            <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#skipLevel" prefHeight="55.0" prefWidth="140.0" text="Skip Level">
+               <font>
+                  <Font name="Bauhaus 93" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="194.0" layoutY="14.0" mnemonicParsing="false" onAction="#resetBallCount" prefHeight="55.0" prefWidth="140.0" text="Reset Ball Count">
+               <font>
+                  <Font name="Bauhaus 93" size="16.0" />
+               </font>
+            </Button>
+            <Slider fx:id="setXSpeed" layoutX="14.0" layoutY="81.0" max="8.0" min="-8.0" onMouseDragged="#onDraggedSpeedX" prefWidth="140.0" />
+            <Slider fx:id="setYSpeed" layoutX="194.0" layoutY="81.0" max="8.0" min="-8.0" onMouseDragged="#OnDraggedSpeedY" />
+         </children>
+      </AnchorPane>
+   </content>
+</DialogPane>

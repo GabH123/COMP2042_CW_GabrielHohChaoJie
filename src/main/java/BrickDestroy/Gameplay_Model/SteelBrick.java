@@ -35,10 +35,10 @@ public class SteelBrick extends Brick {
     private static final int STEEL_STRENGTH = 1;
     private static final double STEEL_PROBABILITY = 0.4;
 
-    private final int STEEL_BRICK_SCORE_WORTH = 90;
+    private static final int STEEL_BRICK_SCORE_WORTH = 90;
 
-    private Random rnd;
-    private Shape brickFace;
+    private final Random rnd;
+    private final Shape brickFace;
 
     public SteelBrick(Point2D point, Dimension2D size){
         super(NAME,point,size,DEF_BORDER,DEF_INNER,STEEL_STRENGTH);
@@ -66,7 +66,9 @@ public class SteelBrick extends Brick {
     }
 
     public void impact(){
-        if(rnd.nextDouble() < STEEL_PROBABILITY){
+
+        if((rnd.nextDouble()) < STEEL_PROBABILITY){
+
             super.impact();
         }
     }

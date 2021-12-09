@@ -26,13 +26,13 @@ class HighScoreManagerTest {
 
     @Test
     void addRecord() {
-        test.addRecord("Kevin",100);
-        test.addRecord("Sam",200);
-        test.addRecord("Nik",300);
-        test.addRecord("Rose",400);
-        test.addRecord("Jake",500);
-        test.addRecord("Thomas",800);
-        test.addRecord("Peter",1000);
+        test.addRecord("KEVIN",100);
+        test.addRecord("SAM",200);
+        test.addRecord("NICK",300);
+        test.addRecord("MIKA",400);
+        test.addRecord("JAKE",500);
+        test.addRecord("THOMAS",800);
+        test.addRecord("JACK",1000);
 
         System.out.println(test.getHighScores());
         test.saveToFile();

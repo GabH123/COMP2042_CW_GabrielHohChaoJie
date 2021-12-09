@@ -23,8 +23,8 @@ abstract public class Ball {
     private Color border;
     private Color inner;
 
-    private int speedX;
-    private int speedY;
+    private double speedX;
+    private double speedY;
 
     public Ball(Point2D center, int radiusA, int radiusB, Color inner, Color border){
         this.center = center;
@@ -55,11 +55,11 @@ abstract public class Ball {
         speedY = y;
     }
 
-    public void setXSpeed(int s){
+    public void setXSpeed(double s){
         speedX = s;
     }
 
-    public void setYSpeed(int s){
+    public void setYSpeed(double s){
         speedY = s;
     }
 
@@ -111,11 +111,11 @@ abstract public class Ball {
         right = center.add(width,0);
     }
 
-    public int getSpeedX(){
+    public double getSpeedX(){
         return speedX;
     }
 
-    public int getSpeedY(){
+    public double getSpeedY(){
         return speedY;
     }
 

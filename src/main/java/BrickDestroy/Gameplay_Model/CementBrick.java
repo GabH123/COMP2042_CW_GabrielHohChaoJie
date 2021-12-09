@@ -51,13 +51,6 @@ public class CementBrick extends Brick {
         return brickFace;
     }
 
-    /*private void updateBrick(){
-        if(!super.isBroken()){
-            //Path gp = crack.draw();
-            //gp.append(super.getBrickFace(),false);
-            //brickFace = gp;
-        }
-    }*/
 
     public void repair(){
         super.repair();

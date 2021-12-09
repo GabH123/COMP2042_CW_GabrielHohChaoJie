@@ -10,6 +10,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Point2D;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.Dialog;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
@@ -59,19 +62,18 @@ public class JavaFXGameBoardController {
 
 
 
-
-
     @FXML
     private void initialize(){
-        gameplayController = new GameplayController(gameBoardPane,30,4,6/2,new Point2D(gameBoardPane.getPrefWidth()/2,gameBoardPane.getPrefHeight()-50));
+        gameplayController = new GameplayController(gameBoardPane,30,4,6/2);
         isPaused=true;
         pauseMenuShown=false;
         initialiseTimer();
         drawGameplay();
         initialiseFXML();
-        updateNumberOfBallsText();
+        updateNumberOfBallsText(gameplayController.getBallCount());
         updateScoresFromManager(gameplayController.getHighScoreManager());
         updateInLevelScoreText(gameplayController.getCurrentPlayerScore());
+
 
     }
 
@@ -100,16 +102,17 @@ public class JavaFXGameBoardController {
         timer = new AnimationTimer() {
             @Override
             public void handle(long l) {
+
                 gameplayController.updatePosition();
                 gameplayController.detectBallCollision();
+                updateNumberOfBallsText(gameplayController.getBallCount());
                 updateInLevelScoreText(gameplayController.getCurrentPlayerScore());
                 if (gameplayController.isBallLost()){
                     if(gameplayController.getBallCount()==0){
                         gameFinished();
-                        restart();
                     }
                     lostABall();
-                } else if (gameplayController.numberOfRemainingBricks()<=0){
+                } else if (gameplayController.numberOfRemainingBricks()<=0|| gameplayController.isDebugSkip()){
                     completedALevel();
                     if (!gameplayController.hasLevel()){
                         gameFinished();
@@ -120,7 +123,7 @@ public class JavaFXGameBoardController {
     }
 
     private void lostABall(){
-        updateNumberOfBallsText();
+        updateNumberOfBallsText(gameplayController.getBallCount());
         gameplayController.resetBall();
         pause();
     }
@@ -135,6 +138,7 @@ public class JavaFXGameBoardController {
         highScoreBoard.setVisible(true);
         highScoreBoard.requestFocus();
         updateScoreBoardText(gameplayController.getCurrentPlayerScore());
+        gameplayController.setDebugSkip(false);
     }
 
     private void removeLevelBricksFromGameBoard(){
@@ -192,14 +196,28 @@ public class JavaFXGameBoardController {
                     pauseMessage.setVisible(true);
                     pauseMenuShown=false;
                 }
+                break;
+            case F1:
+                if (/*event.isAltDown()&&event.isShiftDown()*/true) {
+                    pause();
+                    FXMLLoader loadDebugDialog = new FXMLLoader(BrickDestroyMain.class.getClassLoader().getResource("BrickDestroy_DebugConsole.fxml"));
 
+                    Dialog debugDialog = new Dialog();
+                    ButtonType type = new ButtonType("Done", ButtonBar.ButtonData.OK_DONE);
+                    try {
+                        debugDialog.setDialogPane(loadDebugDialog.load());
+                    }catch (IOException e){
+                        e.printStackTrace();
+                    }
+                    DebugDialogController debugDialogController = loadDebugDialog.getController();
+                    debugDialogController.initialiseController(gameplayController);
+                    debugDialog.getDialogPane().getButtonTypes().add(type);
+                    debugDialog.showAndWait();
+                }
+                break;
             default:
                 gameplayController.stopPlayer();
         }
-    }
-
-    @FXML
-    void onKeyTyped(KeyEvent event) {
     }
 
     @FXML
@@ -238,8 +256,8 @@ public class JavaFXGameBoardController {
         }
     }
 
-    private void updateNumberOfBallsText(){
-        displayBallLeft.setText("Balls left: "+gameplayController.getBallCount());
+    private void updateNumberOfBallsText(int numberOfBalls){
+        displayBallLeft.setText("Balls left: "+numberOfBalls);
     }
 
     private void pause(){
@@ -261,7 +279,7 @@ public class JavaFXGameBoardController {
         addLevelBricksToGameBoard();
         pause();
         unpausePauseMenu();
-        updateNumberOfBallsText();
+        updateNumberOfBallsText(gameplayController.getBallCount());
         updateInLevelScoreText(gameplayController.getCurrentPlayerScore());
 
     }
@@ -283,7 +301,7 @@ public class JavaFXGameBoardController {
         }
         EndGameController endGameController = loadEndGameScoreBoard.getController();
         endGameController.initialiseController(gameplayController.getHighScoreManager(), gameplayController.getCurrentPlayerScore());
-        endGameController.highScorePaneSetup();
+        endGameController.setupScorePane();
 
     }
 

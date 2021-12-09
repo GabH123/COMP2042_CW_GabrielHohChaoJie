@@ -23,7 +23,7 @@
          <image>
             <Image url="@BrickDestroy_Level_Background.jpg" />
          </image></ImageView>
-      <Pane fx:id="gameBoardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" onKeyTyped="#onKeyTyped" prefHeight="400.0" prefWidth="600.0" StackPane.alignment="CENTER">
+      <Pane fx:id="gameBoardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" prefHeight="400.0" prefWidth="600.0" StackPane.alignment="CENTER">
          <children>
             <Text fx:id="displayBallLeft" layoutX="14.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balls left:" wrappingWidth="150.4000000000001">
                <font>
@@ -310,11 +310,11 @@
             </Text>
          </children>
       </VBox>
-      <StackPane fx:id="pauseMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#unpause" prefHeight="400.0" prefWidth="600.0" visible="false">
+      <StackPane fx:id="pauseMenu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#unpause" prefHeight="400.0" prefWidth="600.0">
          <children>
             <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="file:/C:/Users/User/Desktop/Year%202/Software%20Maintenance/Coursework/COMP2042_CW_hcygh1/src/main/resources/BrickDestroy_PauseBackground.jpg" />
+                  <Image url="@BrickDestroy_PauseBackground.jpg" />
                </image>
             </ImageView>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">

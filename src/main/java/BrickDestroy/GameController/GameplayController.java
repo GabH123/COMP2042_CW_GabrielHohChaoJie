@@ -51,12 +51,15 @@ public class GameplayController implements Controllable {
     private int currentLevelNumber;
     private int currentPlayerScore;
 
+    private boolean debugSkip;
+
     private Point2D startPoint;
     private int ballCount;
     private boolean ballLost;
 
 
-    public GameplayController(Pane drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point2D ballPos){
+    public GameplayController(Pane drawArea, int brickCount, int lineCount, double brickDimensionRatio){
+        Point2D ballPos = new Point2D(drawArea.getPrefWidth()/2,drawArea.getPrefHeight()-50);
         this.startPoint = new Point2D(ballPos.getX(),ballPos.getY());
 
         highScoreManager = new HighScoreManager("BrickDestroy_HighScore.bin");
@@ -78,7 +81,7 @@ public class GameplayController implements Controllable {
         player = new Player(ballPos,150,10, drawArea);
 
         area = drawArea;
-
+        debugSkip=false;
         nextLevel();
     }
 
@@ -127,16 +130,12 @@ public class GameplayController implements Controllable {
         }
     }
 
-    public int getPlayerScoreNewPosition(){
-        return getHighScoreManager().indexOfNewScore(getCurrentPlayerScore());
-    }
-
     public void stopPlayer(){
         getPlayer().stop();
     }
 
     public boolean hasLevel(){
-        return currentLevelNumber < LevelFactory.TOTAL_NUMBER_OF_LEVELS;
+        return currentLevelNumber <= LevelFactory.TOTAL_NUMBER_OF_LEVELS;
     }
 
     public void resetGame(){
@@ -169,7 +168,7 @@ public class GameplayController implements Controllable {
     }
 
     private boolean ballLostCollision(Ball ball){
-        return getBall().getPosition().getY() > area.getLayoutBounds().getHeight();
+        return ball.getPosition().getY() > area.getLayoutBounds().getHeight();
     }
 
     private int randomiseSpeedX(){
@@ -189,11 +188,11 @@ public class GameplayController implements Controllable {
     }
 
 
-    public void setBallXSpeed(int s){
+    public void setBallXSpeed(double s){
         getBall().setXSpeed(s);
     }
 
-    public void setBallYSpeed(int s){
+    public void setBallYSpeed(double s){
         getBall().setYSpeed(s);
     }
 
@@ -205,14 +204,6 @@ public class GameplayController implements Controllable {
 
     public void resetPlayScore(){
         currentPlayerScore=0;
-    }
-
-    public boolean ballEnd(){
-        return ballCount == 0;
-    }
-
-    public boolean isDone(){
-        return getCurrentLevel().getTotalBricksLeft() == 0;
     }
 
     public int numberOfRemainingBricks(){
@@ -253,5 +244,13 @@ public class GameplayController implements Controllable {
 
     public int getCurrentPlayerScore() {
         return currentPlayerScore;
+    }
+
+    public boolean isDebugSkip() {
+        return debugSkip;
+    }
+
+    public void setDebugSkip(boolean debugSkip) {
+        this.debugSkip = debugSkip;
     }
 }
