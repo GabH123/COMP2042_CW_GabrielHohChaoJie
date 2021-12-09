@@ -1,11 +1,11 @@
-package BrickDestroy.BrickDestroy_Model_JavaFX;
+package BrickDestroy.Gameplay_Model;
 
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
 
 public interface Playable {
 
-    boolean detectBallPlayerCollision(Ball b);
+    boolean ballPlayerCollision(Ball b);
     void move();
     void moveLeft();
     void moveRight();

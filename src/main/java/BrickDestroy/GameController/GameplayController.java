@@ -15,21 +15,13 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package BrickDestroy.GameController_JavaFX;
+package BrickDestroy.GameController;
 
-import BrickDestroy.BrickDestroy_Model_JavaFX.*;
-import javafx.scene.Group;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
+import BrickDestroy.Gameplay_Model.*;
 
-import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.paint.*;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Shape;
 
 import java.util.Random;
 
@@ -96,12 +88,12 @@ public class GameplayController implements Controllable {
     }
 
     public void detectBallCollision(){
-        getPlayer().detectBallPlayerCollision(getBall());
-        currentPlayerScore+=getCurrentLevel().detectBallBrickCollision(getBall());
-        detectBallBorderCollision(getBall());
-        detectBallRoofCollision(getBall());
+        getPlayer().ballPlayerCollision(getBall());
+        currentPlayerScore+=getCurrentLevel().ballBrickCollision(getBall());
+        ballBorderCollision(getBall());
+        ballRoofCollision(getBall());
 
-         if(detectBallLostCollision(getBall())){
+         if(ballLostCollision(getBall())){
             ballCount--;
             ballLost = true;
         }
@@ -160,7 +152,7 @@ public class GameplayController implements Controllable {
         ball = new RubberBall(ballPos);
     }
 
-    private boolean detectBallRoofCollision(Ball ball){
+    private boolean ballRoofCollision(Ball ball){
         if (getBall().getPosition().getY() <= 0){
             ball.reverseY();
             return true;
@@ -168,7 +160,7 @@ public class GameplayController implements Controllable {
         return false;
     }
 
-    private boolean detectBallBorderCollision(Ball ball){
+    private boolean ballBorderCollision(Ball ball){
         if (ball.getLeft().getX() <= 0 ||(ball.getRight().getX() > (area.getLayoutBounds().getWidth()))) {
             ball.reverseX();
             return true;
@@ -176,7 +168,7 @@ public class GameplayController implements Controllable {
         return false;
     }
 
-    private boolean detectBallLostCollision(Ball ball){
+    private boolean ballLostCollision(Ball ball){
         return getBall().getPosition().getY() > area.getLayoutBounds().getHeight();
     }
 
@@ -220,11 +212,11 @@ public class GameplayController implements Controllable {
     }
 
     public boolean isDone(){
-        return getCurrentLevel().getNumberOfBricksLeft() == 0;
+        return getCurrentLevel().getTotalBricksLeft() == 0;
     }
 
     public int numberOfRemainingBricks(){
-        return getCurrentLevel().getNumberOfBricksLeft();
+        return getCurrentLevel().getTotalBricksLeft();
     }
 
     public int getBallCount(){

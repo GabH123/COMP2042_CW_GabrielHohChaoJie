@@ -1,6 +1,4 @@
-package BrickDestroy.BrickDestroy_Model_JavaFX;
-
-import java.io.IOException;
+package BrickDestroy.Gameplay_Model;
 
 public interface Manager {
     void loadFromFile() ;

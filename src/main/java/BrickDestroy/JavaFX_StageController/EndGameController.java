@@ -1,6 +1,6 @@
 package BrickDestroy.JavaFX_StageController;
 
-import BrickDestroy.BrickDestroy_Model_JavaFX.HighScoreManager;
+import BrickDestroy.Gameplay_Model.HighScoreManager;
 import BrickDestroy.JavaFX_View.BrickDestroyMain;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,6 +46,7 @@ public class EndGameController {
         this.playerNewScore=playerNewScore;
         newName = new TextField();
         newName.setFont(newHighScore.getFont());
+        newName.getStylesheets().add("TextField_Transparent.css");
     }
 
     public void highScorePaneSetup(){
@@ -55,7 +56,6 @@ public class EndGameController {
         Node nodeToRemove = new TextField();
 
         highScoreManager.addRecord("",playerNewScore);
-        highScoreManager.printList();
         for (Node n: scorePane.getChildren()) {
 
             Integer rowIndex=GridPane.getRowIndex(n);
@@ -66,22 +66,17 @@ public class EndGameController {
             if (columnIndex==null)
                 columnIndex=0;
 
-            System.out.println("Index: "+columnIndex+" "+rowIndex);
             if ((rowIndex-1)>=highScoreManager.getHighScores().size()||0>(rowIndex-1))
                 continue;
             if (((rowIndex-1)==indexOfNewRecord)&&(columnIndex==1)){
                 nodeToRemove = n;
-                System.out.println("Test");
-                //scorePane.add(newName,columnIndex,rowIndex,1,1);
             }
             else if (columnIndex==1){
                 rowName = (Text) n;
-                 System.out.println("Name: "+ highScoreManager.getHighScores().get(rowIndex-1).getName());
                 rowName.setText(highScoreManager.getHighScores().get(rowIndex-1).getName());
             }
             else if (columnIndex==2){
                 rowScore = (Text) n;
-                System.out.println("Score: "+ highScoreManager.getHighScores().get(rowIndex-1).getScore());
                 rowScore.setText(Integer.toString(highScoreManager.getHighScores().get(rowIndex-1).getScore()));
             }
 

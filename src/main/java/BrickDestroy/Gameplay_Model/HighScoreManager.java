@@ -1,4 +1,4 @@
-package BrickDestroy.BrickDestroy_Model_JavaFX;
+package BrickDestroy.Gameplay_Model;
 
 import java.io.*;
 import java.util.LinkedList;
@@ -26,9 +26,11 @@ public class HighScoreManager implements Manager{
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+            System.err.println("Error while loading data from file!");
             createFileIfNotCreated(highScoreFile);
 
         } catch (IOException e) {
+            System.err.println("Error while finding file!");
             e.printStackTrace();
         }
     }

@@ -1,8 +1,8 @@
 package BrickDestroy.JavaFX_StageController;
 
-import BrickDestroy.BrickDestroy_Model_JavaFX.Brick;
-import BrickDestroy.BrickDestroy_Model_JavaFX.HighScoreManager;
-import BrickDestroy.GameController_JavaFX.GameplayController;
+import BrickDestroy.Gameplay_Model.Brick;
+import BrickDestroy.Gameplay_Model.HighScoreManager;
+import BrickDestroy.GameController.GameplayController;
 import BrickDestroy.JavaFX_View.BrickDestroyMain;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;

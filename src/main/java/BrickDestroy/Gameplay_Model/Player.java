@@ -15,11 +15,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package BrickDestroy.BrickDestroy_Model_JavaFX;
+package BrickDestroy.Gameplay_Model;
 
 import javafx.geometry.Point2D;
-import javafx.scene.Group;
-import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
@@ -55,7 +53,7 @@ public class Player implements Playable {
 
 
 
-    public boolean detectBallPlayerCollision(Ball ballJavaFX){
+    public boolean ballPlayerCollision(Ball ballJavaFX){
         if (playerFace.contains(ballJavaFX.getPosition())) {
             ballJavaFX.reverseY();
             return true;

@@ -1,4 +1,4 @@
-package BrickDestroy.BrickDestroy_Model_JavaFX;
+package BrickDestroy.Gameplay_Model;
 
 import javafx.geometry.Point2D;
 import javafx.scene.shape.*;

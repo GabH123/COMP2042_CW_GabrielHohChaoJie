@@ -1,4 +1,4 @@
-package BrickDestroy.GameController_JavaFX;
+package BrickDestroy.GameController;
 
 
 import javafx.scene.input.KeyEvent;
