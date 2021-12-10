@@ -9,9 +9,7 @@ class HighScoreManagerTest {
     @Test
     void loadFromFile() {
         test.loadFromFile();
-        //LinkedList<ScoreRecord> highScores = test.getHighScores();
-        System.out.println(test.getHighScores());
-        assertEquals(test.getHighScores().size(),1);
+        assertEquals(test.getHighScores().size(),8);
     }
 
     @Test
@@ -34,6 +32,7 @@ class HighScoreManagerTest {
         test.addRecord("THOMAS",800);
         test.addRecord("JACK",1000);
 
+
         System.out.println(test.getHighScores());
         test.saveToFile();
         assertEquals(test.getHighScores().size(),7);
@@ -43,6 +42,6 @@ class HighScoreManagerTest {
     void indexOfNewScore(){
         test.loadFromFile();
         test.printList();
-        //assertEquals(test.indexOfNewScore(150),5);
+        assertEquals(test.indexOfNewScore(150),6);
     }
 }

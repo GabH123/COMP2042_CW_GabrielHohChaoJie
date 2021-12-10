@@ -1,5 +1,6 @@
 package BrickDestroy.Gameplay_Model;
 
+import BrickDestroy.Gameplay_Model.Ball.Ball;
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
 
@@ -11,5 +12,4 @@ public interface Playable {
     void moveRight();
     void stop();
     void moveTo(Point2D p);
-    void playerDrawInfo(GraphicsContext gc);
 }

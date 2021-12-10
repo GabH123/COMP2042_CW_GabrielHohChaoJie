@@ -1,5 +1,9 @@
 package BrickDestroy.Gameplay_Model;
 
+import BrickDestroy.Gameplay_Model.Ball.Ball;
+import BrickDestroy.Gameplay_Model.Brick.Brick;
+import BrickDestroy.Gameplay_Model.Brick.Crack;
+
 import static BrickDestroy.GameController.GameplayController.*;
 
 public class Level implements Buildable{

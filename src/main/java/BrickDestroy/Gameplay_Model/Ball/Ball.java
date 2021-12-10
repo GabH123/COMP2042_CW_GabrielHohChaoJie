@@ -1,4 +1,4 @@
-package BrickDestroy.Gameplay_Model;
+package BrickDestroy.Gameplay_Model.Ball;
 
 
 import javafx.geometry.*;

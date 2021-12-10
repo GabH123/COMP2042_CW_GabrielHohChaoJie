@@ -1,5 +1,9 @@
 package BrickDestroy.Gameplay_Model;
 
+import BrickDestroy.Gameplay_Model.Brick.Brick;
+import BrickDestroy.Gameplay_Model.Brick.CementBrick;
+import BrickDestroy.Gameplay_Model.Brick.ClayBrick;
+import BrickDestroy.Gameplay_Model.Brick.SteelBrick;
 import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
@@ -54,7 +58,7 @@ public class LevelFactory {
         }
     }
 
-    public Level makeLevel(int typeA, int typeB) {
+    private Level makeLevel(int typeA, int typeB) {
         return new Level(makeChessboardLevel(getDrawArea(),getBrickCount(),getLineCount(),getBrickDimensionRatio(),typeA,typeB));
     }
 

@@ -15,7 +15,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package BrickDestroy.Gameplay_Model;
+package BrickDestroy.Gameplay_Model.Ball;
 
 import javafx.geometry.Point2D;
 import javafx.scene.paint.*;

@@ -1,4 +1,5 @@
-package BrickDestroy.Gameplay_Model;
+package BrickDestroy.Gameplay_Model.Brick;
+
 
 import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
@@ -12,7 +13,7 @@ class CementBrickTest {
 
     @Test
     void setImpact1() {
-        assertEquals(cementBrick.setImpact(new Point2D(0,0),Crack.LEFT),0);
+        assertEquals(cementBrick.setImpact(new Point2D(0,0), Crack.LEFT),0);
         assertEquals(cementBrick.setImpact(new Point2D(0,0),Crack.LEFT),70);
         assertEquals(cementBrick.setImpact(new Point2D(0,0),Crack.LEFT),0);
     }

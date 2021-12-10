@@ -17,6 +17,7 @@
  */
 package BrickDestroy.Gameplay_Model;
 
+import BrickDestroy.Gameplay_Model.Ball.Ball;
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
@@ -53,9 +54,9 @@ public class Player implements Playable {
 
 
 
-    public boolean ballPlayerCollision(Ball ballJavaFX){
-        if (playerFace.contains(ballJavaFX.getPosition())) {
-            ballJavaFX.reverseY();
+    public boolean ballPlayerCollision(Ball ball){
+        if (playerFace.contains(ball.getPosition())) {
+            ball.reverseY();
             return true;
         }
         return false;
@@ -103,16 +104,4 @@ public class Player implements Playable {
         playerFace.setStrokeWidth(1.0f);
     }
 
-    public void print(){
-        System.out.println(playerFace.getX()+" "+playerFace.getY());
-    }
-
-    public void playerDrawInfo(GraphicsContext gc){
-        gc.setFill(INNER_COLOR);
-        gc.fillRect(playerFace.getX(),playerFace.getY(),playerFace.getWidth(),playerFace.getHeight());
-
-        gc.setStroke(BORDER_COLOR);
-        gc.setLineWidth(1);
-        gc.strokeRect(playerFace.getX(),playerFace.getY(),playerFace.getWidth(),playerFace.getHeight());
-    }
 }

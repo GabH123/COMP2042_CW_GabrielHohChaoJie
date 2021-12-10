@@ -19,6 +19,8 @@ package BrickDestroy.GameController;
 
 import BrickDestroy.Gameplay_Model.*;
 
+import BrickDestroy.Gameplay_Model.Ball.Ball;
+import BrickDestroy.Gameplay_Model.Ball.RubberBall;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;

@@ -1,6 +1,6 @@
 package BrickDestroy.JavaFX_SceneController;
 
-import BrickDestroy.Gameplay_Model.Brick;
+import BrickDestroy.Gameplay_Model.Brick.Brick;
 import BrickDestroy.Gameplay_Model.HighScoreManager;
 import BrickDestroy.GameController.GameplayController;
 import BrickDestroy.JavaFX_View.BrickDestroyMain;
@@ -63,7 +63,7 @@ public class JavaFXGameBoardController {
 
     @FXML
     private void initialize(){
-        gameplayController = new GameplayController(gameBoardPane,30,4,6/2);
+        gameplayController = new GameplayController(gameBoardPane,30,3,6/2);
         isPaused=true;
         pauseMenuShown=false;
         initialiseTimer();
