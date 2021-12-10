@@ -159,6 +159,7 @@ public class GameplayController implements Controllable {
     private boolean ballBorderCollision(Ball ball){
         if (ball.getLeft().getX() <= 0 ||(ball.getRight().getX() > (area.getLayoutBounds().getWidth()))) {
             ball.reverseX();
+
             return true;
         }
         return false;

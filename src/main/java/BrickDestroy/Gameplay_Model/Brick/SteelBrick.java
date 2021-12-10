@@ -65,7 +65,7 @@ public class SteelBrick extends Brick {
         return  super.isBroken()?STEEL_BRICK_SCORE_WORTH:0;
     }
 
-    public void impact(){
+    protected void impact(){
 
         if((rnd.nextDouble()) < STEEL_PROBABILITY){
 

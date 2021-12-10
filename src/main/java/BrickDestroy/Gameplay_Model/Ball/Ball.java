@@ -11,6 +11,8 @@ import javafx.scene.shape.*;
  */
 abstract public class Ball {
 
+    private static final double BORDER_STROKE_WIDTH=1.0;
+
     private Shape ballFace;
 
     private Point2D center;
@@ -71,6 +73,7 @@ abstract public class Ball {
         speedY *= -1;
     }
 
+
     public Color getBorderColor(){
         return border;
     }
@@ -93,13 +96,12 @@ abstract public class Ball {
         ballFace.setTranslateY(0);
 
         setPoints(ballFace.getLayoutBounds().getWidth()/2,ballFace.getLayoutBounds().getHeight()/2);
-        //System.out.println("Resetting: "+p);
     }
 
     private void initialiseBall(Shape ballFace){
-        ballFace.setFill(inner);
-        ballFace.setStroke(border);
-        ballFace.setStrokeWidth(1.0);
+        ballFace.setFill(getInnerColor());
+        ballFace.setStroke(getBorderColor());
+        ballFace.setStrokeWidth(BORDER_STROKE_WIDTH);
     }
 
     private void setPoints(double width,double height){

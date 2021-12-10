@@ -19,7 +19,6 @@ package BrickDestroy.Gameplay_Model;
 
 import BrickDestroy.Gameplay_Model.Ball.Ball;
 import javafx.geometry.Point2D;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.*;
 import javafx.scene.shape.Rectangle;
@@ -83,7 +82,7 @@ public class Player implements Playable {
         moveAmount = 0;
     }
 
-    public Shape getPlayerFace(){
+    public Rectangle getPlayerFace(){
         return  playerFace;
     }
 

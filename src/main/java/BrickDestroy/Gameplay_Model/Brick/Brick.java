@@ -66,7 +66,7 @@ abstract public class Brick {
     }
 
 
-    public void impact() {
+    protected void impact() {
         strength--;
         broken = (strength <= 0);
         if (broken) {
