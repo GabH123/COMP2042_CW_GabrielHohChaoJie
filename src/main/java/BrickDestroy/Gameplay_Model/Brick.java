@@ -11,7 +11,6 @@ import javafx.scene.shape.Shape;
  */
 abstract public class Brick {
 
-    public static final int MIN_CRACK = 1;
     public static final int DEF_CRACK_DEPTH = 1;
     public static final int DEF_STEPS = 35;
     private final int NORMAL_BRICK_SCORE_WORTH = 50;
@@ -61,26 +60,15 @@ abstract public class Brick {
     public Crack getCrack() {
         return crack;
     }
-    public Color getBorderColor() {
-        return border;
-    }
-
-    public Color getInnerColor() {
-        return inner;
-    }
 
     public final boolean isBroken() {
         return broken;
     }
 
-    public void repair() {
-        broken = false;
-        strength = fullStrength;
-    }
 
     public void impact() {
         strength--;
-        broken = (strength == 0);
+        broken = (strength <= 0);
         if (broken) {
             getBrickFace().setVisible(false);
             getCrack().getCrackPath().setVisible(false);

@@ -110,11 +110,6 @@ public class GameplayController implements Controllable {
         ballLost = false;
     }
 
-    public void resetLevel(){
-        getCurrentLevel().resetBricks();
-        ballCount = 3;
-    }
-
     public void nextLevel(){
         currentLevel = getLevelMaker().getThisLevel(currentLevelNumber++);
     }

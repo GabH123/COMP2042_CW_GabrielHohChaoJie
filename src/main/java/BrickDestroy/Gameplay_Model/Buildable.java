@@ -5,8 +5,6 @@ package BrickDestroy.Gameplay_Model;
  *
  */
 public interface Buildable {
-    void resetBricks();
     int ballBrickCollision(Ball ball);
     int getTotalBricksLeft();
-
 }

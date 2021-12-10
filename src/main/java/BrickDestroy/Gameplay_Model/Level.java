@@ -10,11 +10,6 @@ public class Level implements Buildable{
         this.bricks = bricks;
     }
 
-    public void resetBricks(){
-        for(Brick b : getBricks())
-            b.repair();
-    }
-
     public int ballBrickCollision(Ball ball){
         for(Brick b : getBricks()){
             switch(findImpact(b, ball)) {

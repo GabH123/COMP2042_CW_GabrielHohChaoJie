@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <DialogPane prefHeight="83.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BrickDestroy.JavaFX_SceneController.DebugDialogController">
    <content>
       <AnchorPane prefHeight="185.0" prefWidth="354.0">

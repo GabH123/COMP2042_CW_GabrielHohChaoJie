@@ -34,14 +34,6 @@ public class Crack {
     }
 
 
-    public Path draw() {
-        return crack;
-    }
-
-    public void reset() {
-        crack = new Path();
-    }
-
     protected void makeCrack(Point2D point, int direction, Rectangle brickFace) {
         Rectangle bounds = brickFace;
 
@@ -80,7 +72,7 @@ public class Crack {
         }
     }
 
-    protected void makeCrack(Point2D start, Point2D end) {
+    private void makeCrack(Point2D start, Point2D end) {
 
         Path path = crack;
 
@@ -94,21 +86,32 @@ public class Crack {
         int jump = bound * 5;
 
         double x, y;
-        //System.out.println("Start: "+start.getX()+" "+start.getY());
         for (int i = 1; i < steps; i++) {
 
             x = (i * w) + start.getX();
             y = (i * h) + start.getY() + randomInBounds(bound);
-            //System.out.println(" X: "+x+" Y: "+y);
 
             if (inMiddle(i, CRACK_SECTIONS, steps))
                 y += jumps(jump, JUMP_PROBABILITY);
 
+            y=checkIfOutOfBrickBound(y,start,end);
             path.getElements().add(new LineTo(x, y));
 
         }
-        //System.out.println(" EndX: "+end.getX()+" "+end.getY());
         path.getElements().add(new LineTo(end.getX(), end.getY()));
+    }
+
+    private double checkIfOutOfBrickBound(double y,Point2D start, Point2D end){
+        if ( ( start.getY()<=y && y<=end.getY() ) || ( start.getY()>=y && y>=end.getY() ) )
+            return y;
+        else{
+            double yStartDifference = start.getY() - y;
+            double yEndDifference = end.getY() - y;
+            if (Math.abs(yStartDifference)<Math.abs(yEndDifference))
+                return start.getY();
+            else return end.getY();
+        }
+
     }
 
     private int randomInBounds(int bound) {
