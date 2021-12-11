@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dbe3fb-f09e-4204-adc6-739691bea208" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Ball/RubberBallTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrickDestroy_HighScore.bin" beforeDir="false" afterPath="$PROJECT_DIR$/BrickDestroy_HighScore.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/GameplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/GameplayController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Brick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/SteelBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/SteelBrick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/JavaFXGameBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/JavaFXGameBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/SteelBrickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/SteelBrickTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Ball/RubberBallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Ball/RubberBallTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/GameController/GameplayController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/GameController/GameplayController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/GameController/GameplayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/GameController/GameplayController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Level.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Player.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -193,9 +190,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RubberBallTest.moveTo" />
         <item itemvalue="JUnit.JavaFXGameBoardControllerTest" />
         <item itemvalue="JUnit.RubberBallTest" />
-        <item itemvalue="JUnit.RubberBallTest.moveTo" />
         <item itemvalue="JUnit.RubberBallTest.move" />
         <item itemvalue="JUnit.SteelBrickTest.setImpact" />
       </list>
@@ -343,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639133619181</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added tests for SteelBrick and RubberBall.">
+      <created>1639153414231</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1639153414231</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -388,7 +392,8 @@
     <MESSAGE value="Renamed JavaFX_StageController to JavaFX_SceneController" />
     <MESSAGE value="Included Test files." />
     <MESSAGE value="Added unit tests for ScoreRecord, Player, Level, LevelFactory, HighScoreManager." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added unit tests for ScoreRecord, Player, Level, LevelFactory, HighScoreManager." />
+    <MESSAGE value="Added tests for SteelBrick and RubberBall." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests for SteelBrick and RubberBall." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

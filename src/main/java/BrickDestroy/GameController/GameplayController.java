@@ -77,8 +77,7 @@ public class GameplayController implements Controllable {
 
         makeBall(ballPos);
 
-
-        getBall().setSpeed(randomiseSpeedX(),randomiseSpeedY());
+        getBall().setBallAngle();
 
         player = new Player(ballPos,150,10, drawArea);
 
@@ -108,7 +107,7 @@ public class GameplayController implements Controllable {
         getPlayer().moveTo(startPoint);
         getBall().moveTo(startPoint);
 
-        getBall().setSpeed(randomiseSpeedX(),randomiseSpeedY());
+        getBall().setBallAngle();
         ballLost = false;
     }
 
@@ -169,21 +168,6 @@ public class GameplayController implements Controllable {
         return ball.getPosition().getY() > area.getLayoutBounds().getHeight();
     }
 
-    private int randomiseSpeedX(){
-        int speedX;
-        do{
-            speedX = getRnd().nextInt(8)-4;
-        }while(speedX == 0);
-        return speedX;
-    }
-
-    private int randomiseSpeedY(){
-        int speedY;
-        do{
-            speedY = -getRnd().nextInt(3)-5;
-        }while(speedY == 0);
-        return speedY;
-    }
 
 
     public void setBallXSpeed(double s){

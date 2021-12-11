@@ -41,7 +41,6 @@ public class Player implements Playable {
 
 
     public Player(Point2D ballPoint, double width, double height, Pane container) {
-
         this.ballPoint = ballPoint;
         moveAmount = 0;
         playerFace = makeRectangle(width, height);
@@ -56,6 +55,11 @@ public class Player implements Playable {
     public boolean ballPlayerCollision(Ball ball){
         if (playerFace.contains(ball.getPosition())) {
             ball.reverseY();
+            double yDifference = ball.getPosition().getY()-playerFace.getY();
+            Point2D correctedPoint2D = new Point2D(ball.getPosition().getX(), playerFace.getY()-yDifference);
+            ball.moveTo(correctedPoint2D);
+            ball.calculateDeviation(playerFace.getX(), getPlayerFace().getWidth());
+
             return true;
         }
         return false;

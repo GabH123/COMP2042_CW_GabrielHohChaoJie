@@ -5,6 +5,8 @@ import javafx.geometry.*;
 import javafx.scene.paint.*;
 import javafx.scene.shape.*;
 
+import java.util.Random;
+
 /**
  * Created by filippo on 04/09/16.
  *
@@ -12,6 +14,8 @@ import javafx.scene.shape.*;
 abstract public class Ball {
 
     private static final double BORDER_STROKE_WIDTH=1.0;
+    private static final double ANGLE_DEVIATION_CHANGE_FACTOR=20;
+    private static final double BALL_SPEED = 6;
 
     private Shape ballFace;
 
@@ -52,9 +56,12 @@ abstract public class Ball {
 
     }
 
-    public void setSpeed(int x,int y){
-        speedX = x;
-        speedY = y;
+    public void setBallAngle(){
+        Random rnd = new Random();
+        double ballAngle = rnd.nextDouble(80)+50;
+
+        setXSpeed(Math.cos(Math.toRadians(ballAngle))*BALL_SPEED);
+        setYSpeed(-1*Math.sin(Math.toRadians(ballAngle))*BALL_SPEED);
     }
 
     public void setXSpeed(double s){
@@ -71,6 +78,35 @@ abstract public class Ball {
 
     public void reverseY(){
         speedY *= -1;
+    }
+
+    public void calculateDeviation(double playerX, double playerWidth){
+        double midpointX = playerX + playerWidth/2;
+        double distanceBetweenMidAndBallHit = ( getPosition().getX()-midpointX);
+        double actualDeviationPercentage = distanceBetweenMidAndBallHit * ANGLE_DEVIATION_CHANGE_FACTOR/(playerWidth/2);
+        System.out.println(actualDeviationPercentage);
+        if (actualDeviationPercentage>0){
+            Point2D rootVector = new Point2D(1,0);
+            double angleRelativeToX = rootVector.angle(getSpeedX(),getSpeedY());
+            System.out.println("Angle before: "+angleRelativeToX);
+            double newAngle = angleRelativeToX - angleRelativeToX*actualDeviationPercentage/100;
+            System.out.println("Angle after: "+newAngle);
+            setXSpeed(Math.cos(Math.toRadians(newAngle))*BALL_SPEED);
+            setYSpeed(-Math.sin(Math.toRadians(newAngle))*BALL_SPEED);
+        }
+        else {
+            Point2D rootVector = new Point2D(1,0);
+            double angleRelativeToX = rootVector.angle(getSpeedX(),getSpeedY());
+
+            angleRelativeToX = 180 - angleRelativeToX;
+            System.out.println("Angle before: "+angleRelativeToX);
+            double newAngle = angleRelativeToX + angleRelativeToX*actualDeviationPercentage/100;
+            System.out.println("Angle after: "+newAngle);
+            newAngle = 180 - newAngle;
+
+            setXSpeed(Math.cos(Math.toRadians(newAngle))*BALL_SPEED);
+            setYSpeed(-Math.sin(Math.toRadians(newAngle))*BALL_SPEED);
+        }
     }
 
 
@@ -95,6 +131,8 @@ abstract public class Ball {
         ballFace.setTranslateX(0);
         ballFace.setTranslateY(0);
 
+        ballFace.setTranslateX(p.getX()-ballFace.getBoundsInParent().getCenterX());
+        ballFace.setTranslateY(p.getY()-ballFace.getBoundsInParent().getCenterY());
         setPoints(ballFace.getLayoutBounds().getWidth()/2,ballFace.getLayoutBounds().getHeight()/2);
     }
 
