@@ -123,7 +123,7 @@ public class JavaFXGameBoardController {
 
     private void lostABall(){
         updateNumberOfBallsText(gameplayController.getBallCount());
-        gameplayController.resetBall();
+        gameplayController.resetBallPlayer();
         pause();
     }
 
@@ -131,7 +131,7 @@ public class JavaFXGameBoardController {
         removeLevelBricksFromGameBoard();
         gameplayController.nextLevel();
         addLevelBricksToGameBoard();
-        gameplayController.resetBall();
+        gameplayController.resetBallPlayer();
         pause();
         gameBoardPane.setVisible(false);
         highScoreBoard.setVisible(true);

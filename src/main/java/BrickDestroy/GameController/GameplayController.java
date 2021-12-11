@@ -28,9 +28,8 @@ import javafx.scene.layout.Pane;
 import java.util.Random;
 
 
-/**
- * GameplayController is used to store the current logical state of the game in-game.
- *
+/**GameplayController is used to control the interactions between the objects in model.
+ *It has the methods to decide how the objects in model behave based on other objects.
  */
 
 public class GameplayController implements Controllable {
@@ -103,7 +102,7 @@ public class GameplayController implements Controllable {
         }
     }
 
-    public void resetBall(){
+    public void resetBallPlayer(){
         getPlayer().moveTo(startPoint);
         getBall().moveTo(startPoint);
 
@@ -130,12 +129,8 @@ public class GameplayController implements Controllable {
         getPlayer().stop();
     }
 
-    public boolean hasLevel(){
-        return currentLevelNumber <= LevelFactory.TOTAL_NUMBER_OF_LEVELS;
-    }
-
     public void resetGame(){
-        resetBall();
+        resetBallPlayer();
         resetBallCount();
         currentLevelNumber=0;
         nextLevel();
@@ -178,7 +173,9 @@ public class GameplayController implements Controllable {
         getBall().setYSpeed(s);
     }
 
-
+    public boolean hasLevel(){
+        return currentLevelNumber <= LevelFactory.TOTAL_NUMBER_OF_LEVELS;
+    }
 
     public void resetBallCount(){
         ballCount = 3;

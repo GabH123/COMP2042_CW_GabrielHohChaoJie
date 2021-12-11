@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dbe3fb-f09e-4204-adc6-739691bea208" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BrickDestroy_HighScore.bin" beforeDir="false" afterPath="$PROJECT_DIR$/BrickDestroy_HighScore.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/Controllable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/Controllable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/GameplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/GameplayController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Ball/RubberBallTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Ball/RubberBallTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/GameController/GameplayController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/GameController/GameplayController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/GameController/GameplayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/GameController/GameplayController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/RubberBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/RubberBall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/JavaFXGameBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/JavaFXGameBoardController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639153414231</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Mechanic changed: instead of a random speed X and Y,Ball has been set up so that it will always have the same speed set in code. &#10;Tactical deflecting with Player can be done now (i.e. player can use the sides of Player to change the path of the ball by a certain amount decided with the Ball.ANGLE_DEVIATION_CHANGE_FACTOR)">
+      <created>1639217443838</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1639217443838</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -393,7 +401,8 @@
     <MESSAGE value="Included Test files." />
     <MESSAGE value="Added unit tests for ScoreRecord, Player, Level, LevelFactory, HighScoreManager." />
     <MESSAGE value="Added tests for SteelBrick and RubberBall." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tests for SteelBrick and RubberBall." />
+    <MESSAGE value="Mechanic changed: instead of a random speed X and Y,Ball has been set up so that it will always have the same speed set in code. &#10;Tactical deflecting with Player can be done now (i.e. player can use the sides of Player to change the path of the ball by a certain amount decided with the Ball.ANGLE_DEVIATION_CHANGE_FACTOR)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mechanic changed: instead of a random speed X and Y,Ball has been set up so that it will always have the same speed set in code. &#10;Tactical deflecting with Player can be done now (i.e. player can use the sides of Player to change the path of the ball by a certain amount decided with the Ball.ANGLE_DEVIATION_CHANGE_FACTOR)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
