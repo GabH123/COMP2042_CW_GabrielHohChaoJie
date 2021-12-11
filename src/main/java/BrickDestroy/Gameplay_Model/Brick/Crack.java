@@ -7,6 +7,15 @@ import java.util.Random;
 
 public class Crack {
 
+    /**Defines the depth of the crack when making a crack object
+     *
+     */
+    public static final int DEF_CRACK_DEPTH = 1;
+    /**Defines the number of s
+     *
+     */
+    public static final int DEF_STEPS = 35;
+
     private static final int CRACK_SECTIONS = 3;
     private static final double JUMP_PROBABILITY = 0.7;
 
@@ -25,11 +34,11 @@ public class Crack {
     private int steps;
 
 
-    public Crack(int crackDepth, int steps) {
+    public Crack() {
         rnd=new Random();
         crack = new Path();
-        this.crackDepth = crackDepth;
-        this.steps = steps;
+        this.crackDepth = DEF_CRACK_DEPTH;
+        this.steps = DEF_STEPS;
 
     }
 

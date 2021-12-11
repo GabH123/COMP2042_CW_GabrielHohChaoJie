@@ -6,16 +6,17 @@ import javafx.scene.paint.*;
 import javafx.scene.shape.Shape;
 
 
-/**
- * Created by filippo on 04/09/16.
+/**A Brick represent a brick that can be broken by the ball in the game.
+ *
  */
 abstract public class Brick {
 
-    public static final int DEF_CRACK_DEPTH = 1;
-    public static final int DEF_STEPS = 35;
-    private final int NORMAL_BRICK_SCORE_WORTH = 50;
+    /**Defines the default score worth of the brick.
+     *
+     */
+    private final int DEFAULT_BRICK_SCORE_WORTH = 50;
 
-    private String name;
+    private final String name;
     private Shape brickFace;
 
     protected Crack crack;
@@ -36,7 +37,7 @@ abstract public class Brick {
         this.border = border;
         this.inner = inner;
         this.fullStrength = this.strength = strength;
-        crack = new Crack(DEF_CRACK_DEPTH,DEF_STEPS);
+        crack = new Crack();
     }
 
     protected abstract Shape makeBrickFace(Point2D pos, Dimension2D size);
@@ -52,7 +53,7 @@ abstract public class Brick {
         if (broken)
             return 0;
         impact();
-        return NORMAL_BRICK_SCORE_WORTH;
+        return DEFAULT_BRICK_SCORE_WORTH;
     }
 
     public abstract Shape getBrick();

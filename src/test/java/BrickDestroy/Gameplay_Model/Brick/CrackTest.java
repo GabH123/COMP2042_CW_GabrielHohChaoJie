@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CrackTest {
-    Crack crack = new Crack(1,35);
+    Crack crack = new Crack();
     @Test
     void makeCrack1() {
         crack.makeCrack(new Point2D(50,0),Crack.UP,new Rectangle(0,0,100,20));

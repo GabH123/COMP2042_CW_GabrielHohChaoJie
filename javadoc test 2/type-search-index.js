@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"BrickDestroy.Gameplay_Model.Ball","l":"Ball"}];updateSearchResults();

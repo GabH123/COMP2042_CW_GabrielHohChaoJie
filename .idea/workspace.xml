@@ -8,13 +8,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dbe3fb-f09e-4204-adc6-739691bea208" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/BrickDestroy/Gameplay_Model/Ball/Ball.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/BrickDestroy/Gameplay_Model/Ball/package-summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/BrickDestroy/Gameplay_Model/Ball/package-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/allclasses-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/allpackages-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/constant-values.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/element-list" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/help-doc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-10.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-11.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/jquery-ui.overrides.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/legal/COPYRIGHT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/legal/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/legal/jquery.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/legal/jqueryUI.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/member-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/module-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/overview-tree.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/package-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/resources/glass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/resources/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_glass_65_dadada_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_glass_75_dadada_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-icons_222222_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-icons_2e83ff_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-icons_454545_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-icons_888888_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-icons_cd0a0a_256x240.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/jquery-3.5.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/jquery-ui.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/jquery-ui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/jquery-ui.structure.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/tag-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javadoc test 2/type-search-index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/Controllable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/Controllable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/GameplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/GameplayController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/RubberBall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/RubberBall.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/JavaFXGameBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/JavaFXGameBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Brick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Crack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Crack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/CrackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/CrackTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +89,15 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="21i88BieSUknvqJCrBxpUIsixJo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -355,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639217443838</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Creating javadoc for the game...">
+      <created>1639227535267</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1639227535267</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -381,6 +441,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Finish setting up JavaFX with Maven." />
     <MESSAGE value="Implemented switching between Info and Home menu." />
     <MESSAGE value="Copied the Model classes into a new package in order to modify them to be suitable with JavaFX." />
@@ -402,7 +463,8 @@
     <MESSAGE value="Added unit tests for ScoreRecord, Player, Level, LevelFactory, HighScoreManager." />
     <MESSAGE value="Added tests for SteelBrick and RubberBall." />
     <MESSAGE value="Mechanic changed: instead of a random speed X and Y,Ball has been set up so that it will always have the same speed set in code. &#10;Tactical deflecting with Player can be done now (i.e. player can use the sides of Player to change the path of the ball by a certain amount decided with the Ball.ANGLE_DEVIATION_CHANGE_FACTOR)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mechanic changed: instead of a random speed X and Y,Ball has been set up so that it will always have the same speed set in code. &#10;Tactical deflecting with Player can be done now (i.e. player can use the sides of Player to change the path of the ball by a certain amount decided with the Ball.ANGLE_DEVIATION_CHANGE_FACTOR)" />
+    <MESSAGE value="Creating javadoc for the game..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating javadoc for the game..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

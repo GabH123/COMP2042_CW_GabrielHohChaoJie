@@ -33,32 +33,69 @@ import java.util.Random;
  */
 
 public class GameplayController implements Controllable {
+    /**The default number of balls during the start of the game.
+     */
+    private static final int BALL_DEFAULT_AMOUNT=3;
 
+    /**Constant number to signal impact on the upper part of the brick.
+     */
     public static final int UP_IMPACT = 100;
+    /**Constant number to signal impact on the bottom part of the brick.
+     */
     public static final int DOWN_IMPACT = 200;
+    /**Constant number to signal impact on the left part of the brick.
+     */
     public static final int LEFT_IMPACT = 300;
+    /**Constant number to signal impact on the right part of the brick.
+     */
     public static final int RIGHT_IMPACT = 400;
 
     private Random rnd;
+    /**Main drawing area for the game.
+     */
     private Pane area;
 
+    /**The current level.
+     */
     private Level currentLevel;
+    /**The main ball inside game.
+     */
     private Ball ball;
+    /**The object which the player is controlling.
+     */
     private Player player;
+    /**To manage the highscores in the current game.
+     */
     private HighScoreManager highScoreManager;
-
+    /**Contains instructions on how to build a level for th current game.
+     */
     private LevelFactory levelMaker;
-
+    /**Tracks current number of the level.
+     */
     private int currentLevelNumber;
+    /**Tracks current score of the player.
+     */
     private int currentPlayerScore;
-
+    /**For debugging. To decide whether to skip or not.
+     */
     private boolean debugSkip;
-
+    /**Starting point of the player and ball.
+     */
     private Point2D startPoint;
+    /**Current amount of balls left before the player loses.
+     */
     private int ballCount;
+    /**Whether the player has lost the ball or not.
+     */
     private boolean ballLost;
 
 
+    /**Intialises the controller and the objects in the model for the game.
+     * @param drawArea The pane that contains the objects for the game.
+     * @param brickCount The amount of bricks allowed for every level.
+     * @param lineCount The amount of lines which the bricks would fill.
+     * @param brickDimensionRatio The ratio between the width and the height of the bricks.
+     */
     public GameplayController(Pane drawArea, int brickCount, int lineCount, double brickDimensionRatio){
         Point2D ballPos = new Point2D(drawArea.getPrefWidth()/2,drawArea.getPrefHeight()-50);
         this.startPoint = new Point2D(ballPos.getX(),ballPos.getY());
@@ -84,12 +121,14 @@ public class GameplayController implements Controllable {
         debugSkip=false;
         nextLevel();
     }
-
+    /**Updates position of the ball and player.
+     */
     public void updatePosition(){
         getPlayer().move();
         getBall().move();
     }
-
+    /**Detects collision  between the ball and the wall, player, border, rood and death zone.
+     */
     public void detectBallCollision(){
         getPlayer().ballPlayerCollision(getBall());
         currentPlayerScore+=getCurrentLevel().ballBrickCollision(getBall());
@@ -101,7 +140,8 @@ public class GameplayController implements Controllable {
             ballLost = true;
         }
     }
-
+    /**Resets the ball and player back to their default location and state.
+     */
     public void resetBallPlayer(){
         getPlayer().moveTo(startPoint);
         getBall().moveTo(startPoint);
@@ -109,11 +149,15 @@ public class GameplayController implements Controllable {
         getBall().setBallAngle();
         ballLost = false;
     }
-
+    /**Updates and retrieves the next level.
+     */
     public void nextLevel(){
         currentLevel = getLevelMaker().getThisLevel(currentLevelNumber++);
     }
 
+    /**Moves the player based on inputs from the keyboard.
+     * @param keyEvent
+     */
     public void movePlayer(KeyEvent keyEvent){
         switch (keyEvent.getCode()) {
             case A:
@@ -124,11 +168,13 @@ public class GameplayController implements Controllable {
                 break;
         }
     }
-
+    /**Stops the motion of the player.
+     */
     public void stopPlayer(){
         getPlayer().stop();
     }
-
+    /**Reset the state of the game to the initial conditions.
+     */
     public void resetGame(){
         resetBallPlayer();
         resetBallCount();
@@ -138,10 +184,17 @@ public class GameplayController implements Controllable {
     }
 
 
+    /**Creates a new RubberBall object for the controller.
+     * @param ballPos center of the ball object
+     */
     private void makeBall(Point2D ballPos){
         ball = new RubberBall(ballPos);
     }
 
+    /**Detects collision of the roof of the pane and the ball.
+     * @param ball the ball object being detected
+     * @return collided or not.
+     */
     private boolean ballRoofCollision(Ball ball){
         if (getBall().getPosition().getY() <= 0){
             ball.reverseY();
@@ -150,6 +203,10 @@ public class GameplayController implements Controllable {
         return false;
     }
 
+    /**Detects collision between border of the pane and ball.
+     * @param ball the ball object being detected
+     * @return collided or not
+     */
     private boolean ballBorderCollision(Ball ball){
         if (ball.getLeft().getX() <= 0 ||(ball.getRight().getX() > (area.getLayoutBounds().getWidth()))) {
             ball.reverseX();
@@ -159,76 +216,123 @@ public class GameplayController implements Controllable {
         return false;
     }
 
+    /**Detects whether the ball is in the death zone or not.
+     * @param ball the ball object being detected
+     * @return is the ball in the zone or not
+     */
     private boolean ballLostCollision(Ball ball){
         return ball.getPosition().getY() > area.getLayoutBounds().getHeight();
     }
 
 
-
+    /**Changes the horizontal axis speed of the ball.
+     * @param s the new horizontal axis speed of the ball
+     */
     public void setBallXSpeed(double s){
         getBall().setXSpeed(s);
     }
 
+    /**Changes the vertical axis speed of the ball.
+     * @param s the new vertical axis speed of the ball
+     */
     public void setBallYSpeed(double s){
         getBall().setYSpeed(s);
     }
 
+    /** Checks whether there are any remaining levels
+     * @return are there any remaining levels or not
+     */
     public boolean hasLevel(){
         return currentLevelNumber <= LevelFactory.TOTAL_NUMBER_OF_LEVELS;
     }
 
+    /**Reset the number of balls left to the default amount.
+     *
+     */
     public void resetBallCount(){
-        ballCount = 3;
+        ballCount = BALL_DEFAULT_AMOUNT;
     }
 
+    /**Reset the score of the player to 0.
+     *
+     */
     public void resetPlayScore(){
         currentPlayerScore=0;
     }
 
+    /**Get the amount of remaining unbroken bricks.
+     * @return amount of unbroken bricks left
+     */
     public int numberOfRemainingBricks(){
         return getCurrentLevel().getTotalBricksLeft();
     }
 
+    /**Get the amount of balls left
+     * @return amount of balls left
+     */
     public int getBallCount(){
         return ballCount;
     }
 
+    /**Checks whether the ball is indeed lost or not.
+     * @return is the ball lost
+     */
     public boolean isBallLost(){
         return ballLost;
     }
 
+    /**Gets the Level object for the current level.
+     * @return the Level object of the current level
+     */
     public Level getCurrentLevel() {
         return currentLevel;
     }
 
+    /**Gets the ball object for the game
+     * @return the ball object in the game
+     */
     public Ball getBall() {
         return ball;
     }
 
+    /**Get the player object for the game
+     * @return the player object in the game
+     */
     public Player getPlayer() {
         return player;
     }
 
+    /**Gets the current HighScoreManager object with list of current highscores.
+     * @return the current HighScoreManager
+     */
     public HighScoreManager getHighScoreManager() {
         return highScoreManager;
     }
 
+    /**Gets the current factory for making the levels
+     * @return the current LevelFactory
+     */
     public LevelFactory getLevelMaker() {
         return levelMaker;
     }
 
-    public Random getRnd() {
-        return rnd;
-    }
-
+    /**Get the current score of the plaer
+     * @return current score of the player
+     */
     public int getCurrentPlayerScore() {
         return currentPlayerScore;
     }
 
+    /**Checks the flag from the debug console whether to skip or not
+     * @return to skip or not to skip
+     */
     public boolean isDebugSkip() {
         return debugSkip;
     }
 
+    /**Sets the flag from the debug console for skipping the current level
+     * @param debugSkip skip or not
+     */
     public void setDebugSkip(boolean debugSkip) {
         this.debugSkip = debugSkip;
     }
