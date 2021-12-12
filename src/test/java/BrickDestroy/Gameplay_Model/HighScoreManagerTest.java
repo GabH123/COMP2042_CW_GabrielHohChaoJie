@@ -1,5 +1,6 @@
 package BrickDestroy.Gameplay_Model;
 
+import BrickDestroy.Gameplay_Model.Manager.HighScoreManager;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

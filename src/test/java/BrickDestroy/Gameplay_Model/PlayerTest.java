@@ -2,6 +2,7 @@ package BrickDestroy.Gameplay_Model;
 
 import BrickDestroy.Gameplay_Model.Ball.Ball;
 import BrickDestroy.Gameplay_Model.Ball.RubberBall;
+import BrickDestroy.Gameplay_Model.Playable.Player;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
 import org.junit.jupiter.api.BeforeEach;

@@ -6,7 +6,14 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 
+/**Controller for handling the Info section in VIew
+ *
+ */
 public class JavaFXInfoMenuController {
+    /**Goes back to the home menu.
+     * @param event mouse clicked.
+     * @throws IOException
+     */
     @FXML
     void backToMenu(ActionEvent event) throws IOException {
         BrickDestroyMain.setNewScene("BrickDestroy_Menu");

@@ -8,36 +8,47 @@ import javafx.scene.input.KeyEvent;
 
 import java.io.IOException;
 
+/**Controller for handling the home menu in VIew.
+ *
+ */
 public class JavaFXHomeMenuController {
 
+    /**Background image for the home menu.
+     *
+     */
     @FXML
     private ImageView mainMenuBackground;
 
 
+    /**Intialises the home menu controller.
+     *
+     */
     @FXML
     private void initialize(){
         mainMenuBackground.requestFocus();
-        //HighScoreManager test = new HighScoreManager();
     }
-    @FXML
-    void keyTest(KeyEvent event) {
-        //System.out.println("TEST2");
 
-    }
-    @FXML
-    void keyboardTest(KeyEvent event) {
-        //System.out.println("TEST");
-    }
+    /**Starts the game
+     * @param event mouse clicked
+     * @throws IOException
+     */
     @FXML
     void startGame(ActionEvent event) throws IOException{
         BrickDestroyMain.setNewScene("BrickDestroy_GameBoard");
     }
 
+    /**Opens the info menu
+     * @param event mouse clicked
+     * @throws IOException
+     */
     @FXML
     void openInfoMenu(ActionEvent event) throws IOException {
         BrickDestroyMain.setNewScene("BrickDestroy_Info");
     }
 
+    /**Exits the game
+     * @param event mouse clicked
+     */
     @FXML
     void exitGame(ActionEvent event) {
         System.out.println("User clicked \'Exit\' !");

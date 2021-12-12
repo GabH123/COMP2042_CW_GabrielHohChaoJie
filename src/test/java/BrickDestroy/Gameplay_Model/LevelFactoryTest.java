@@ -4,6 +4,8 @@ import BrickDestroy.Gameplay_Model.Brick.Brick;
 import BrickDestroy.Gameplay_Model.Brick.CementBrick;
 import BrickDestroy.Gameplay_Model.Brick.ClayBrick;
 import BrickDestroy.Gameplay_Model.Brick.SteelBrick;
+import BrickDestroy.Gameplay_Model.LevelFactory.Level;
+import BrickDestroy.Gameplay_Model.LevelFactory.LevelFactory;
 import javafx.scene.layout.Pane;
 import org.junit.jupiter.api.Test;
 

@@ -1,0 +1,9 @@
+BrickDestroy.GameController
+BrickDestroy.Gameplay_Model
+BrickDestroy.Gameplay_Model.Ball
+BrickDestroy.Gameplay_Model.Brick
+BrickDestroy.Gameplay_Model.LevelFactory
+BrickDestroy.Gameplay_Model.Manager
+BrickDestroy.Gameplay_Model.Playable
+BrickDestroy.JavaFX_SceneController
+BrickDestroy.JavaFX_View

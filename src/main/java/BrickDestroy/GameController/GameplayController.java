@@ -17,10 +17,12 @@
  */
 package BrickDestroy.GameController;
 
-import BrickDestroy.Gameplay_Model.*;
-
 import BrickDestroy.Gameplay_Model.Ball.Ball;
 import BrickDestroy.Gameplay_Model.Ball.RubberBall;
+import BrickDestroy.Gameplay_Model.LevelFactory.Level;
+import BrickDestroy.Gameplay_Model.LevelFactory.LevelFactory;
+import BrickDestroy.Gameplay_Model.Manager.HighScoreManager;
+import BrickDestroy.Gameplay_Model.Playable.Player;
 import javafx.geometry.Point2D;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
