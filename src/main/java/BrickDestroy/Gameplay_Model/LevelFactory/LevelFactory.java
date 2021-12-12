@@ -8,6 +8,8 @@ import javafx.geometry.Dimension2D;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
 
+import java.util.Random;
+
 
 /**LevelFactory is used to create (or build) different types of level for the game.
  * It also stores the info required for building each level.
@@ -58,6 +60,7 @@ public class LevelFactory {
      * @return the generated level from the level number with the corresponding brick types
      */
     public Level getThisLevel(int level){
+
         switch (level){
             case 0:
                 return makeLevel(CLAY,CLAY);
@@ -79,6 +82,7 @@ public class LevelFactory {
                 return makeLevel(STEEL,STEEL);
             default:
                 return makeLevel(CLAY,CLAY);
+
         }
     }
 

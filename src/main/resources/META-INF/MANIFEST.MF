@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: BrickDestroy.JavaFX_View.BrickDestroyMain
+

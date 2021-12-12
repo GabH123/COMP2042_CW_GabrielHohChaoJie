@@ -148,10 +148,12 @@ abstract public class Ball {
      * The left half of the player sways the path of the ball in a counter-clockwise direction.
      * <p>
      * While the right half of the player sways the path of the ball in a clockwise direction.
+     *
      * @param playerX Position of the player on the X-axis.
      * @param playerWidth Width of the player.
      */
     public void calculateDeviation(double playerX, double playerWidth){
+
         Point2D xAxis = new Point2D(1,0);
         double angleRelativeToXAndSpeedVector = xAxis.angle(getSpeedX(),getSpeedY());
         double actualDeviationPercentage = calculateAngleDeviationPercentage(playerX,playerWidth);

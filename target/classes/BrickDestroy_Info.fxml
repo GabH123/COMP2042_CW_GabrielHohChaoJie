@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BrickDestroy.JavaFX_SceneController.JavaFXInfoMenuController">
+<StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BrickDestroy.JavaFX_SceneController.InfoMenuController">
    <children>
       <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" StackPane.alignment="CENTER">
          <image>
@@ -20,54 +20,59 @@
          <children>
             <Button layoutX="230.0" layoutY="322.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="70.0" prefWidth="146.0" text="Back" AnchorPane.bottomAnchor="7.600000000000023" AnchorPane.leftAnchor="230.0">
                <font>
-                  <Font size="18.0" />
+                  <Font name="Bauhaus 93" size="18.0" />
                </font>
             </Button>
             <VBox alignment="TOP_CENTER" prefHeight="275.0" prefWidth="607.0" spacing="10.0">
                <children>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="3.0" text="How To Play" textAlignment="CENTER" wrappingWidth="271.2542724609375">
                      <font>
-                        <Font size="40.0" />
+                        <Font name="Bauhaus 93" size="40.0" />
                      </font>
                   </Text>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Goal: Destroy all the brick" textAlignment="CENTER" wrappingWidth="607.1155700683594">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Bauhaus 93" size="16.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="How: You can move left and right to deflect the ball" textAlignment="CENTER" wrappingWidth="569.5155639648438">
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="How: You can move left and right to deflect the ball. " textAlignment="CENTER" wrappingWidth="387.64892578125">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Bauhaus 93" size="16.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="You lose a life if the missed the ball." textAlignment="CENTER" wrappingWidth="569.5155639648438">
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="The sides of the player can slightly change the path of the ball." textAlignment="CENTER" wrappingWidth="569.5155639648438">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Bauhaus 93" size="16.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="You lose if you lose all your lives." textAlignment="CENTER" wrappingWidth="569.5155639648438">
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="You will lose a life if the missed the ball." textAlignment="CENTER" wrappingWidth="569.5155639648438">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Bauhaus 93" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="You lose if you lost all your lives." textAlignment="CENTER" wrappingWidth="569.5155639648438">
+                     <font>
+                        <Font name="Bauhaus 93" size="16.0" />
                      </font>
                   </Text>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Keyboard keys:" textAlignment="CENTER" wrappingWidth="569.5155639648438">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Bauhaus 93" size="16.0" />
                      </font>
                   </Text>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="A - Move Left   D - Move right   Esc - Pause Menu   Space - Pause" textAlignment="CENTER" wrappingWidth="569.5155639648438">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Bauhaus 93" size="16.0" />
                      </font>
                   </Text>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Destroying bricks gives score." textAlignment="CENTER" wrappingWidth="569.5155639648438">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Bauhaus 93" size="16.0" />
                      </font>
                   </Text>
                   <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Clay - 50 Points    Cement - 70 Points    Steel - 90 Points" textAlignment="CENTER" wrappingWidth="569.5155639648438">
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Bauhaus 93" size="16.0" />
                      </font>
                   </Text>
                </children>

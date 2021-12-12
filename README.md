@@ -1,12 +1,16 @@
 # Brick_Destroy
-This is a simple arcace video game.
-Player's goal is to destroy a wall with a small ballJavaFX.
-The game has  very simple commmand:
-SPACE start/pause the game
-A move left the player
-D move rigth the player
-ESC enter/exit pause menu
-ALT+SHITF+F1 open console
-the game automatically pause if the frame loses focus
-
-Enjoy ;-)
+Highlights:
+- MVC
+- Conversion to JavaFX
+- Adhering to SOLID
+- Applied Factory pattern on creation of Level
+- Done some code smelling.
+- Seperated classes into packages
+- Moved methods around
+- Reduce dependency by reduce object calling and pass by value.
+Additions:
+- Added new levels
+- Added info menu
+- Added score storing system
+- Permanent score storage
+- New mechanic: player can use sides the slightly change the path of the ball, allows for tactical playing
