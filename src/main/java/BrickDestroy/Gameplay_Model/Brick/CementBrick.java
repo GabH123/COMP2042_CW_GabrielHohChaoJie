@@ -64,9 +64,10 @@ public class CementBrick extends Brick {
     public int collidedWithBall(Point2D point, int dir) {
         if(super.isBroken())
             return 0;
+
         super.impact();
         if(!super.isBroken()){
-            crack.makeCrack(point,dir,(Rectangle) getBrickFace());
+            crack.makeCrackPath(point,dir,(Rectangle) getBrickFace());
             return 0;
         }
         return CEMENT_BRICK_SCORE_WORTH;

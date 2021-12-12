@@ -1,6 +1,5 @@
 package BrickDestroy.Gameplay_Model.Brick;
 
-import BrickDestroy.Gameplay_Model.Brick.Crack;
 import javafx.collections.ObservableList;
 import javafx.geometry.Point2D;
 import javafx.scene.shape.*;
@@ -12,7 +11,7 @@ class CrackTest {
     Crack crack = new Crack();
     @Test
     void makeCrack1() {
-        crack.makeCrack(new Point2D(50,0),Crack.UP,new Rectangle(0,0,100,20));
+        crack.makeCrackPath(new Point2D(50,0),Crack.UP,new Rectangle(0,0,100,20));
         ObservableList<PathElement> list = crack.getCrackPath().getElements();
         MoveTo start = (MoveTo) list.get(0);
         LineTo end = (LineTo) list.get(35);
@@ -37,7 +36,7 @@ class CrackTest {
 
     @Test
     void makeCrack2() {
-        crack.makeCrack(new Point2D(0,10),Crack.LEFT,new Rectangle(0,0,100,20));
+        crack.makeCrackPath(new Point2D(0,10),Crack.LEFT,new Rectangle(0,0,100,20));
         ObservableList<PathElement> list = crack.getCrackPath().getElements();
         MoveTo start = (MoveTo) list.get(0);
         LineTo end = (LineTo) list.get(35);
@@ -62,7 +61,7 @@ class CrackTest {
 
     @Test
     void makeCrack3() {
-        crack.makeCrack(new Point2D(50,20),Crack.DOWN,new Rectangle(0,0,100,20));
+        crack.makeCrackPath(new Point2D(50,20),Crack.DOWN,new Rectangle(0,0,100,20));
         ObservableList<PathElement> list = crack.getCrackPath().getElements();
         MoveTo start = (MoveTo) list.get(0);
         LineTo end = (LineTo) list.get(35);
@@ -87,7 +86,7 @@ class CrackTest {
 
     @Test
     void makeCrack4() {
-        crack.makeCrack(new Point2D(100,10),Crack.RIGHT,new Rectangle(0,0,100,20));
+        crack.makeCrackPath(new Point2D(100,10),Crack.RIGHT,new Rectangle(0,0,100,20));
         ObservableList<PathElement> list = crack.getCrackPath().getElements();
         MoveTo start = (MoveTo) list.get(0);
         LineTo end = (LineTo) list.get(35);

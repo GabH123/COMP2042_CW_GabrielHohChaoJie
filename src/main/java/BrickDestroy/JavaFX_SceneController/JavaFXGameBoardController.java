@@ -63,7 +63,7 @@ public class JavaFXGameBoardController {
 
     @FXML
     void initialize(){
-        gameplayController = new GameplayController(gameBoardPane,30,3,6/2);
+        gameplayController = new GameplayController(gameBoardPane,36,4,6/2);
         isPaused=true;
         pauseMenuShown=false;
         initialiseTimer();

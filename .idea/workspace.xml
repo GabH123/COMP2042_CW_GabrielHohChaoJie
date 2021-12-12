@@ -12,16 +12,21 @@
       <change beforePath="$PROJECT_DIR$/BrickDestroy_HighScore.bin" beforeDir="false" afterPath="$PROJECT_DIR$/BrickDestroy_HighScore.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Brick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/CementBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/CementBrick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/ClayBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/ClayBrick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Crack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Crack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/SteelBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/SteelBrick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Buildable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Buildable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/HighScoreManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/HighScoreManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/CementBrickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/CementBrickTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/ClayBrickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/ClayBrickTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/SteelBrickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/SteelBrickTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/HighScoreManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/HighScoreManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/LevelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/LevelFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Playable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Playable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/ScoreRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/ScoreRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/DebugDialogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/DebugDialogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/JavaFXGameBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/JavaFXGameBoardController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/CrackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/CrackTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/HighScoreManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/HighScoreManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Level.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/BrickDestroy/Gameplay_Model/HighScoreManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BrickDestroy/Gameplay_Model/HighScoreManagerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/LevelFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/LevelFactory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -373,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639232733819</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Removed inMiddle() from Crack.">
+      <created>1639279990303</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1639279990303</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -423,7 +435,8 @@
     <MESSAGE value="Mechanic changed: instead of a random speed X and Y,Ball has been set up so that it will always have the same speed set in code. &#10;Tactical deflecting with Player can be done now (i.e. player can use the sides of Player to change the path of the ball by a certain amount decided with the Ball.ANGLE_DEVIATION_CHANGE_FACTOR)" />
     <MESSAGE value="Creating javadoc for the game..." />
     <MESSAGE value="Adding javadoc for bricks." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding javadoc for bricks." />
+    <MESSAGE value="Removed inMiddle() from Crack." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed inMiddle() from Crack." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

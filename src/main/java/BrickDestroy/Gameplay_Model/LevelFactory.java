@@ -10,22 +10,43 @@ import javafx.scene.layout.Pane;
 import javafx.scene.shape.Rectangle;
 
 
-/**LevelFactory is a class use to create (or build) different types of level for Wall. It also stores the info required for building each level.
+/**LevelFactory is used to create (or build) different types of level for the game.
+ * It also stores the info required for building each level.
  *
  */
 public class LevelFactory {
 
+    /**Constant to indicate to create brick type ClayBrick.
+     *
+     */
     private static final int CLAY = 1;
+    /**Constant to indicate to create brick type SteelBrick.
+     *
+     */
     private static final int STEEL = 2;
+    /**Constant to indicate to create brick type CementBrick.
+     *
+     */
     private static final int CEMENT = 3;
-
+    /**Defines the maximum amount of levels.
+     *
+     */
     public static final int TOTAL_NUMBER_OF_LEVELS = 9;
 
+    /**Amount of bricks in a level. (Note: Dues to how the level is generated, there will be extra bricks used to fill the sides.)
+     *
+     */
     private int brickCount;
     private int lineCount;
     private double brickDimensionRatio;
     private Pane drawArea;
 
+    /**Initialises the LevelFactory with the corresponding draw area, number of bricks, lines and the ratio of the brick.
+     * @param drawArea the pane where the game is drawn
+     * @param brickCount the amount of bricks in the level
+     * @param lineCount the number of lines of bricks in the game
+     * @param brickDimensionRatio the ratio between the width and height of the brick
+     */
     public LevelFactory(Pane drawArea, int brickCount, int lineCount, double brickDimensionRatio) {
         this.drawArea = drawArea;
         this.brickCount = roundBrickCnt(brickCount,lineCount);
@@ -33,6 +54,10 @@ public class LevelFactory {
         this.brickDimensionRatio = brickDimensionRatio;
     }
 
+    /**Generates the level of the current number with its brick type.
+     * @param level number of level to be generated
+     * @return the generated level from the level number with the corresponding brick types
+     */
     public Level getThisLevel(int level){
         switch (level){
             case 0:
@@ -58,58 +83,84 @@ public class LevelFactory {
         }
     }
 
+    /**Makes the level with the corresponding brick types
+     * @param typeA first type of brick (appears the least in the level)
+     * @param typeB second type of brick (appears the most in the level)
+     * @return the level generated
+     */
     private Level makeLevel(int typeA, int typeB) {
-        return new Level(makeChessboardLevel(getDrawArea(),getBrickCount(),getLineCount(),getBrickDimensionRatio(),typeA,typeB));
+        return new Level(makeLevel(getDrawArea(),getBrickCount(),getLineCount(),getBrickDimensionRatio(),typeA,typeB));
     }
 
 
-    private Brick[] makeChessboardLevel(Pane drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int typeA, int typeB){
+    /**Makes the level based on the size of the draw area, number of bricks and line, ratio of brick size and the types of brick
+     * @param drawArea the area where the bricks are drawn
+     * @param brickCnt number of bricks (it will be increased by some to fill the edges)
+     * @param numberOfLines number of lines of bricks
+     * @param brickSizeRatio width to height ratio of the size of the brick
+     * @param typeA first type of brick (appears the least in the level)
+     * @param typeB second type of brick (appears the most in the level)
+     * @return the array of bricks for the levels
+     */
+    private Brick[] makeLevel(Pane drawArea, int brickCnt, int numberOfLines, double brickSizeRatio, int typeA, int typeB){
 
-        brickCnt=roundBrickCnt(brickCnt,lineCnt);
+        int bricksPerLine = brickCnt / numberOfLines;
+        brickCnt += numberOfLines / 2;
 
-        int brickOnLine = brickCnt / lineCnt;
+        Brick[] level  = new Brick[brickCnt];
+        Dimension2D brickSize = setBrickDimension(drawArea,bricksPerLine,brickSizeRatio);
 
-        int centerLeft = brickOnLine / 2 - 1;
-        int centerRight = brickOnLine / 2 + 1;
-
-        double brickLen = drawArea.getPrefWidth() / brickOnLine;
-        double brickHgt = brickLen / brickSizeRatio;
-        brickCnt += lineCnt / 2; //??
-
-        Brick[] tmp  = new Brick[brickCnt];
-
-        Dimension2D brickSize = new Dimension2D( brickLen, brickHgt);
-
-        //Second, set the location of each brickJavaFX
-        Point2D p = new Point2D(0,0);
         int i;
 
-        for(i = 0; i < tmp.length; i++){
-            int line = i / brickOnLine;
-            if(line == lineCnt)
+        for(i = 0; i < level.length; i++){
+            int currentLine = i / bricksPerLine;
+            if(currentLine == numberOfLines)
                 break;
 
-            int posX = i % brickOnLine;
+            int brickIndexOnRow = i % bricksPerLine;
 
-            double x = posX * brickLen;
-            x =(line % 2 == 0) ? x : (x - (brickLen / 2));
+            double x = brickIndexOnRow * brickSize.getWidth();
+            x =(currentLine % 2 == 0) ? x : (x - (brickSize.getWidth() / 2));
 
-            double y = (line) * brickHgt;
+            double y = (currentLine) * brickSize.getHeight();
 
 
-            boolean b = ((line % 2 == 0 && i % 2 == 0) || (line % 2 != 0 && posX > centerLeft && posX <= centerRight));
+            boolean b =decideBricksPattern(i,currentLine,brickIndexOnRow,bricksPerLine);
 
-            tmp[i] = b ?  makeBrick(new Point2D(x,y),brickSize,typeA) : makeBrick(new Point2D(x,y),brickSize,typeB);
+            level[i] = b ?  makeBrick(new Point2D(x,y),brickSize,typeA) : makeBrick(new Point2D(x,y),brickSize,typeB);
 
         }
 
-        for(double y = brickHgt;i < tmp.length;i++, y += 2*brickHgt){
-            double x = (brickOnLine * brickLen) - (brickLen / 2);
-            tmp[i] = makeBrick(new Point2D(x,y),brickSize,typeA);
+        for(double y = brickSize.getHeight();i < level.length;i++, y += 2*brickSize.getHeight()){
+            double x = (bricksPerLine * brickSize.getWidth()) - (brickSize.getWidth() / 2);
+            level[i] = makeBrick(new Point2D(x,y),brickSize,typeB);
         }
-        return tmp;
+        return level;
     }
 
+    /**Decides what type of brick to generate based on the pattern of the level intended.
+     * <p>
+     * Odd numbered rows contains bricks arranged in a chessboard manner.
+     * Even numbered rows contains bricks arranged with the middle containing second type and the edges contains the first type.
+     * @param index index of the current brick in question
+     * @param currentLine current line number
+     * @param brickIndexOnRow index of the current brick on the current row
+     * @param bricksPerLine number of bricks on one line (excluding the edge filler bricks)
+     * @return indicator for first type or second type of brick
+     */
+    private boolean decideBricksPattern(int index, int currentLine, int brickIndexOnRow, int bricksPerLine){
+        int centerLeftIndex = bricksPerLine / 2 - 1;
+        int centerRightIndex = bricksPerLine / 2 + 1;
+
+        return  ((currentLine % 2 == 0 && index % 2 == 0) || (currentLine % 2 != 0 && brickIndexOnRow > centerLeftIndex && brickIndexOnRow <= centerRightIndex));
+    }
+
+    /**Makes the corresponding brick type with the intended location and size.
+     * @param point upper-left of the brick
+     * @param size size of brick
+     * @param type type of brick
+     * @return brick object of the intended type
+     */
     private Brick makeBrick(Point2D point, Dimension2D size, int type){
         //Switch CASE for subclasses not allowed
         Brick out;
@@ -129,38 +180,23 @@ public class LevelFactory {
         return  out;
     }
 
-    private Brick[] setBrickLocation(int brickCnt, int lineCnt, int brickOnLine, Dimension2D brickSize, int type){
-        Brick[] brickJavaFXES = new Brick[brickCnt];
-        Point2D p = new Point2D(0,0);
-
-        int brickNo;
-        for(brickNo = 0; brickNo < brickJavaFXES.length; brickNo++){
-            int line = brickNo / brickOnLine;
-            if(line == lineCnt)
-                break;
-            double x = (brickNo % brickOnLine) * brickSize.getWidth();
-            x =(line % 2 == 0) ? x : (x - (brickSize.getWidth() / 2));
-            double y = (line) * brickSize.getHeight();
-            p.add(x,y);
-            brickJavaFXES[brickNo] = makeBrick(p,brickSize,type);
-            //System.out.println("Brick: "+i+" X: "+x+" Y: "+y);
-        }
-
-        for(double y = brickSize.getHeight(); brickNo < brickJavaFXES.length; brickNo++, y += 2*brickSize.getHeight()){
-            double x = (brickOnLine * brickSize.getWidth()) - (brickSize.getWidth() / 2);
-            p.add(x,y);
-            brickJavaFXES[brickNo] = new ClayBrick(p,brickSize);
-        }
-        return brickJavaFXES;
-    }
-
-    private Dimension2D setBrickDimension (Rectangle drawArea, int brickOnLine, double brickSizeRatio){
-        double brickLen = drawArea.getWidth() / brickOnLine;
+    /**Calculates the dimension of the brick.
+     * @param drawArea area of where the bricks are drawn
+     * @param brickOnLine number of bricks per line
+     * @param brickSizeRatio width to height ratio of brick
+     * @return dimension object of the brick
+     */
+    private Dimension2D setBrickDimension (Pane drawArea, int brickOnLine, double brickSizeRatio){
+        double brickLen = drawArea.getPrefWidth() / brickOnLine;
         double brickHgt = brickLen / brickSizeRatio;
-        return new Dimension2D((int) brickLen,(int) brickHgt);
+        return new Dimension2D( brickLen, brickHgt);
     }
 
-    //Rounds the amount of Bricks so that it fits exactly in the screen according to the number of lines
+    /**Rounds the amount of Bricks so that it fits exactly in the screen according to the number of lines
+     * @param brickCnt number of bricks on the leve;
+     * @param lineCnt number of lines
+     * @return rounded number of bricks that fits the draw area with the intended number of lines
+     */
     private int roundBrickCnt (int brickCnt, int lineCnt){
         return brickCnt -= brickCnt % lineCnt;
     }

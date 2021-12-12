@@ -90,7 +90,9 @@ abstract public class Brick {
     public int collidedWithBall(Point2D point, int dir) {
         if (broken)
             return 0;
+
         impact();
+
         return DEFAULT_BRICK_SCORE_WORTH;
     }
 
