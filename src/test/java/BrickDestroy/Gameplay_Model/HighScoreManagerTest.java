@@ -8,8 +8,17 @@ class HighScoreManagerTest {
     HighScoreManager test = new HighScoreManager("BrickDestroy_HighScore.bin");
     @Test
     void loadFromFile() {
+        test.addRecord("KEVIN",100);
+        test.addRecord("SAM",200);
+        test.addRecord("NICK",300);
+        test.addRecord("MIKA",400);
+        test.addRecord("JAKE",500);
+        test.addRecord("THOMAS",800);
+        test.addRecord("JACK",1000);
+
+        test.saveToFile();
         test.loadFromFile();
-        assertEquals(test.getHighScores().size(),8);
+        assertEquals(test.getHighScores().size(),7);
     }
 
     @Test
@@ -40,8 +49,13 @@ class HighScoreManagerTest {
 
     @Test
     void indexOfNewScore(){
-        test.loadFromFile();
-        test.printList();
+        test.addRecord("KEVIN",100);
+        test.addRecord("SAM",200);
+        test.addRecord("NICK",300);
+        test.addRecord("MIKA",400);
+        test.addRecord("JAKE",500);
+        test.addRecord("THOMAS",800);
+        test.addRecord("JACK",1000);
         assertEquals(test.indexOfNewScore(150),6);
     }
 }

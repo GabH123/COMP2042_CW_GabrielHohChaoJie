@@ -1,6 +1,7 @@
 package BrickDestroy.Gameplay_Model.Brick;
 
 import javafx.geometry.Point2D;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 
 import java.util.Random;
@@ -11,12 +12,16 @@ public class Crack {
      *
      */
     public static final int DEF_CRACK_DEPTH = 1;
-    /**Defines the number of s
+    /**Defines how zig-zag is the crack.
      *
      */
     public static final int DEF_STEPS = 35;
 
-    private static final int CRACK_SECTIONS = 3;
+    /**Defines the stroke color of the crack.
+     *
+     */
+    private static final Color CRACK_COLOR = new Color(218.0/256, 200.0/256, 176.0/256,1);
+
     private static final double JUMP_PROBABILITY = 0.7;
 
     public static final int LEFT = 10;
@@ -37,6 +42,7 @@ public class Crack {
     public Crack() {
         rnd=new Random();
         crack = new Path();
+        crack.setStroke(CRACK_COLOR);
         this.crackDepth = DEF_CRACK_DEPTH;
         this.steps = DEF_STEPS;
 
@@ -98,10 +104,9 @@ public class Crack {
         for (int i = 1; i < steps; i++) {
 
             x = (i * w) + start.getX();
-            y = (i * h) + start.getY() + randomInBounds(bound);
+            y = (i * h) + start.getY();
 
-            if (inMiddle(i, CRACK_SECTIONS, steps))
-                y += jumps(jump, JUMP_PROBABILITY);
+            y += jumps(jump, JUMP_PROBABILITY);
 
             y=checkIfOutOfBrickBound(y,start,end);
             path.getElements().add(new LineTo(x, y));
@@ -126,13 +131,6 @@ public class Crack {
     private int randomInBounds(int bound) {
         int n = (bound * 2) + 1;
         return rnd.nextInt(n) - bound;
-    }
-
-    private boolean inMiddle(int i, int steps, int divisions) {
-        int low = (steps / divisions);
-        int up = low * (divisions - 1);
-
-        return (i > low) && (i < up);
     }
 
     private int jumps(int bound, double probability) {

@@ -14,11 +14,11 @@ class SteelBrickTest {
         int score = 0;
         do{
             assertEquals(score,0);
-            score = steelBrick.setImpact(new Point2D(50,1),Crack.UP);
+            score = steelBrick.collidedWithBall(new Point2D(50,1),Crack.UP);
         }while (!steelBrick.isBroken());
         assertEquals(score,90);
         for (int i = 0 ;i<10;i++) {
-            score = steelBrick.setImpact(new Point2D(50, 1), Crack.UP);
+            score = steelBrick.collidedWithBall(new Point2D(50, 1), Crack.UP);
             assertEquals(score, 0);
         }
     }

@@ -13,29 +13,29 @@ class CementBrickTest {
 
     @Test
     void setImpact1() {
-        assertEquals(cementBrick.setImpact(new Point2D(0,0), Crack.LEFT),0);
-        assertEquals(cementBrick.setImpact(new Point2D(0,0),Crack.LEFT),70);
-        assertEquals(cementBrick.setImpact(new Point2D(0,0),Crack.LEFT),0);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(0,0), Crack.LEFT),0);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(0,0),Crack.LEFT),70);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(0,0),Crack.LEFT),0);
     }
     @Test
     void setImpact2() {
-        assertEquals(cementBrick.setImpact(new Point2D(0,10),Crack.DOWN),0);
-        assertEquals(cementBrick.setImpact(new Point2D(0,10),Crack.DOWN),70);
-        assertEquals(cementBrick.setImpact(new Point2D(0,10),Crack.DOWN),0);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(0,10),Crack.DOWN),0);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(0,10),Crack.DOWN),70);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(0,10),Crack.DOWN),0);
     }
 
     @Test
     void setImpact3() {
-        assertEquals(cementBrick.setImpact(new Point2D(20,0),Crack.UP),0);
-        assertEquals(cementBrick.setImpact(new Point2D(20,0),Crack.UP),70);
-        assertEquals(cementBrick.setImpact(new Point2D(20,0),Crack.UP),0);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(20,0),Crack.UP),0);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(20,0),Crack.UP),70);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(20,0),Crack.UP),0);
     }
 
     @Test
     void setImpact4() {
-        assertEquals(cementBrick.setImpact(new Point2D(20,100),Crack.RIGHT),0);
-        assertEquals(cementBrick.setImpact(new Point2D(20,100),Crack.RIGHT),70);
-        assertEquals(cementBrick.setImpact(new Point2D(20,100),Crack.RIGHT),0);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(20,100),Crack.RIGHT),0);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(20,100),Crack.RIGHT),70);
+        assertEquals(cementBrick.collidedWithBall(new Point2D(20,100),Crack.RIGHT),0);
     }
 
 

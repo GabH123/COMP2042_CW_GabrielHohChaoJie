@@ -20,18 +20,18 @@ public class Level implements Buildable{
                 //Vertical Impact
                 case UP_IMPACT:
                     ball.reverseY();
-                    return b.setImpact(ball.getDown(), Crack.UP);
+                    return b.collidedWithBall(ball.getDown(), Crack.UP);
                 case DOWN_IMPACT:
                     ball.reverseY();
-                    return b.setImpact(ball.getUp(), Crack.DOWN);
+                    return b.collidedWithBall(ball.getUp(), Crack.DOWN);
 
                 //Horizontal Impact
                 case LEFT_IMPACT:
                     ball.reverseX();
-                    return b.setImpact(ball.getRight(), Crack.RIGHT);
+                    return b.collidedWithBall(ball.getRight(), Crack.RIGHT);
                 case RIGHT_IMPACT:
                     ball.reverseX();
-                    return b.setImpact(ball.getLeft(), Crack.LEFT);
+                    return b.collidedWithBall(ball.getLeft(), Crack.LEFT);
             }
         }
         return 0;
@@ -43,9 +43,9 @@ public class Level implements Buildable{
         int out = 0;
         if (brick.getBrickFace().contains(ball.getRight()))
             out = LEFT_IMPACT;
-        else if (brick.getBrick().contains(ball.getLeft()))
+        else if (brick.getBrickFace().contains(ball.getLeft()))
             out = RIGHT_IMPACT;
-        else if (brick.getBrick().contains(ball.getUp()))
+        else if (brick.getBrickFace().contains(ball.getUp()))
             out = DOWN_IMPACT;
         else if (brick.getBrickFace().contains(ball.getDown()))
             out = UP_IMPACT;

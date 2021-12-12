@@ -8,62 +8,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dbe3fb-f09e-4204-adc6-739691bea208" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/BrickDestroy/Gameplay_Model/Ball/Ball.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/BrickDestroy/Gameplay_Model/Ball/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/BrickDestroy/Gameplay_Model/Ball/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/allclasses-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/allpackages-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/constant-values.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/element-list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/help-doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-11.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index-files/index-9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/jquery-ui.overrides.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/legal/COPYRIGHT" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/legal/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/legal/jquery.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/legal/jqueryUI.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/member-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/module-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/overview-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/package-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/resources/glass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/resources/x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_glass_55_fbf9ee_1x400.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_glass_65_dadada_1x400.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_glass_75_dadada_1x400.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_glass_75_e6e6e6_1x400.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_glass_95_fef1ec_1x400.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-icons_222222_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-icons_2e83ff_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-icons_454545_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-icons_888888_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/images/ui-icons_cd0a0a_256x240.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/jquery-3.5.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/jquery-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script-dir/jquery-ui.structure.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/stylesheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/tag-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javadoc test 2/type-search-index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/GameplayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController/GameplayController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrickDestroy_HighScore.bin" beforeDir="false" afterPath="$PROJECT_DIR$/BrickDestroy_HighScore.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Brick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Brick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/CementBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/CementBrick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/ClayBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/ClayBrick.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Crack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/Crack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/CrackTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/CrackTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/SteelBrick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Brick/SteelBrick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/CementBrickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/CementBrickTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/ClayBrickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/ClayBrickTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/SteelBrickTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/Brick/SteelBrickTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/HighScoreManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrickDestroy/Gameplay_Model/HighScoreManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Level.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/Gameplay_Model/Level.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/BrickDestroy/Gameplay_Model/HighScoreManagerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/BrickDestroy/Gameplay_Model/HighScoreManagerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,79 +114,72 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JavaFXGameBoardControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in COMP2042_CW_hcygh1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="COMP2042_CW_hcygh1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HighScoreManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP2042_CW_hcygh1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="BrickDestroy.JavaFX_SceneController.*" />
+          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="BrickDestroy.JavaFX_SceneController" />
-      <option name="MAIN_CLASS_NAME" value="BrickDestroy.JavaFX_SceneController.JavaFXGameBoardControllerTest" />
+      <option name="PACKAGE_NAME" value="BrickDestroy.Gameplay_Model" />
+      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.HighScoreManagerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RubberBallTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HighScoreManagerTest.addRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP2042_CW_hcygh1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.Ball.*" />
+          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="BrickDestroy.Gameplay_Model.Ball" />
-      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.Ball.RubberBallTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RubberBallTest.move" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="COMP2042_CW_hcygh1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.Ball.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="BrickDestroy.Gameplay_Model.Ball" />
-      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.Ball.RubberBallTest" />
-      <option name="METHOD_NAME" value="move" />
+      <option name="PACKAGE_NAME" value="BrickDestroy.Gameplay_Model" />
+      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.HighScoreManagerTest" />
+      <option name="METHOD_NAME" value="addRecord" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RubberBallTest.moveTo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HighScoreManagerTest.indexOfNewScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP2042_CW_hcygh1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.Ball.*" />
+          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="BrickDestroy.Gameplay_Model.Ball" />
-      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.Ball.RubberBallTest" />
-      <option name="METHOD_NAME" value="moveTo" />
+      <option name="PACKAGE_NAME" value="BrickDestroy.Gameplay_Model" />
+      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.HighScoreManagerTest" />
+      <option name="METHOD_NAME" value="indexOfNewScore" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SteelBrickTest.setImpact" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="HighScoreManagerTest.loadFromFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="COMP2042_CW_hcygh1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.Brick.*" />
+          <option name="PATTERN" value="BrickDestroy.Gameplay_Model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="BrickDestroy.Gameplay_Model.Brick" />
-      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.Brick.SteelBrickTest" />
-      <option name="METHOD_NAME" value="setImpact" />
+      <option name="PACKAGE_NAME" value="BrickDestroy.Gameplay_Model" />
+      <option name="MAIN_CLASS_NAME" value="BrickDestroy.Gameplay_Model.HighScoreManagerTest" />
+      <option name="METHOD_NAME" value="loadFromFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -236,19 +187,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.BrickDestroyMain" />
-      <item itemvalue="JUnit.SteelBrickTest.setImpact" />
-      <item itemvalue="JUnit.RubberBallTest.move" />
-      <item itemvalue="JUnit.RubberBallTest" />
-      <item itemvalue="JUnit.RubberBallTest.moveTo" />
-      <item itemvalue="JUnit.JavaFXGameBoardControllerTest" />
+      <item itemvalue="JUnit.All in COMP2042_CW_hcygh1" />
+      <item itemvalue="JUnit.HighScoreManagerTest.addRecord" />
+      <item itemvalue="JUnit.HighScoreManagerTest" />
+      <item itemvalue="JUnit.HighScoreManagerTest.indexOfNewScore" />
+      <item itemvalue="JUnit.HighScoreManagerTest.loadFromFile" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RubberBallTest.moveTo" />
-        <item itemvalue="JUnit.JavaFXGameBoardControllerTest" />
-        <item itemvalue="JUnit.RubberBallTest" />
-        <item itemvalue="JUnit.RubberBallTest.move" />
-        <item itemvalue="JUnit.SteelBrickTest.setImpact" />
+        <item itemvalue="JUnit.HighScoreManagerTest.addRecord" />
+        <item itemvalue="JUnit.HighScoreManagerTest" />
+        <item itemvalue="JUnit.HighScoreManagerTest.loadFromFile" />
+        <item itemvalue="JUnit.HighScoreManagerTest.indexOfNewScore" />
+        <item itemvalue="JUnit.All in COMP2042_CW_hcygh1" />
       </list>
     </recent_temporary>
   </component>
@@ -415,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639227535267</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Adding javadoc for bricks.">
+      <created>1639232733819</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1639232733819</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -464,7 +422,8 @@
     <MESSAGE value="Added tests for SteelBrick and RubberBall." />
     <MESSAGE value="Mechanic changed: instead of a random speed X and Y,Ball has been set up so that it will always have the same speed set in code. &#10;Tactical deflecting with Player can be done now (i.e. player can use the sides of Player to change the path of the ball by a certain amount decided with the Ball.ANGLE_DEVIATION_CHANGE_FACTOR)" />
     <MESSAGE value="Creating javadoc for the game..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Creating javadoc for the game..." />
+    <MESSAGE value="Adding javadoc for bricks." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding javadoc for bricks." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
