@@ -29,6 +29,7 @@ public class BrickDestroyMain extends Application {
     }
 
     public static void main(String[] args) {
+        System.out.println("Opening Brick_Destroy");
         launch(args);
     }
 }

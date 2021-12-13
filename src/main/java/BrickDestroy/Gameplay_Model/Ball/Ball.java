@@ -105,8 +105,12 @@ abstract public class Ball {
         Random rnd = new Random();
         double ballAngle = rnd.nextDouble(80)+50;
 
-        setXSpeed(Math.cos(Math.toRadians(ballAngle))*BALL_SPEED);
-        setYSpeed(-1*Math.sin(Math.toRadians(ballAngle))*BALL_SPEED);
+        adjustSpeedVector(BALL_SPEED,ballAngle);
+    }
+
+    public void adjustSpeedVector(double speed, double angle){
+        setXSpeed(Math.cos(Math.toRadians(angle))*speed);
+        setYSpeed(-1*Math.sin(Math.toRadians(angle))*speed);
     }
 
 
@@ -161,8 +165,7 @@ abstract public class Ball {
         if (actualDeviationPercentage>0){
             double newAngle = angleRelativeToXAndSpeedVector - angleRelativeToXAndSpeedVector*actualDeviationPercentage/100;
 
-            setXSpeed(Math.cos(Math.toRadians(newAngle))*BALL_SPEED);
-            setYSpeed(-Math.sin(Math.toRadians(newAngle))*BALL_SPEED);
+            adjustSpeedVector(BALL_SPEED,newAngle);
         }
         else {
 
@@ -172,8 +175,7 @@ abstract public class Ball {
 
             newAngle = 180 - newAngle;
 
-            setXSpeed(Math.cos(Math.toRadians(newAngle))*BALL_SPEED);
-            setYSpeed(-Math.sin(Math.toRadians(newAngle))*BALL_SPEED);
+            adjustSpeedVector(BALL_SPEED,newAngle);
         }
     }
 

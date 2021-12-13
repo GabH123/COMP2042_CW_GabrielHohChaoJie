@@ -5,25 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77dbe3fb-f09e-4204-adc6-739691bea208" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Brick_Destroy - Modified Class Diagram.drawio.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/COMP2042_CW_hcygh1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/COMP2042_CW_hcygh1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_4_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_4_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_17_0_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_17_0_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_17_0_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_17_0_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_17_0_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_win_17_0_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_17_0_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_16.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_win_17_0_0_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Destroy Javadoc/BrickDestroy/JavaFX_SceneController/JavaFXGameBoardController.html" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Destroy Javadoc/BrickDestroy/JavaFX_SceneController/JavaFXGameBoardController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Destroy Javadoc/BrickDestroy/JavaFX_SceneController/JavaFXHomeMenuController.html" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Destroy Javadoc/BrickDestroy/JavaFX_SceneController/JavaFXHomeMenuController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Destroy Javadoc/BrickDestroy/JavaFX_SceneController/JavaFXInfoMenuController.html" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Destroy Javadoc/BrickDestroy/JavaFX_SceneController/JavaFXInfoMenuController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick_Destroy - Modified Class Diagram.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/Brick_Destroy - Modified Class Diagram.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BrickDestroy_HighScore.bin" beforeDir="false" afterPath="$PROJECT_DIR$/BrickDestroy_HighScore.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/COMP2042_CW_hcygh1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/COMP2042_CW_hcygh1.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/Ball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/Ball/Ball.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/LevelFactory/LevelFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/Gameplay_Model/LevelFactory/LevelFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/JavaFXGameBoardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/GameBoardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/JavaFXHomeMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/HomeMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/JavaFXInfoMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_SceneController/InfoMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/BrickDestroy_GameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/BrickDestroy_GameBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_View/BrickDestroyMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BrickDestroy/JavaFX_View/BrickDestroyMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/BrickDestroy_Info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/BrickDestroy_Info.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/BrickDestroy_Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/BrickDestroy_Menu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Brick_Destroy-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy_GameBoard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy_GameBoard.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy/JavaFX_View/BrickDestroyMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy/JavaFX_View/BrickDestroyMain.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy_Info.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy_Info.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BrickDestroy_Menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BrickDestroy_Menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-cli/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +43,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -67,9 +75,9 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="true" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/BrickDestroy/GameController_JavaFX" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.26187575" />
     <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="ReaderModeSettings">
@@ -103,6 +111,12 @@
       <recent name="BrickDestroy.BrickDestroy_Model_JavaFX" />
     </key>
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean package" />
+      <command value="mvn clean compile assembly:single" />
+    </option>
+  </component>
   <component name="RunManager" selected="Application.BrickDestroyMain">
     <configuration name="BrickDestroyMain" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="BrickDestroy.JavaFX_View.BrickDestroyMain" />
@@ -118,10 +132,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in COMP2042_CW_hcygh1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="BrickDestroy.JavaFX_View.Main" />
       <module name="COMP2042_CW_hcygh1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="BrickDestroy.JavaFX_View.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -191,7 +210,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.BrickDestroyMain" />
-      <item itemvalue="JUnit.All in COMP2042_CW_hcygh1" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.HighScoreManagerTest.addRecord" />
       <item itemvalue="JUnit.HighScoreManagerTest" />
       <item itemvalue="JUnit.HighScoreManagerTest.indexOfNewScore" />
@@ -199,11 +218,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.HighScoreManagerTest.addRecord" />
         <item itemvalue="JUnit.HighScoreManagerTest" />
         <item itemvalue="JUnit.HighScoreManagerTest.loadFromFile" />
         <item itemvalue="JUnit.HighScoreManagerTest.indexOfNewScore" />
-        <item itemvalue="JUnit.All in COMP2042_CW_hcygh1" />
       </list>
     </recent_temporary>
   </component>
@@ -398,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639298945077</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Created MANIFEST file">
+      <created>1639329600285</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1639329600285</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -425,7 +451,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implemented switching between Info and Home menu." />
     <MESSAGE value="Copied the Model classes into a new package in order to modify them to be suitable with JavaFX." />
     <MESSAGE value="Modified JavaFX version of Brick, CementBrick, Playable, Player and RubberBall to suit JavaFX." />
     <MESSAGE value="Modified JavaFX version of Ball, Brick, CementBrick, ClayBrick, Crack, LevelFactory, RubberBall and SteelBrick." />
@@ -450,7 +475,8 @@
     <MESSAGE value="Removed inMiddle() from Crack." />
     <MESSAGE value="Finished creating javadoc for the classes in the model." />
     <MESSAGE value="Completed creating the javadoc files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed creating the javadoc files." />
+    <MESSAGE value="Created MANIFEST file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created MANIFEST file" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -18,7 +18,7 @@
       </ImageView>
       <AnchorPane prefHeight="270.0" prefWidth="600.0">
          <children>
-            <Button layoutX="230.0" layoutY="322.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="70.0" prefWidth="146.0" text="Back" AnchorPane.bottomAnchor="7.600000000000023" AnchorPane.leftAnchor="230.0">
+            <Button layoutX="240.0" layoutY="353.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="26.0" prefWidth="126.0" text="Back" AnchorPane.bottomAnchor="14.199999999999989" AnchorPane.leftAnchor="240.0">
                <font>
                   <Font name="Bauhaus 93" size="18.0" />
                </font>
@@ -30,7 +30,12 @@
                         <Font name="Bauhaus 93" size="40.0" />
                      </font>
                   </Text>
-                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Goal: Destroy all the brick" textAlignment="CENTER" wrappingWidth="607.1155700683594">
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="Goal: Destroy all the bricks" textAlignment="CENTER" wrappingWidth="607.1155700683594">
+                     <font>
+                        <Font name="Bauhaus 93" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" text="There are 9 levels." textAlignment="CENTER" wrappingWidth="607.1155700683594">
                      <font>
                         <Font name="Bauhaus 93" size="16.0" />
                      </font>
